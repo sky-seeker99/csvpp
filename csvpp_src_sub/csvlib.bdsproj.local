@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2008/09/15 21:50:37.125.bdsproj,C:\Documents and Settings\kasuya99\My Documents\Borland Studio Projects\Project1.bdsproj=C:\Documents and Settings\kasuya99\My Documents\Borland Studio Projects\csvlib.bdsproj</Transaction>
+    <Transaction>2008/09/15 21:50:49.718.bdsproj,C:\Documents and Settings\kasuya99\My Documents\Borland Studio Projects\csvlib.bdsproj=C:\hpdata\csvpp_source_tc\csvpp_src_sub\csvlib.bdsproj</Transaction>
+    <Transaction>2010/07/11 17:38:10.187.lib,C:\hpdata\csvpp_source_tc\csvpp_xbase\Release_Build\xbase.lib=</Transaction>
+    <Transaction>2010/07/11 17:38:12.625.lib,C:\hpdata\csvpp_source_tc\csvpp_xlang\Release_Build\xlang.lib=</Transaction>
+    <Transaction>2010/07/11 17:40:01.390.cpp,C:\hpdata\csvpp_source_tc\csvpp_xlang\xcsvdb.cpp=</Transaction>
+  </Transactions>
+</BorlandProject>

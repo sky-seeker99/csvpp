@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2008/09/15 21:41:02.093.bdsproj,C:\Documents and Settings\kasuya99\My Documents\Borland Studio Projects\Project1.bdsproj=C:\Documents and Settings\kasuya99\My Documents\Borland Studio Projects\csvpp.bdsproj</Transaction>
+    <Transaction>2008/09/15 21:41:07.203.bdsproj,C:\Documents and Settings\kasuya99\My Documents\Borland Studio Projects\csvpp.bdsproj=C:\hpdata\csvpp_source_tc\csvpp_src\csvpp.bdsproj</Transaction>
+    <Transaction>2010/03/20 07:58:19.046.cpp,C:\hpdata\csvpp_source_tc\csvpp_xbase\xlist.cpp=</Transaction>
+    <Transaction>2010/07/11 17:24:17.406.lib,C:\hpdata\csvpp_source_tc\csvpp_xbase\Release_Build\xbase.lib=</Transaction>
+    <Transaction>2010/07/11 17:24:20.687.lib,C:\hpdata\csvpp_source_tc\csvpp_xlang\Release_Build\xlang.lib=</Transaction>
+    <Transaction>2010/07/11 17:25:06.937.cpp,C:\hpdata\csvpp_source_tc\csvpp_xlang\xlang_top.cpp=</Transaction>
+    <Transaction>2010/07/11 17:25:10.859.cpp,C:\hpdata\csvpp_source_tc\csvpp_xlang\xlang.cpp=</Transaction>
+    <Transaction>2011/10/30 16:50:48.281.cpp,C:\hpdata\csvpp_source_tc\csvpp_xlang\xcsvdb.cpp=</Transaction>
+    <Transaction>2011/10/30 16:58:59.640.cpp,C:\hpdata\csvpp_source_tc\csvpp_xlang\xdbctl.cpp=</Transaction>
+  </Transactions>
+</BorlandProject>
