@@ -1,0 +1,10 @@
+USEUNIT("_csvmake3_oo.cpp");
+USEUNIT("..\csvpp_xbase\zfile.cpp");
+USEUNIT("..\csvpp_xbase\zschar.cpp");
+USEUNIT("..\csvpp_xbase\zsjis_anl.cpp");
+USEUNIT("..\csvpp_xbase\xwildcard.cpp");
+USEUNIT("..\csvpp_xbase\ztoken.cpp");
+//---------------------------------------------------------------------------
+This file is used by the project manager only and should be treated like the project file
+
+main
