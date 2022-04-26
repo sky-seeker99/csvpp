@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2009/05/10 17:23:45.640.cpp,C:\Documents and Settings\kasuya99\My Documents\Borland Studio Projects\Unit1.cpp=C:\hpdata\csvpp_source_tc\conout_get\_conoutwind.cpp</Transaction>
+    <Transaction>2009/05/10 17:23:45.640.h,C:\Documents and Settings\kasuya99\My Documents\Borland Studio Projects\Unit1.h=C:\hpdata\csvpp_source_tc\conout_get\_conoutwind.h</Transaction>
+    <Transaction>2009/05/10 17:23:45.640.dfm,C:\Documents and Settings\kasuya99\My Documents\Borland Studio Projects\Unit1.dfm=C:\hpdata\csvpp_source_tc\conout_get\_conoutwind.dfm</Transaction>
+    <Transaction>2009/05/10 17:24:02.359.bdsproj,C:\Documents and Settings\kasuya99\My Documents\Borland Studio Projects\Project1.bdsproj=C:\hpdata\csvpp_source_tc\conout_get\conoutwind.bdsproj</Transaction>
+    <Transaction>2010/07/11 14:56:38.750.cpp,C:\hpdata\csvpp_source_tc\csvpp_xbase\xcsvi_anl.cpp=</Transaction>
+  </Transactions>
+</BorlandProject>

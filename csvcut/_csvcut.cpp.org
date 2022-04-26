@@ -1,0 +1,248 @@
+/*
+
+ * Copyright (c) 2003 Shigeru Kasuya (sky_seeker99@users.sourceforge.jp)
+ *
+ *    This source code is free software; you can redistribute it
+ *    and/or modify it in source code form under the terms of the GNU
+ *    General Public License as published by the Free Software
+ *    Foundation; either version 2 of the License, or (at your option)
+ *    any later version.
+ *
+ *    This program is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU General Public License for more details.
+ *
+ *    You should have received a copy of the GNU General Public License
+ *    along with this program; if not, write to the Free Software
+ *    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
+ */
+
+//---------------------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <condefs.h>
+#include <io.h>
+#include <fcntl.h>
+
+#include <vcl.h>
+#pragma hdrstop
+
+namespace xbase {
+#include "..\csvpp_xbase\xtool.h"
+#include "..\csvpp_xbase\xlist.h"
+#include "..\csvpp_xbase\xprintf.h"
+#include "..\csvpp_xbase\xfile.h"
+#include "..\csvpp_xbase\xcsvi.h"
+#include "..\csvpp_xbase\xstr.h"
+}
+
+using namespace xbase;
+using namespace std;
+
+
+//---------------------------------------------------------------------------
+
+#pragma argsused
+int main(int argc, char* argv[])
+{
+bool inFlg = false;
+bool outFlg = false;
+
+
+if (argc < 4)
+  {
+  printf("csv_file cutter converter Ver 1.04\n\n");
+  printf("use:csvcut csv_in_file csv_out_file koumoku,koumoku,koumoku-koumoku,....\n");
+  printf("ex :csvcut aaa.csv aaa_out.csv 1,3-5,7,9\n");
+  printf("ex :type aaa.csv | csvcut - - 1,3-5,7,9 > aaa_out.csv\n");
+  return 1;
+  }
+
+if (strcmp(argv[1],"-") == 0){inFlg =true;}
+if (strcmp(argv[2],"-") == 0){outFlg=true;}
+
+if (strcmp(argv[1],argv[2]) == 0)
+  {
+  if (inFlg == false)
+    {
+    printf("in_file and out_file same name error.\n");
+    return 1;
+    }
+  }
+
+// stdin -> file
+sChar *get_file;
+if (inFlg)
+  {
+  FileTemp_T *temp = new FileTemp_T("csv");
+  get_file = new sChar(temp->GetName());
+  delete temp;
+  FILE *temp_fp = fopen(get_file->c_str(),"wt");
+  char bb[4096];
+
+  for(;;)
+    {
+    if (gets(bb) == NULL){break;}
+    fprintf(temp_fp,"%s\n",bb);
+    }
+  fclose(temp_fp);
+  }
+else
+  {
+  get_file = new sChar(argv[1]);
+  }
+
+
+CsvInf_T *csvi;
+FILE *out_fp;
+int i;
+char *str;
+
+csvi   = new CsvInf_T(get_file->c_str());
+out_fp = NULL;
+if (outFlg == false)
+  {
+  out_fp = fopen(argv[2],"wt");
+  }
+
+if ((csvi->CsvError_Rd() != 0) || ((out_fp == NULL) && (outFlg == false)))
+  {
+  if (csvi->CsvError_Rd() != 0){printf("file open error.(file=%s)\n",argv[1]);}
+  if (out_fp == NULL          ){printf("file open error.(file=%s)\n",argv[2]);}else{fclose(out_fp);}
+  delete csvi;
+  delete get_file;
+  return 1;
+  }
+
+csvi->sp_push_set(false);
+
+MemHeader_T *it = new MemHeader_T;
+MEM_FP *mem_fp  = new MEM_FP(it);
+sChar *sstr;
+
+StrSrchInf_T *ssi = new StrSrchInf_T;
+ssi->Set(','); ssi->Set('-'); ssi->SetFlg();
+ssi->Main(argv[3]);
+int sv_top=0;
+bool renzoku_flg = false;
+for(int i=0;i<ssi->GetSu();i++)
+  {
+  sstr = ssi->Get(i);
+  if (strcmp(sstr->c_str(),"-") == 0){renzoku_flg = true; continue;}
+  if (renzoku_flg)
+    {
+    renzoku_flg = false;
+    int ee = sstr->c_int();
+    for(int j=sv_top+1;j<=ee;++j)
+      {
+      sstr = new sChar("");
+      sstr->intset(j);
+      it->alloc_ptr = sstr;
+      mem_fp->mem_alloc();
+      }
+    continue;
+    }
+
+  it->alloc_ptr = new sChar(sstr->c_str());
+  mem_fp->mem_alloc();
+  sv_top = sstr->c_int();
+  }
+
+delete ssi;
+
+sChar *w_sstr = new sChar("");
+for(;;)
+  {
+  bool first=true;
+  if (csvi->CsvFgets() == -1) {break;}
+  if (csvi->CsvSelSu_Rd() == 0){continue;}
+  MEM_LOOP(sstr,sChar,mem_fp)
+    if (first){first=false;}
+    else
+      {
+      if (outFlg == false)
+        {
+        fprintf(out_fp,",");
+        }
+      else
+        {
+        printf(",");
+        }
+      }
+    int no = sstr->c_int();
+    if (no < 1) {no = 1;}
+
+    //printf("no=%d\n",no);
+
+    str = csvi->CsvSel_Rd(no-1);
+
+    if (str != MM_NULL)
+      {
+
+      w_sstr->DblIns(str);
+      str = w_sstr->c_str();
+
+      bool dblFlg = csvi->dblFlgGet(no-1);
+      char ccc[2];
+      if ((dblFlg) && (*str != '"'))
+        {
+        ccc[0]='"';
+        ccc[1]=0x00;
+        }
+      else
+        {
+        ccc[0]=0x00;
+        }
+
+      if (outFlg==false)
+        {
+        fprintf(out_fp,"%s%s%s",ccc,str,ccc);
+        }
+      else
+        {
+        printf("%s%s%s",ccc,str,ccc);
+        }
+      }
+  LOOP_END
+  if (outFlg==false){fprintf(out_fp,"\n");}
+  else              {printf("\n");}
+  }
+delete w_sstr;
+
+if (inFlg)
+  {
+  fprintf(stderr,"  [stdin] -> ");
+  }
+else
+  {
+  fprintf(stderr,"  %s -> ",argv[1]);
+  }
+if (outFlg)
+  {
+  fprintf(stderr,"[stdout]");
+  }
+else
+  {
+  fprintf(stderr,"%s",argv[2]);
+  }
+
+fprintf(stderr," (%s)\n",argv[3]);
+
+delete csvi;
+fclose(out_fp);
+MEM_LOOP(sstr,sChar,mem_fp) delete sstr; LOOP_END
+delete mem_fp;
+delete it;
+
+if (inFlg)
+  {
+  DeleteFile(get_file->c_str());
+  }
+
+delete get_file;
+
+        return 0;
+}
+//---------------------------------------------------------------------------
