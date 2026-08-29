@@ -42,6 +42,8 @@
 ## サンプルプログラム
 * [filelist.xls](https://github.com/user-attachments/files/31473311/filelist.xls)
 
+## クラスライブラリ
+* [C/C++ソース生成クラス](https://github.com/user-attachments/files/31517968/cpp_maker_core.xlsx) ... 2026.8.27
 
 
 
