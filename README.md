@@ -1,124 +1,240 @@
 # CSVPP
- Excelで作ったデータや仕様から、プログラム・スクリプト・各種ファイルを自動生成するWindows向けコード生成システム。
- CSVPP（CSV-Preprocessor system）は、Excelを「コード生成のための入力・定義環境」として利用するインタプリタ型の言語生成システムです。
- Excelにデータや処理内容を記述すると、その定義に従ってC/C++などのプログラム、スクリプト、バッチファイル、Verilog-HDLなどを生成できます。
 
-## こんなことができます
+## Excelからプログラムを生成する
+
+**CSVPP（CSV-Preprocessor system）は、Excelで作成したデータや仕様をもとに、プログラム・スクリプト・バッチファイルなどを自動生成するWindows向けのコード生成システムです。**
+
+Excelにデータや処理内容を記述すると、CSVPPがその定義に従って目的の言語・形式のコードを生成します。
+
+> **Excelで仕様・データを作る → CSVPPで処理する → ソースコードを生成する**
+
+という使い方ができます。
+
+---
+
+## CSVPPでできること
+
 - Excelで作成した仕様からソースコードを自動生成
 - 大量の定型コードを自動生成
-- Excelのデータをプログラムや各種テキスト形式へ変換
-- C/C++ソースコードを生成
-- Verilog-HDLを生成
-- CSVの加工・比較・結合・変換
-- 仕様書・データ・生成コードを一連の流れで管理
+- Excelのデータを利用した各種テキストファイルの生成
+- C/C++ソースコードの生成
+- Verilog-HDLの生成
+- CSVデータの加工・比較・結合・変換
+- スクリプト・バッチファイルなどの自動生成
+- 仕様作成 → データ作成 → コード生成を一連の流れで処理
 
-### 「Excelで仕様を書く → CSVPPで処理する → ソースコードを生成する」
- という使い方ができます。
+---
 
-## なぜCSVPP？
-### 通常、仕様書とプログラムは別々に管理されます。
-<pre>
-仕様書（Excel）
-     ↓
-人間が内容を確認
-     ↓
-プログラムを手作業で作成
-     ↓
+## こんな人におすすめ
+
+### 組み込み・C/C++開発
+
+大量の定型的なソースコードやデータ定義を、Excelから自動生成できます。
+
+### FPGA / Verilog-HDL開発
+
+Excelで管理しているデータや仕様をもとに、Verilog-HDLのコードを生成できます。
+
+### Excelで仕様やデータを管理している人
+
+Excelで作成した仕様・データを、そのままコード生成の入力として利用できます。
+
+### 定型作業を自動化したい人
+
+コピー＆ペーストや手作業によるコード作成を減らし、データから必要なファイルを自動生成できます。
+
+---
+
+# CSVPPの特徴
+
+## Excelベースのコード生成
+
+一般的なテキストエディタによるコーディングだけではなく、Excelのセルを利用してデータや処理内容を構造化して記述できます。
+
+- セル単位でデータを編集できます
+- 表形式で仕様やデータを管理できます
+- Excelの操作方法をそのまま活用できます
+- データとコード生成処理を同じExcel環境で管理できます
+
+---
+
+## 仕様書からコードを自動生成
+
+Excelで作成した仕様をCSVPPの入力として利用し、その内容から目的の言語やテキストファイルを生成できます。
+
+例えば、
+
+```text
+Excelで仕様を作成
+        ↓
+      CSVPP
+        ↓
+C/C++ / Verilog-HDL / Script / Text ...
+```
+
+という流れで、仕様から実装までの作業を自動化できます。
+
+---
+
+## 仕様・データ・コード生成を一つにつなげる
+
+通常は、
+
+```text
+仕様書
+  ↓
+人が内容を確認
+  ↓
+プログラムを作成
+  ↓
 仕様変更
-     ↓
+  ↓
 プログラムを修正
-</pre>
+```
 
-### CSVPPでは、この作業を自動化できます。
-<pre>
+という作業が必要になります。
+
+CSVPPでは、
+
+```text
 Excelで仕様・データを作成
-      ↓
-    CSVPP
-      ↓
-ソースコードを生成
-</pre>
+          ↓
+        CSVPP
+          ↓
+   ソースコードを生成
+```
 
- Excelを使って仕様とデータを管理し、その内容から必要なコードを生成することで、コピー＆ペーストや定型コードの手作業を減らすことができます。
+という流れを作ることができます。
 
-### 特にこんな用途に
-- 組み込み・C/C++開発
- 大量の定型的なC/C++コードやデータ定義を、Excelから自動生成できます。
+定型的なコードを自動生成することで、手作業によるミスや修正作業を減らすことを目的としています。
 
-- FPGA / Verilog-HDL
- Excelで管理しているデータや仕様から、Verilog-HDLの記述を生成できます。
+---
 
-- データ処理
- CSVの加工、比較、結合、変換など、開発時によく発生するデータ処理にも利用できます。
+# 主な用途
 
-- 仕様書からのコード生成
- Excelで作成した仕様を、そのままコード生成の入力として利用できます。
+## C/C++ソースコード生成
 
-### 動作環境
-- Windows 10 / 11
+Excelのデータや仕様からC/C++ソースコードを生成できます。
+
+C/C++ソース生成用のクラスライブラリも提供しています。
+
+## Verilog-HDL生成
+
+Excelで管理しているデータや仕様からVerilog-HDLを生成できます。
+
+## テキストファイル生成
+
+プログラムソースだけでなく、さまざまな形式のテキストファイルをデータから生成できます。
+
+## CSVデータ処理
+
+CSVPPにはCSVデータを扱うための各種ツールが含まれています。
+
+CSVの加工、比較、結合、変換など、開発時に発生するさまざまなデータ処理に利用できます。
+
+---
+
+# 動作環境
+
+- Microsoft Windows 10 / 11
 - Microsoft Excel
 
-## ダウンロード
- 最新版の csvpp_system_*.zip をダウンロードしてください。
- 最新版をダウンロード
- ダウンロード後、ZIPファイルを展開して使用してください。
- ※ Microsoft Excelが必要です。
+---
 
-## まず試してみる
- サンプルプログラムを使って、CSVPPの動作を確認できます。
+# ダウンロード
 
-- filelist.xls — サンプル
-- CSVPP設定と使い方
-- CSVPP言語マニュアル
-- CSVPP言語リファレンス
-- テキストファイル生成と加工
-- Verilog-HDL生成
+最新版のプログラムをダウンロードして使用してください。
 
- 詳しい使い方は マニュアル を参照してください。
+**最新版：2026.9.6**
 
-## 主なツール
- CSVPPには、コード生成だけでなく、CSV・テキストデータを扱うための複数のツールが含まれています。
- | ツール         | 概要             |
- | ----------- | -------------- |
- | `csvcut`    | CSVデータの抽出・加工   |
- | `csvdiff`   | CSVデータの比較      |
- | `csvmerge`  | CSVデータの結合      |
- | `csvxml`    | CSV / XML関連の変換 |
- | `csvveri`   | Verilog-HDL関連  |
- | `csvmake`   | コード生成・ビルド関連    |
+- [2026.9.6](https://github.com/user-attachments/files/31876312/csvpp_system_177a.zip)
 
-## 特徴
-- Excelベースの言語定義
- テキストエディタだけでなく、Excelのセルを利用してデータや処理内容を構造化して記述できます。
-- 仕様・データ・コード生成を一つにつなげる
- Excelで仕様やデータを作成し、その内容をCSVPPで処理してコードを生成できます。
-- 定型コードを自動生成
- 繰り返し作成する必要のあるコードやテキストを自動生成することで、手作業を減らせます。
-- 拡張可能
- CSVPPにはC/C++ソース生成などのためのクラスライブラリも含まれています。
+> ZIPファイルを展開して使用してください。
+>
+> CSVPPの利用には Microsoft Excel が必要です。
 
-## ライセンス
- プログラム及び、ドキュメントは GNU General Public License version 2.0 のライセンスに従います。
+---
 
-## Author
- sky-seeker99
+# まず試してみる
 
-## マニュアル
-* [CSVPP設定と使い方](https://github.com/user-attachments/files/31350199/CSVPP_Setup_and_Usage.xlsx) ... 2026.8.24
-* [CSVPP言語マニュアル](https://github.com/user-attachments/files/31342409/CSVPP_LanguageManual.xlsx) ... 2026.8.23
-* [CSVPP言語リファレンス](https://github.com/user-attachments/files/31342410/CSVPP_LanguageReferenceGuide.xlsx) ... 2026.8.23
-* [テキストファイル生成と加工](https://github.com/user-attachments/files/31473250/CSVPP_TextFile_Generation_and_Processing.xlsx) ... 2026.8.26
-* [Verilog-HDL生成](https://github.com/user-attachments/files/31876291/CSVPP_Verilog_Generation.xlsx) ... 2026.9.6
+サンプルプログラムを使ってCSVPPを試すことができます。
 
-## プログラム本体 [csvpp_system_177a.zip]
-* [2026.9.6](https://github.com/user-attachments/files/31876312/csvpp_system_177a.zip)
-* [2026.8.26](https://github.com/user-attachments/files/31473193/csvpp_system_177a.zip)
-* [2026.8.23](https://github.com/user-attachments/files/31342405/csvpp_system_177a.zip) 
- 
-## サンプルプログラム
-* [filelist.xls](https://github.com/user-attachments/files/31473311/filelist.xls)
+- [filelist.xls](https://github.com/user-attachments/files/31473311/filelist.xls)
 
-## クラスライブラリ
-* [C/C++ソース生成クラス](https://github.com/user-attachments/files/31517968/cpp_maker_core.xlsx) ... 2026.8.27
+サンプルを使って、Excelで作成したデータからファイルを生成する基本的な流れを確認できます。
 
+---
 
+# マニュアル
 
+詳しい使い方については、リポジトリ内のマニュアルを参照してください。
+
+- [CSVPP設定と使い方](https://github.com/user-attachments/files/31350199/CSVPP_Setup_and_Usage.xlsx) ... 2026.8.24
+- [CSVPP言語マニュアル](https://github.com/user-attachments/files/31342409/CSVPP_LanguageManual.xlsx) ... 2026.8.23
+- [CSVPP言語リファレンス](https://github.com/user-attachments/files/31342410/CSVPP_LanguageReferenceGuide.xlsx) ... 2026.8.23
+- [テキストファイル生成と加工](https://github.com/user-attachments/files/31473250/CSVPP_TextFile_Generation_and_Processing.xlsx) ... 2026.8.26
+- [Verilog-HDL生成](https://github.com/user-attachments/files/31876291/CSVPP_Verilog_Generation.xlsx) ... 2026.9.6
+
+---
+
+# CSVPPに含まれる主なツール
+
+CSVPPには、コード生成だけでなく、CSVやテキストデータを扱うための複数のツールが含まれています。
+
+- `csvcut` - CSVデータの加工・抽出
+- `csvdiff` - CSVデータの比較
+- `csvmerge` - CSVデータの結合
+- `csvxml` - CSV / XML関連の処理
+- `csvmake` - コード生成・ビルド関連
+- `csvveri` - Verilog-HDL関連
+- `csvstrcnv` - 文字列変換
+- `csvtab` - CSV関連処理
+- `text_create` - テキストファイル生成
+- `text_ctl` - テキスト処理
+- `txt_catcut` - テキストデータ処理
+
+---
+
+# クラスライブラリ
+
+C/C++ソースコードを生成するためのクラスライブラリを提供しています。
+
+---
+
+# CSVPPを使うメリット
+
+CSVPPを利用することで、次のような作業の自動化が期待できます。
+
+- 定型的なソースコードの作成
+- 大量のデータからのコード生成
+- Excelで管理している仕様のコード化
+- CSVデータの加工
+- テキストファイルの一括生成
+- 仕様変更に伴うコード修正
+- コピー＆ペーストによる作業
+
+特に、**「データはたくさんあるが、それを決まった形式のコードやファイルに変換したい」**という用途で力を発揮します。
+
+---
+
+# ライセンス
+
+CSVPPのプログラムおよびドキュメントは、
+
+**GNU General Public License version 2.0 (GPL-2.0)**
+
+のライセンスに従います。
+
+詳細は `LICENSE` を参照してください。
+
+---
+
+# Author
+
+**sky-seeker99**
+
+---
+
+# 更新情報
+
+最新の機能追加やマニュアルについては、GitHubのコミット履歴および本リポジトリを確認してください。
