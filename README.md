@@ -145,9 +145,8 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 
 最新版のプログラムをダウンロードして使用してください。
 
-**最新版：2026.9.6**
-
-- [csvpp_system_177a.zip](https://github.com/user-attachments/files/31876312/csvpp_system_177a.zip)
+**最新版：2026.9.7**
+- [csvpp_system_177a.zip](https://github.com/user-attachments/files/31918018/csvpp_system_177a.zip)
 
 > ZIPファイルを展開して使用してください。
 >
@@ -173,6 +172,7 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 - [CSVPP言語マニュアル](https://github.com/user-attachments/files/31342409/CSVPP_LanguageManual.xlsx) ... 2026.8.23
 - [CSVPP言語リファレンス](https://github.com/user-attachments/files/31342410/CSVPP_LanguageReferenceGuide.xlsx) ... 2026.8.23
 - [テキストファイル生成と加工](https://github.com/user-attachments/files/31473250/CSVPP_TextFile_Generation_and_Processing.xlsx) ... 2026.8.26
+- [バイナリファイル加工](https://github.com/user-attachments/files/31918076/CSVPP_BinaryFile_Processing.xlsx) ... 2026.9.7
 - [Verilog-HDL生成](https://github.com/user-attachments/files/31876291/CSVPP_Verilog_Generation.xlsx) ... 2026.9.6
 
 ---
