@@ -147,7 +147,7 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 
 **最新版：2026.9.6**
 
-- [2026.9.6](https://github.com/user-attachments/files/31876312/csvpp_system_177a.zip)
+- [csvpp_system_177a.zip](https://github.com/user-attachments/files/31876312/csvpp_system_177a.zip)
 
 > ZIPファイルを展開して使用してください。
 >
@@ -197,7 +197,8 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 
 # クラスライブラリ
 
-C/C++ソースコードを生成するためのクラスライブラリを提供しています。
+[C/C++ソースコードを生成するためのクラスライブラリを提供しています。](https://github.com/user-attachments/files/31517968/cpp_maker_core.xlsx) ... 2026.8.27
+
 
 ---
 
