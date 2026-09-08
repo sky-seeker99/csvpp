@@ -164,6 +164,13 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 
 ---
 
+# インストールとまずは試してみる(動画)
+
+<img width="640" height="438" alt="csvpp_install_and_exec" src="https://github.com/user-attachments/assets/ca64f838-b8bd-4e49-8b34-5ed9f7977114" />
+
+
+---
+
 # マニュアル
 
 詳しい使い方については、リポジトリ内のマニュアルを参照してください。
