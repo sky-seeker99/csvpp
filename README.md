@@ -181,6 +181,8 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 - [テキストファイル生成と加工](https://github.com/user-attachments/files/31473250/CSVPP_TextFile_Generation_and_Processing.xlsx) ... 2026.8.26
 - [バイナリファイル加工](https://github.com/user-attachments/files/31918076/CSVPP_BinaryFile_Processing.xlsx) ... 2026.9.7
 - [Verilog-HDL生成](https://github.com/user-attachments/files/31876291/CSVPP_Verilog_Generation.xlsx) ... 2026.9.6
+- [Excel⇔CSV変換](https://github.com/user-attachments/files/32112378/CSVPP_Converting_Excel_CSV.xlsx) ... 2026.9.11
+
 
 ---
 
