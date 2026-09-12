@@ -150,7 +150,7 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 
 > ZIPファイルを展開して使用してください。
 >
-> CSVPPの利用には Microsoft Excel が必要です。
+> CSVPPは Microsoft Excel または LibreOffice Calc で使用できます。
 
 ---
 
