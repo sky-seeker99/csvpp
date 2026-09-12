@@ -137,7 +137,7 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 # 動作環境
 
 - Microsoft Windows 10 / 11
-- Microsoft Excel
+- Microsoft Excel or Libre Office
 
 ---
 
@@ -145,12 +145,12 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 
 最新版のプログラムをダウンロードして使用してください。
 
-**最新版：2026.9.7**
-- [csvpp_system_177a.zip](https://github.com/user-attachments/files/31918018/csvpp_system_177a.zip)
+**最新版：2026.9.12**
+- [csvpp_system_177a.zip](https://github.com/user-attachments/files/32136864/csvpp_system_177a_20260912-1.zip)
 
 > ZIPファイルを展開して使用してください。
 >
-> CSVPPの利用には Microsoft Excel が必要です。
+> CSVPPは Microsoft Excel または LibreOffice Calc で使用できます。
 
 ---
 
@@ -175,26 +175,27 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 
 詳しい使い方については、リポジトリ内のマニュアルを参照してください。
 
-- [CSVPP設定と使い方](https://github.com/user-attachments/files/31350199/CSVPP_Setup_and_Usage.xlsx) ... 2026.8.24
+- [CSVPP設定と使い方](https://github.com/user-attachments/files/32136884/CSVPP_Setup_and_Usage.xlsx) ... 2026.9.12
 - [CSVPP言語マニュアル](https://github.com/user-attachments/files/31342409/CSVPP_LanguageManual.xlsx) ... 2026.8.23
 - [CSVPP言語リファレンス](https://github.com/user-attachments/files/31342410/CSVPP_LanguageReferenceGuide.xlsx) ... 2026.8.23
 - [テキストファイル生成と加工](https://github.com/user-attachments/files/31473250/CSVPP_TextFile_Generation_and_Processing.xlsx) ... 2026.8.26
 - [バイナリファイル加工](https://github.com/user-attachments/files/31918076/CSVPP_BinaryFile_Processing.xlsx) ... 2026.9.7
 - [Verilog-HDL生成](https://github.com/user-attachments/files/31876291/CSVPP_Verilog_Generation.xlsx) ... 2026.9.6
-- [Excel⇔CSV変換](https://github.com/user-attachments/files/32112378/CSVPP_Converting_Excel_CSV.xlsx) ... 2026.9.11
-
+- [Excel⇔CSV変換(Libre Office版](https://github.com/user-attachments/files/32136882/CSVPP_Converting_LibreCalc_CSV.xlsx) ... 2026.9.12
+- [Excel⇔CSV変換(Microsoft Excel版)](https://github.com/user-attachments/files/32136881/CSVPP_Converting_Excel_CSV.xlsx) ... 2026.9.12
 
 ---
 
 # CSVPPに含まれる主なツール
 
-CSVPPには、コード生成だけでなく、CSVやテキストデータを扱うための複数のツールが含まれています。
+CSVPPには、コード生成だけでなく、CSVやテキストデータを扱うための複数のツールが含まれています。下記に記載されている以外にもあります。
 
 - `csvcut` - CSVデータの加工・抽出
 - `csvdiff` - CSVデータの比較
 - `csvmerge` - CSVデータの結合
-- `csvxml` - CSV / XML関連の処理
-- `csvmake` - コード生成・ビルド関連
+- `csvxml` - CSV→XML変換
+- `csvmake` - Excel←→CSV変換 (Microsoft Excel版)
+- `csvmake_ooo` - Excel←→CSV変換 (Libre Office版)
 - `csvveri` - Verilog-HDL関連
 - `csvstrcnv` - 文字列変換
 - `csvtab` - CSV関連処理
