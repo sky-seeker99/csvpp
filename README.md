@@ -183,6 +183,7 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 - [Verilog-HDL生成](https://github.com/user-attachments/files/31876291/CSVPP_Verilog_Generation.xlsx) ... 2026.9.6
 - [Excel⇔CSV変換(Libre Office版](https://github.com/user-attachments/files/32136882/CSVPP_Converting_LibreCalc_CSV.xlsx) ... 2026.9.12
 - [Excel⇔CSV変換(Microsoft Excel版)](https://github.com/user-attachments/files/32136881/CSVPP_Converting_Excel_CSV.xlsx) ... 2026.9.12
+- [Excel⇔CSV変換便利ツール(フィルタプログラム)](https://github.com/user-attachments/files/32143161/CSVPP_Utility_CSV_tool.xlsx) ... 2026.9.12
 
 ---
 
