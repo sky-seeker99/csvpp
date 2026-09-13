@@ -1,4 +1,4 @@
-# <img width="64" height="64" alt="csvpp_icon" src="https://github.com/user-attachments/assets/eb42ce81-966d-4a2f-8761-ee0f0ce27b8a" /> CSVPP
+# <img width="272" height="90" alt="csvpp_tag" src="https://github.com/user-attachments/assets/4e7b423a-ee63-4bff-a92e-96e39b48b21e" />
 
 ## Excelからプログラムを生成する
 
@@ -251,4 +251,4 @@ CSVPPのプログラムおよびドキュメントは、
 
 最新の機能追加やマニュアルについては、GitHubのコミット履歴および本リポジトリを確認してください。
 
-# <img width="135" height="45" alt="csvpp_tag" src="https://github.com/user-attachments/assets/4e7b423a-ee63-4bff-a92e-96e39b48b21e" />
+
