@@ -211,7 +211,14 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 
 # クラスライブラリ
 
-[C/C++ソースコードを生成するためのクラスライブラリを提供しています。](https://github.com/user-attachments/files/31517968/cpp_maker_core.xlsx) ... 2026.8.27
+- [C/C++ソースコードを生成するためのクラスライブラリを提供しています。](https://github.com/user-attachments/files/31517968/cpp_maker_core.xlsx) ... 2026.8.27
+
+---
+
+# Verilogを生成するサンプルファイル
+
+- [csvveri_sample_top.xls](https://github.com/user-attachments/files/32294150/csvveri_sample_top.xls) ... 2026.9.16
+- [csvveri_sample.xls](https://github.com/user-attachments/files/32294147/csvveri_sample.xls) ... 2026.9.16
 
 
 ---
