@@ -1,4 +1,7 @@
-# CSVPP
+<!-- CSVPP - Generate C/C++, Verilog-HDL, scripts and text files from Excel data and specifications. -->
+<!-- CSVPP (CSV-Preprocessor system) is a code generation system for Windows that automatically generates programs, scripts, batch files, and more based on data and specifications created in Excel. -->
+
+# <img width="272" height="90" alt="csvpp_tag" src="https://github.com/user-attachments/assets/4e7b423a-ee63-4bff-a92e-96e39b48b21e" />
 
 ## Excelからプログラムを生成する
 
@@ -250,3 +253,5 @@ CSVPPのプログラムおよびドキュメントは、
 # 更新情報
 
 最新の機能追加やマニュアルについては、GitHubのコミット履歴および本リポジトリを確認してください。
+
+
