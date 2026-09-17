@@ -3,6 +3,10 @@
 
 # <img width="272" height="90" alt="csvpp_tag" src="https://github.com/user-attachments/assets/4e7b423a-ee63-4bff-a92e-96e39b48b21e" />
 
+![License](https://img.shields.io/badge/license-GPL--2.0-blue.svg)
+![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
+![Language](https://img.shields.io/badge/language-C%2B%2B-orange.svg)
+
 ## Excelからプログラムを生成する
 
 **CSVPP（CSV-Preprocessor system）は、Excelで作成したデータや仕様をもとに、プログラム・スクリプト・バッチファイルなどを自動生成するWindows向けのコード生成システムです。**
