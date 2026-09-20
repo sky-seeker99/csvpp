@@ -146,10 +146,6 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 - Microsoft Windows 10 / 11
 - Microsoft Excel or Libre Office
 
-# ビルド環境
-
-- C++Builder
-
 ---
 
 # ダウンロード
