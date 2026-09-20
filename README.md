@@ -165,7 +165,7 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 
 サンプルプログラムを使ってCSVPPを試すことができます。
 
-- [filelist.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_manual/31473311/filelist.xls)
+- [filelist.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_manual/filelist.xls)
 
 サンプルを使って、Excelで作成したデータからファイルを生成する基本的な流れを確認できます。
 
@@ -221,8 +221,8 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 
 # Verilogを生成するサンプルファイル
 
-- [csvveri_sample_top.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_manual/csvveri_2_sample/csvveri_sample_top.xls) ... 2026.9.16
-- [csvveri_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_manual/csvveri_2_sample/csvveri_sample.xls) ... 2026.9.16
+- [csvveri_sample_top.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample_top.xls) ... 2026.9.16
+- [csvveri_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample.xls) ... 2026.9.16
 
 
 ---
