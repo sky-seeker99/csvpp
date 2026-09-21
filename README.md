@@ -165,7 +165,7 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 
 サンプルプログラムを使ってCSVPPを試すことができます。
 
-- [filelist.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_manual/filelist.xls)
+- [filelist.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/filelist.xls)
 
 サンプルを使って、Excelで作成したデータからファイルを生成する基本的な流れを確認できます。
 
@@ -182,15 +182,15 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 
 詳しい使い方については、リポジトリ内のマニュアルを参照してください。
 
-- [CSVPP設定と使い方](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_manual/CSVPP_Setup_and_Usage.xlsx) ... 2026.9.12
-- [CSVPP言語マニュアル](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_manual/CSVPP_LanguageManual.xlsx) ... 2026.8.23
-- [CSVPP言語リファレンス](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_manual/CSVPP_LanguageReferenceGuide.xlsx) ... 2026.8.23
-- [テキストファイル生成と加工](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_manual/CSVPP_TextFile_Generation_and_Processing.xlsx) ... 2026.8.26
-- [バイナリファイル加工](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_manual/CSVPP_BinaryFile_Processing.xlsx) ... 2026.9.7
-- [Verilog-HDL生成](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_manual/CSVPP_Verilog_Generation.xlsx) ... 2026.9.6
-- [Excel⇔CSV変換(Libre Office版](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_manual/CSVPP_Converting_LibreCalc_CSV.xlsx) ... 2026.9.12
-- [Excel⇔CSV変換(Microsoft Excel版)](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_manual/CSVPP_Converting_Excel_CSV.xlsx) ... 2026.9.12
-- [Excel⇔CSV変換便利ツール(フィルタプログラム)](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_manual/CSVPP_Utility_CSV_tool.xlsx) ... 2026.9.12
+- [CSVPP設定と使い方](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Setup_and_Usage.xlsx) ... 2026.9.12
+- [CSVPP言語マニュアル](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_LanguageManual.xlsx) ... 2026.8.23
+- [CSVPP言語リファレンス](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_LanguageReferenceGuide.xlsx) ... 2026.8.23
+- [テキストファイル生成と加工](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_TextFile_Generation_and_Processing.xlsx) ... 2026.8.26
+- [バイナリファイル加工](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_BinaryFile_Processing.xlsx) ... 2026.9.7
+- [Verilog-HDL生成](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Verilog_Generation.xlsx) ... 2026.9.6
+- [Excel⇔CSV変換(Libre Office版](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Converting_LibreCalc_CSV.xlsx) ... 2026.9.12
+- [Excel⇔CSV変換(Microsoft Excel版)](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Converting_Excel_CSV.xlsx) ... 2026.9.12
+- [Excel⇔CSV変換便利ツール(フィルタプログラム)](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Utility_CSV_tool.xlsx) ... 2026.9.12
 
 ---
 
