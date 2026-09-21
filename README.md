@@ -255,6 +255,10 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 
 - [text_file_gen_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/text_file_gen_sample.xls) ... 2026.9.21
 
+## 大量のテキストファイルを生成するサンプルファイル
+
+- [json_file_gen_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/json_file_gen_sample.xls) ... 2026.9.21
+
 
 ## C++コードを生成するサンプルファイル
 
