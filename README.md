@@ -153,7 +153,7 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 最新版のプログラムをダウンロードして使用してください。
 
 **最新版：2026.9.12**
-- [csvpp_system_177a.zip](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_manual/32136864/csvpp_system_177a_20260912-1.zip)
+- [csvpp_system_177a.zip](https://github.com/sky-seeker99/csvpp/releases/download/Ver-1.77a-20260908/csvpp_system_177a_20260908-1.zip)
 
 > ZIPファイルを展開して使用してください。
 >
