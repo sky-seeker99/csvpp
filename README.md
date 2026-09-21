@@ -245,15 +245,23 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 
 # クラスライブラリ
 
-- [C/C++ソースコード生成クラスライブラリ](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_app/cpp_maker_core.xlsx) ... 2026.8.27
+- [C/C++ソースコード生成クラスライブラリ](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_app/cpp_maker_core.xlsx) ... 2026.9.21
 
 ---
-# テキストファイルを生成するサンプルファイル
+
+# サンプルファイル
+
+## テキストファイルを生成するサンプルファイル
 
 - [text_file_gen_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/text_file_gen_sample.xls) ... 2026.9.21
 
 
-# Verilogを生成するサンプルファイル
+## C++コードを生成するサンプルファイル
+
+- [cpp_maker.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/cpp_maker.xls) ... 2026.9.21
+
+
+## Verilogを生成するサンプルファイル
 
 - [csvveri_sample_top.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample_top.xls) ... 2026.9.16
 - [csvveri_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample.xls) ... 2026.9.16
