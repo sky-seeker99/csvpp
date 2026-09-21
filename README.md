@@ -196,28 +196,62 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 
 # CSVPPに含まれる主なツール
 
-CSVPPには、コード生成だけでなく、CSVやテキストデータを扱うための複数のツールが含まれています。下記に記載されている以外にもあります。
+CSVPPには、コード生成だけでなく、CSVやテキストデータを扱うための複数のツールが含まれています。
 
-- `csvcut` - CSVデータの加工・抽出
-- `csvdiff` - CSVデータの比較
-- `csvmerge` - CSVデータの結合
-- `csvxml` - CSV→XML変換
-- `csvmake` - Excel←→CSV変換 (Microsoft Excel版)
-- `csvmake_ooo` - Excel←→CSV変換 (Libre Office版)
-- `csvveri` - Verilog-HDL関連
-- `csvstrcnv` - 文字列変換
-- `csvtab` - CSV関連処理
-- `text_create` - テキストファイル生成
-- `text_ctl` - テキスト処理
-- `txt_catcut` - テキストデータ処理
+- [csvmake.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvmake.exe)  -  Excel→CSV変換
+- [csvmake2.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvmake2.exe)  -  CSV→Excel変換
+- [csvmake3.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvmake3.exe)  -  Excel→CSV変換(大量変換用)
+- [csvmake4.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvmake4.exe)  -  CSV→Excel変換(大量変換用)
+- [csvmake_ooo.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvmake_ooo.exe)  -  Excel→CSV変換 for LibreOffice
+- [csvmake2_ooo.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvmake2_ooo.exe)  -  CSV→Excel変換 for LibreOffice
+- [csvmake3_ooo.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvmake3_ooo.exe)  -  Excel→CSV変換 for LibreOffice(大量変換用)
+- [csvmake4_ooo.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvmake4_ooo.exe)  -  CSV→Excel変換 for LibreOffice(大量変換用)
+- [bin_catcut.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//bin_catcut.exe)  -  バイナリファイル連結・分割
+- [bin_ctl.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//bin_ctl.exe)  -  バイナリファイル加工
+- [bincsv.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//bincsv.exe)  -  バイナリ→CSV変換
+- [csvbin.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvbin.exe)  -  CSV→バイナリ変換
+- [text_create.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//text_create.exe)  -  テキストファイル生成
+- [text_ctl.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//text_ctl.exe)  -  テキストファイル加工
+- [txt_catcut.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//txt_catcut.exe)  -  テキストファイル連結・分割
+- [logcat.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//logcat.exe)  -  LOG連結
+- [retchg.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//retchg.exe)  -  改行コード変換
+- [csvxml.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvxml.exe)  -  CSV→XML変換
+- [csvhtml.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvhtml.exe)  -  CSV→HTML変換
+- [htmlcsv.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//htmlcsv.exe)  -  HTML→CSV変換
+- [eucsjis.csv] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//eucsjis.csv)  -  SJIS-EUC変換
+- [eucsjis.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//eucsjis.exe)  -  SJIS-EUC変換
+- [eucsjis2.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//eucsjis2.exe)  -  SJIS-EUC変換
+- [nullchg.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//nullchg.exe)  -  NULL変換
+- [csv_textcut.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csv_textcut.exe)  -  CSVファイル分割
+- [csvcellretchg.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvcellretchg.exe)  -  CSVファイルセル内改行コード変換
+- [csvcellretchg2.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvcellretchg2.exe)  -  CSVファイルセル内改行コード変換
+- [csvmerge.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvmerge.exe)  -  CSVファイル横マージ
+- [csvcut.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvcut.exe)  -  CSVファイル項目抽出
+- [csvdiff.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvdiff.exe)  -  CSV-DIFF
+- [c_cmt_del.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//c_cmt_del.exe)  -  C/C++コメント削除
+- [c_cmt_del2.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//c_cmt_del2.exe)  -  C/C++コメント削除
+- [jpegcsv.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//jpegcsv.exe)  -  JPEG,BMP→CSVファイル変換
+- [csvjpeg.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvjpeg.exe)  -  CSVファイル → JPEG,BMPファイル変換
+- [csvveri.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvveri.exe)  -  CSVファイル → Verilog-HDLファイル変換
+- [csvtab.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvtab.exe)  -  CSVファイル → TABファイル変換
+- [tabcsv.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//tabcsv.exe)  -  TABファイル → CSVファイル変換
+- [csvstrcnv.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//csvstrcnv.exe)  -  CSV 数値→文字列変換
+- [retconv.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//retconv.exe)  -  Excel 用 CSV 改行コード変換
+- [retconv2.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//retconv2.exe)  -  Excel 用 CSV 改行コード変換
+- [retconv3.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//retconv3.exe)  -  FileMaker 用 CSV 改行コード変換
+- [retconv4.exe] (https://github.com/sky-seeker99/csvpp/raw/refs/heads/main//retconv4.exe)  -  FileMaker 用 CSV 改行コード変換
 
 ---
 
 # クラスライブラリ
 
-- [C/C++ソースコードを生成するためのクラスライブラリを提供しています。](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_app/cpp_maker_core.xlsx) ... 2026.8.27
+- [C/C++ソースコード生成クラスライブラリ](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_app/cpp_maker_core.xlsx) ... 2026.8.27
 
 ---
+# テキストファイルを生成するサンプルファイル
+
+- [text_file_gen_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/text_file_gen_sample.xls) ... 2026.9.21
+
 
 # Verilogを生成するサンプルファイル
 
