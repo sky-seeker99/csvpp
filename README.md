@@ -241,6 +241,14 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 - [retconv4.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/retconv4.exe)  -  FileMaker 用 CSV 改行コード変換  
 
 
+---
+
+# CSVPP言語で記述されたツール追加
+
+
+- [grep_textcut.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_app/grep_textcut.xlsx)  -  拡張Grep&テキスト分割プログラム  
+- [filelist2xls.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_app/filelist2xls.xlsx)  -  ディレクトリ＆ファイルリスト作成プログラム   
+
 
 ---
 
