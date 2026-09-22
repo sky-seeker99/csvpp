@@ -243,20 +243,6 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 
 ---
 
-# CSVPP言語で記述されたツール追加
-
-
-- [grep_textcut.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_app/grep_textcut.xlsx)  -  拡張Grep&テキスト分割プログラム  
-- [filelist2xls.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_app/filelist2xls.xlsx)  -  ディレクトリ＆ファイルリスト作成プログラム   
-
-
----
-
-# クラスライブラリ
-
-- [C/C++ソースコード生成クラスライブラリ](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_app/cpp_maker_core.xlsx) ... 2026.9.21
-
----
 
 # サンプルファイル
 
@@ -279,6 +265,20 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 - [csvveri_sample_top.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample_top.xls) ... 2026.9.16
 - [csvveri_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample.xls) ... 2026.9.16
 
+
+---
+
+# CSVPP言語で記述されたツール
+
+
+- [grep_textcut.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_app/grep_textcut.xlsx)  -  拡張Grep&テキスト分割プログラム  
+- [filelist2xls.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_app/filelist2xls.xlsx)  -  ディレクトリ＆ファイルリスト作成プログラム   
+
+---
+
+# クラスライブラリ
+
+- [C/C++ソースコード生成クラスライブラリ](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_app/cpp_maker_core.xlsx) ... 2026.9.21
 
 ---
 
