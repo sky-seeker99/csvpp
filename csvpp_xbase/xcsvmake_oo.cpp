@@ -29,8 +29,6 @@
 
 
 void csvmake2_oo_C::csvmake_begin(){
-  process_check("LibreOffice.EXE",true);
-
   try         {objServiceManager = CreateOleObject("com.sun.star.ServiceManager");}
   catch (...) {return ;}
   CoreReflection = objServiceManager.OleFunction("createInstance","com.sun.star.reflection.CoreReflection");
@@ -59,7 +57,6 @@ void csvmake2_oo_C::csvmake_begin(){
 }
 
 void csvmake2_oo_C::csvmake_end(){
-  process_check("LibreOffice.EXE",false);
 }
 
 void csvmake2_oo_C::csvmake(char *p_xlsfile,char *p_filter){
@@ -443,54 +440,6 @@ void csvmake_oo_C::csvFileSave(int moji_kind,Variant objServiceManager,Variant o
 
   delete sss;
 
-}
-
-
-void csvmake2_oo_C::process_check(char *srch_name,bool getFlag){
-  if (pchkFlag == false){return;}
-
-  HANDLE hSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
-  if (hSnap == INVALID_HANDLE_VALUE) {return;}
-  PROCESSENTRY32 p;
-
-  if (getFlag){
-	ARY_LOOP(pc,procCell,proc_fp)
-	  delete pc;
-	LOOP_END
-	proc_fp->clear();
-  }
-
-  BOOL flag = Process32First(hSnap, &p);
-  while(flag){
-
-#ifdef DEBUG_csvmake
-printf("process %d %s\n",getFlag,p.szExeFile);
-#endif
-
-	if (strcmp(p.szExeFile, srch_name)==0){
-	  if (getFlag){
-		pc = new procCell(p.szExeFile,p.th32ProcessID);
-		proc_fp->mem_alloc((unsigned char *)pc);
-	  }
-	  else {
-		bool hitFlag=false;
-		ARY_LOOP(pc,procCell,proc_fp)
-		  if (pc->proc_id == p.th32ProcessID){hitFlag=true; break;}
-		LOOP_END
-		if (hitFlag == false){
-		  HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS,FALSE,p.th32ProcessID);
-		  TerminateProcess(hProcess, 0);
-//            printf("remain excel process delete. (pid=%d)\n",p.th32ProcessID);
-		  printf("%s process delete. (pid=%d)\n",p.szExeFile,p.th32ProcessID);
-		  DWORD dwExitCode = 0;
-		  GetExitCodeProcess(hProcess, &dwExitCode);
-		  CloseHandle(hProcess);
-		}
-	  }
-	}
-	flag = Process32Next(hSnap, &p);
-  }
-  CloseHandle(hSnap);
 }
 
 
