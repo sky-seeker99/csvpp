@@ -31,7 +31,7 @@
 #include "xwrite64.h"
 #include "xwildcard.h"
 #include "xexec.h"
-
+#include "xcsvmake_new.h"
 
 
 
@@ -119,6 +119,7 @@ class csvmake2_oo_C{
     VariableArray_C *sheet_fp;
     VariableArea_C  *filter;
     VariableArea_C  *get_file;
+	VariableArray_C *proc_fp;
 
     Variant objServiceManager;
     Variant objDesktop;
@@ -142,12 +143,16 @@ class csvmake2_oo_C{
     Variant MyStruct_5;
 
     bool visual_flg;    
+	bool pchkFlag;
+	procCell     *pc;
     csvmake2_oo_C(){
       del_fp     = new VariableArray_C(5);
       sheet_fp   = new VariableArray_C(5);
       sss        = new sChar("");
       filter     = new VariableArea_C(10);
       get_file   = new VariableArea_C(10);
+	  proc_fp    = new VariableArray_C(5);
+	  pchkFlag   = true;
       delFlg     = false;
       visual_flg = true;
     }
@@ -158,8 +163,10 @@ class csvmake2_oo_C{
       delete sss;
       ARY_LOOP(s_str,sChar,del_fp )  delete s_str; LOOP_END
       ARY_LOOP(s_str,sChar,sheet_fp) delete s_str; LOOP_END
+      ARY_LOOP(pc,procCell,proc_fp)  delete pc; LOOP_END
       delete sheet_fp;
       delete del_fp;
+      delete proc_fp;
       delete filter;
       delete get_file;
     }
@@ -167,6 +174,7 @@ class csvmake2_oo_C{
     void csvmake2_oo_C::csvmake_begin();
     void csvmake2_oo_C::csvmake(char *p_xlsfile,char *p_filter);
     void csvmake2_oo_C::csvmake_end();
+    void csvmake2_oo_C::process_check(char *srch_name,bool getFlag);
 
 
 
