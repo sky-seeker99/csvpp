@@ -207,14 +207,14 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 - [csvmake4_ooo.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvmake4_ooo.exe)  -  CSV→Excel変換 for LibreOffice(大量変換用)  
 - [bin_catcut.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/bin_catcut.exe)  -  バイナリファイル連結・分割   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/bin_catcut_manual.md)
 - [bin_ctl.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/bin_ctl.exe)  -  バイナリファイル加工   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/bin_ctl_manual.md)
-- [bincsv.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/bincsv.exe)  -  バイナリ→CSV変換  
-- [csvbin.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvbin.exe)  -  CSV→バイナリ変換  
+- [bincsv.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/bincsv.exe)  -  バイナリ→CSV変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/bincsv_manual.md)
+- [csvbin.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvbin.exe)  -  CSV→バイナリ変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/csvbin_manual.md)
 - [text_create.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/text_create.exe)  -  テキストファイル生成   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/text_create_manual.md)
 - [text_ctl.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/text_ctl.exe)  -  テキストファイル加工   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/text_ctl_manual.md)
 - [txt_catcut.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/txt_catcut.exe)  -  テキストファイル連結・分割   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/txt_catcut_manual.md)
 - [logcat.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/logcat.exe)  -  LOG連結  
 - [retchg.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/retchg.exe)  -  改行コード変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/retchg_manual.md)
-- [csvxml.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvxml.exe)  -  CSV→XML変換  
+- [csvxml.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvxml.exe)  -  CSV→XML変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/csvxml_manual.md)
 - [csvhtml.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvhtml.exe)  -  CSV→HTML変換  
 - [htmlcsv.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/htmlcsv.exe)  -  HTML→CSV変換  
 - [eucsjis.csv](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/eucsjis.csv)  -  SJIS-EUC変換  
@@ -232,11 +232,11 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 - [jpegcsv.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/jpegcsv.exe)  -  JPEG,BMP→CSVファイル変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/jpegcsv_manual.md)
 - [csvjpeg.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvjpeg.exe)  -  CSVファイル → JPEG,BMPファイル変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/csvjpeg_manual.md)
 - [csvveri.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvveri.exe)  -  CSVファイル → Verilog-HDLファイル変換  
-- [csvtab.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvtab.exe)  -  CSVファイル → TABファイル変換  
-- [tabcsv.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/tabcsv.exe)  -  TABファイル → CSVファイル変換  
-- [csvstrcnv.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvstrcnv.exe)  -  CSV 数値→文字列変換  
-- [retconv.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/retconv.exe)  -  Excel 用 CSV 改行コード変換  
-- [retconv2.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/retconv2.exe)  -  Excel 用 CSV 改行コード変換  
+- [csvtab.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvtab.exe)  -  CSVファイル → TABファイル変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/csvtab_manual.md)
+- [tabcsv.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/tabcsv.exe)  -  TABファイル → CSVファイル変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/tabcsv_manual.md)
+- [csvstrcnv.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvstrcnv.exe)  -  CSV 数値→文字列変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/csvstrcnv_manual.md)
+- [retconv.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/retconv.exe)  -  Excel 用 CSV 改行コード変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/retconv_manual.md)
+- [retconv2.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/retconv2.exe)  -  Excel 用 CSV 改行コード変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/retconv2_manual.md)
 - [retconv3.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/retconv3.exe)  -  FileMaker 用 CSV 改行コード変換  
 - [retconv4.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/retconv4.exe)  -  FileMaker 用 CSV 改行コード変換  
 

@@ -400,6 +400,8 @@ bool csvmake_oo_C::csvmake(char *p_xlsfile,char *p_dir,char *p_filter,char *p_ex
     } else {printf("  ->%s(NG)\n",buff);}
   }
   objDocument.OleFunction( "close",true );
+  Sleep(500);
+  objDocument.OleFunction ("dispose");
   return(true);
 }
 

@@ -48,7 +48,7 @@ void help(){
 
 
 int main(int argc, char* argv[]){
-  printf("XLS File -> CSV File Program (OpenOffice.org Edition) Ver 1.06\n\n");
+  printf("XLS File -> CSV File Program (OpenOffice.org Edition) Ver 1.07\n\n");
 
   char *xls_file = NULL;
   char *out_dir  = NULL;
