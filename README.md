@@ -3,7 +3,7 @@
 
 # <img width="272" height="90" alt="csvpp_tag" src="https://github.com/user-attachments/assets/4e7b423a-ee63-4bff-a92e-96e39b48b21e" />
 
-![License](https://img.shields.io/badge/license-GPL--2.0-blue.svg)
+![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
 ![Language](https://img.shields.io/badge/language-C%2B%2B-orange.svg)
 
@@ -182,15 +182,15 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 
 詳しい使い方については、リポジトリ内のマニュアルを参照してください。
 
-- [CSVPP設定と使い方](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Setup_and_Usage.xlsx) ... 2026.9.12
-- [CSVPP言語マニュアル](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_LanguageManual.xlsx) ... 2026.8.23
-- [CSVPP言語リファレンス](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_LanguageReferenceGuide.xlsx) ... 2026.8.23
-- [テキストファイル生成と加工](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_TextFile_Generation_and_Processing.xlsx) ... 2026.8.26
-- [バイナリファイル加工](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_BinaryFile_Processing.xlsx) ... 2026.9.7
-- [Verilog-HDL生成](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Verilog_Generation.xlsx) ... 2026.9.6
-- [Excel⇔CSV変換(Libre Office版](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Converting_LibreCalc_CSV.xlsx) ... 2026.9.12
-- [Excel⇔CSV変換(Microsoft Excel版)](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Converting_Excel_CSV.xlsx) ... 2026.9.12
-- [Excel⇔CSV変換便利ツール(フィルタプログラム)](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Utility_CSV_tool.xlsx) ... 2026.9.12
+- [CSVPP設定と使い方](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Setup_and_Usage.xlsx) 
+- [CSVPP言語マニュアル](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_LanguageManual.xlsx) 
+- [CSVPP言語リファレンス](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_LanguageReferenceGuide.xlsx) 
+- [テキストファイル生成と加工](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_TextFile_Generation_and_Processing.xlsx) 
+- [バイナリファイル加工](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_BinaryFile_Processing.xlsx) 
+- [Verilog-HDL生成](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Verilog_Generation.xlsx)
+- [Excel⇔CSV変換(Libre Office版](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Converting_LibreCalc_CSV.xlsx) 
+- [Excel⇔CSV変換(Microsoft Excel版)](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Converting_Excel_CSV.xlsx)
+- [Excel⇔CSV変換便利ツール(フィルタプログラム)](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Utility_CSV_tool.xlsx) 
 
 ---
 
@@ -248,22 +248,26 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 
 ## テキストファイルを生成するサンプルファイル
 
-- [text_file_gen_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/text_file_gen_sample.xls) ... 2026.9.21
+- [text_file_gen_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/text_file_gen_sample.xls) 
+
+## ソースコードのヘッダを差し替えるサンプルファイル
+
+- [replace_license_header.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/replace_license_header.xlsx)
 
 ## 大量のテキストファイルを生成するサンプルファイル
 
-- [json_file_gen_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/json_file_gen_sample.xls) ... 2026.9.21
+- [json_file_gen_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/json_file_gen_sample.xls) 
 
 
 ## C++コードを生成するサンプルファイル
 
-- [cpp_maker.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/cpp_maker.xls) ... 2026.9.21
+- [cpp_maker.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/cpp_maker.xls) 
 
 
 ## Verilogを生成するサンプルファイル
 
-- [csvveri_sample_top.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample_top.xls) ... 2026.9.16
-- [csvveri_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample.xls) ... 2026.9.16
+- [csvveri_sample_top.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample_top.xls) 
+- [csvveri_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample.xls) 
 
 
 ---
@@ -278,7 +282,7 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 
 # クラスライブラリ
 
-- [C/C++ソースコード生成クラスライブラリ](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_app/cpp_maker_core.xlsx) ... 2026.9.21
+- [C/C++ソースコード生成クラスライブラリ](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_app/cpp_maker_core.xlsx)
 
 ---
 
@@ -302,7 +306,7 @@ CSVPPを利用することで、次のような作業の自動化が期待でき
 
 CSVPPのプログラムおよびドキュメントは、
 
-**GNU General Public License version 2.0 (GPL-2.0)**
+**Apache License Version 2.0**
 
 のライセンスに従います。
 
