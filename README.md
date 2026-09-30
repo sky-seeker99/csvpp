@@ -212,16 +212,15 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 - [text_create.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/text_create.exe)  -  テキストファイル生成   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/text_create_manual.md)
 - [text_ctl.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/text_ctl.exe)  -  テキストファイル加工   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/text_ctl_manual.md)
 - [txt_catcut.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/txt_catcut.exe)  -  テキストファイル連結・分割   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/txt_catcut_manual.md)
-- [logcat.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/logcat.exe)  -  LOG連結  
+- [logcat.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/logcat.exe)  -  LOG連結   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/logcat_manual.md)
 - [retchg.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/retchg.exe)  -  改行コード変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/retchg_manual.md)
 - [csvxml.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvxml.exe)  -  CSV→XML変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/csvxml_manual.md)
-- [csvhtml.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvhtml.exe)  -  CSV→HTML変換  
-- [htmlcsv.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/htmlcsv.exe)  -  HTML→CSV変換  
-- [eucsjis.csv](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/eucsjis.csv)  -  SJIS-EUC変換  
-- [eucsjis.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/eucsjis.exe)  -  SJIS-EUC変換  
-- [eucsjis2.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/eucsjis2.exe)  -  SJIS-EUC変換  
-- [nullchg.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/nullchg.exe)  -  NULL変換  
-- [csv_textcut.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csv_textcut.exe)  -  CSVファイル分割  
+- [csvhtml.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvhtml.exe)  -  CSV→HTML変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/csvhtml_manual.md)
+- [htmlcsv.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/htmlcsv.exe)  -  HTML→CSV変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/htmlcsv_manual.md)
+- [eucsjis.csv](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/eucsjis.csv)  -  SJIS-EUC変換用定義ファイル  
+- [eucsjis.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/eucsjis.exe)  -  SJIS-EUC変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/eucsjis_manual.md)
+- [eucsjis2.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/eucsjis2.exe)  -  SJIS-EUC変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/eucsjis2_manual.md)
+- [nullchg.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/nullchg.exe)  -  NULL変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/nullchg_manual.md)
 - [csvcellretchg.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvcellretchg.exe)  -  CSVファイルセル内改行コード変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/csvcellretchg_manual.md)
 - [csvcellretchg2.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvcellretchg2.exe)  -  CSVファイルセル内改行コード変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/csvcellretchg2_manual.md)
 - [csvmerge.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvmerge.exe)  -  CSVファイル横マージ   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/csvmerge_manual.md)
@@ -231,7 +230,6 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 - [c_cmt_del2.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/c_cmt_del2.exe)  -  C/C++コメント削除   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/c_cmt_del2_manual.md)
 - [jpegcsv.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/jpegcsv.exe)  -  JPEG,BMP→CSVファイル変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/jpegcsv_manual.md)
 - [csvjpeg.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvjpeg.exe)  -  CSVファイル → JPEG,BMPファイル変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/csvjpeg_manual.md)
-- [csvveri.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvveri.exe)  -  CSVファイル → Verilog-HDLファイル変換  
 - [csvtab.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvtab.exe)  -  CSVファイル → TABファイル変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/csvtab_manual.md)
 - [tabcsv.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/tabcsv.exe)  -  TABファイル → CSVファイル変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/tabcsv_manual.md)
 - [csvstrcnv.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvstrcnv.exe)  -  CSV 数値→文字列変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/csvstrcnv_manual.md)
