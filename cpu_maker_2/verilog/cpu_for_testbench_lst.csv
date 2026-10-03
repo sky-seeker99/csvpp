@@ -1,0 +1,134 @@
+##### top imformation #####
+register area  ,13(d)
+program area   ,102(66)
+start address  ,0
+global area    ,1(1)
+
+##### global veriable #####
+
+##### calcuration #####
+000,argCnt:1,method:p0
+003,argCnt:2,method:p0!=p1
+002,argCnt:2,method:p0+p1
+001,argCnt:2,method:p0<(p1)
+
+##### printf #####
+002,argCnt:0,format:Result - Good
+001,argCnt:0,format:Result - NG
+000,argCnt:2,format:data unmatch (read data = %x  expect data = %x)
+
+##### extend code #####
+
+##### type define #####
+
+##### program #####
+addr:00000000(00000000),function:main,programSize:79,argSize:0,localSize:2
+local,dt,mapping:0(0),size:1
+local,i,mapping:1(1),size:1
+addr:00000000(00000000),code:#set,ParmCnt <- StkCnt + 0 - 0,,,,//,#st,main,
+addr:00000001(00000001),code:#set,StkCnt <- StkCnt + 2 - 0,,
+addr:00000002(00000002),code:#set,r10 <- ParmCnt + 1 - 0,,,,//,#for,i,30,
+addr:00000003(00000003),code:#set,r11 <- 0 + 0 - 0,,
+addr:00000004(00000004),code:#set,*(r10) <- r11 + 0 - 0,,
+addr:00000005(00000005),code:#set,r10 <- ParmCnt + 1 - 0,,
+addr:00000006(00000006),code:#set,r10 <- *(r10) + 0 - 0,,
+addr:00000007(00000007),code:#set,r11 <- 30 + 0 - 0,,
+addr:00000008(00000008),code:#calc,methodNo:001,regNo:010,argCnt:002,
+addr:00000009(00000009),code:#set,SumCnt <- r10 + 0 - 0,,
+addr:0000000a(00000010),code:#jmp,trueAddr:0000000b,falseAddr:0000001f,
+addr:0000000b(00000011),code:#set,*(StkCnt) <- 24 + 0 - 0,,,,//,#do,write,i,i,
+addr:0000000c(00000012),code:#set,StkCnt <- StkCnt + 1 - 0,,
+addr:0000000d(00000013),code:#set,*(StkCnt) <- ParmCnt + 0 - 0,,
+addr:0000000e(00000014),code:#set,StkCnt <- StkCnt + 1 - 0,,
+addr:0000000f(00000015),code:#set,r10 <- ParmCnt + 1 - 0,,
+addr:00000010(00000016),code:#set,r10 <- *(r10) + 0 - 0,,
+addr:00000011(00000017),code:#set,*(StkCnt) <- r10 + 0 - 0,,
+addr:00000012(00000018),code:#set,StkCnt <- StkCnt + 1 - 0,,
+addr:00000013(00000019),code:#set,r10 <- ParmCnt + 1 - 0,,
+addr:00000014(00000020),code:#set,r10 <- *(r10) + 0 - 0,,
+addr:00000015(00000021),code:#set,*(StkCnt) <- r10 + 0 - 0,,
+addr:00000016(00000022),code:#set,StkCnt <- StkCnt + 1 - 0,,
+addr:00000017(00000023),code:#jmp,trueAddr:0000005a,falseAddr:0000005a,
+addr:00000018(00000024),code:#set,r10 <- ParmCnt + 1 - 0,,,,//,#endfor,
+addr:00000019(00000025),code:#set,r11 <- ParmCnt + 1 - 0,,
+addr:0000001a(00000026),code:#set,r11 <- *(r11) + 0 - 0,,
+addr:0000001b(00000027),code:#set,r12 <- 1 + 0 - 0,,
+addr:0000001c(00000028),code:#calc,methodNo:002,regNo:011,argCnt:002,
+addr:0000001d(00000029),code:#set,*(r10) <- r11 + 0 - 0,,
+addr:0000001e(00000030),code:#jmp,trueAddr:00000005,falseAddr:00000005,
+addr:0000001f(00000031),code:#set,r10 <- ParmCnt + 1 - 0,,,,//,#for,i,30,
+addr:00000020(00000032),code:#set,r11 <- 0 + 0 - 0,,
+addr:00000021(00000033),code:#set,*(r10) <- r11 + 0 - 0,,
+addr:00000022(00000034),code:#set,r10 <- ParmCnt + 1 - 0,,
+addr:00000023(00000035),code:#set,r10 <- *(r10) + 0 - 0,,
+addr:00000024(00000036),code:#set,r11 <- 30 + 0 - 0,,
+addr:00000025(00000037),code:#calc,methodNo:001,regNo:010,argCnt:002,
+addr:00000026(00000038),code:#set,SumCnt <- r10 + 0 - 0,,
+addr:00000027(00000039),code:#jmp,trueAddr:00000028,falseAddr:00000049,
+addr:00000028(00000040),code:#set,*(StkCnt) <- 52 + 0 - 0,,,,//,#do,read,i,@dt,
+addr:00000029(00000041),code:#set,StkCnt <- StkCnt + 1 - 0,,
+addr:0000002a(00000042),code:#set,*(StkCnt) <- ParmCnt + 0 - 0,,
+addr:0000002b(00000043),code:#set,StkCnt <- StkCnt + 1 - 0,,
+addr:0000002c(00000044),code:#set,r10 <- ParmCnt + 1 - 0,,
+addr:0000002d(00000045),code:#set,r10 <- *(r10) + 0 - 0,,
+addr:0000002e(00000046),code:#set,*(StkCnt) <- r10 + 0 - 0,,
+addr:0000002f(00000047),code:#set,StkCnt <- StkCnt + 1 - 0,,
+addr:00000030(00000048),code:#set,r10 <- ParmCnt + 0 - 0,,
+addr:00000031(00000049),code:#set,*(StkCnt) <- r10 + 0 - 0,,
+addr:00000032(00000050),code:#set,StkCnt <- StkCnt + 1 - 0,,
+addr:00000033(00000051),code:#jmp,trueAddr:0000004f,falseAddr:0000004f,
+addr:00000034(00000052),code:#set,r10 <- ParmCnt + 1 - 0,,,,//,#if,i != dt,
+addr:00000035(00000053),code:#set,r10 <- *(r10) + 0 - 0,,
+addr:00000036(00000054),code:#set,r11 <- ParmCnt + 0 - 0,,
+addr:00000037(00000055),code:#set,r11 <- *(r11) + 0 - 0,,
+addr:00000038(00000056),code:#calc,methodNo:003,regNo:010,argCnt:002,
+addr:00000039(00000057),code:#set,SumCnt <- r10 + 0 - 0,,
+addr:0000003a(00000058),code:#jmp,trueAddr:0000003b,falseAddr:00000042,
+addr:0000003b(00000059),code:#set,r10 <- ParmCnt + 0 - 0,,,,//,#printf,data unmatch (read data = %x  expect data = %x),dt,i,
+addr:0000003c(00000060),code:#set,r10 <- *(r10) + 0 - 0,,
+addr:0000003d(00000061),code:#set,r11 <- ParmCnt + 1 - 0,,
+addr:0000003e(00000062),code:#set,r11 <- *(r11) + 0 - 0,,
+addr:0000003f(00000063),code:#printf,printfNo:000,regNo:10,argCnt:2
+addr:00000040(00000064),code:#printf,printfNo:001,regNo:10,argCnt:0,,//,#printf,Result - NG,
+addr:00000041(00000065),code:#user,userCode:002,regNo:010,argCnt:000,,//,#user,2,
+addr:00000042(00000066),code:#set,r10 <- ParmCnt + 1 - 0,,,,//,#endfor,
+addr:00000043(00000067),code:#set,r11 <- ParmCnt + 1 - 0,,
+addr:00000044(00000068),code:#set,r11 <- *(r11) + 0 - 0,,
+addr:00000045(00000069),code:#set,r12 <- 1 + 0 - 0,,
+addr:00000046(00000070),code:#calc,methodNo:002,regNo:011,argCnt:002,
+addr:00000047(00000071),code:#set,*(r10) <- r11 + 0 - 0,,
+addr:00000048(00000072),code:#jmp,trueAddr:00000022,falseAddr:00000022,
+addr:00000049(00000073),code:#printf,printfNo:002,regNo:10,argCnt:0,,//,#printf,Result - Good,
+addr:0000004a(00000074),code:#user,userCode:002,regNo:010,argCnt:000,,//,#user,2,
+addr:0000004b(00000075),code:#set,StkCnt <- StkCnt + 0 - 3,,,,//,#st,read,
+addr:0000004c(00000076),code:#set,ParmCnt <- *(StkCnt) + 0 - 0,,
+addr:0000004d(00000077),code:#set,StkCnt <- StkCnt + 0 - 1,,
+addr:0000004e(00000078),code:#set,PrgCnt <- *(StkCnt) + 0 - 0,,
+addr:0000004f(00000079),function:read,programSize:11,argSize:2,localSize:0
+parm,addr,mapping:0(0),size:1
+parm,dt,mapping:1(1),size:1
+addr:0000004f(00000079),code:#set,ParmCnt <- StkCnt + 0 - 2,,
+addr:00000050(00000080),code:#set,StkCnt <- StkCnt + 0 - 0,,
+addr:00000051(00000081),code:#set,r10 <- ParmCnt + 0 - 0,,,,//,#user,10,addr,@dt,
+addr:00000052(00000082),code:#set,r10 <- *(r10) + 0 - 0,,
+addr:00000053(00000083),code:#set,r11 <- ParmCnt + 1 - 0,,
+addr:00000054(00000084),code:#set,r11 <- *(r11) + 0 - 0,,
+addr:00000055(00000085),code:#user,userCode:010,regNo:010,argCnt:002
+addr:00000056(00000086),code:#set,StkCnt <- StkCnt + 0 - 3,,,,//,#st,write,
+addr:00000057(00000087),code:#set,ParmCnt <- *(StkCnt) + 0 - 0,,
+addr:00000058(00000088),code:#set,StkCnt <- StkCnt + 0 - 1,,
+addr:00000059(00000089),code:#set,PrgCnt <- *(StkCnt) + 0 - 0,,
+addr:0000005a(00000090),function:write,programSize:11,argSize:2,localSize:0
+parm,addr,mapping:0(0),size:1
+parm,dt,mapping:1(1),size:1
+addr:0000005a(00000090),code:#set,ParmCnt <- StkCnt + 0 - 2,,
+addr:0000005b(00000091),code:#set,StkCnt <- StkCnt + 0 - 0,,
+addr:0000005c(00000092),code:#set,r10 <- ParmCnt + 0 - 0,,,,//,#user,11,addr,dt,
+addr:0000005d(00000093),code:#set,r10 <- *(r10) + 0 - 0,,
+addr:0000005e(00000094),code:#set,r11 <- ParmCnt + 1 - 0,,
+addr:0000005f(00000095),code:#set,r11 <- *(r11) + 0 - 0,,
+addr:00000060(00000096),code:#user,userCode:011,regNo:010,argCnt:002
+addr:00000061(00000097),code:#set,StkCnt <- StkCnt + 0 - 3,,
+addr:00000062(00000098),code:#set,ParmCnt <- *(StkCnt) + 0 - 0,,
+addr:00000063(00000099),code:#set,StkCnt <- StkCnt + 0 - 1,,
+addr:00000064(00000100),code:#set,PrgCnt <- *(StkCnt) + 0 - 0,,
