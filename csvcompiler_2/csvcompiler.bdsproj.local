@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2008/09/14 22:15:21.250.bdsproj,C:\Documents and Settings\kasuya99\My Documents\Borland Studio Projects\Project1.bdsproj=C:\Documents and Settings\kasuya99\My Documents\Borland Studio Projects\csvcompiler.bdsproj</Transaction>
+    <Transaction>2008/09/14 22:15:28.703.bdsproj,C:\Documents and Settings\kasuya99\My Documents\Borland Studio Projects\csvcompiler.bdsproj=C:\hpdata\csvpp_source_tc\csvcompiler\csvcompiler.bdsproj</Transaction>
+    <Transaction>2010/07/11 15:26:17.421.lib,C:\hpdata\csvpp_source_tc\csvpp_xbase\Release_Build\xbase.lib=</Transaction>
+  </Transactions>
+</BorlandProject>
