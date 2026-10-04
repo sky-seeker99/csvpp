@@ -267,9 +267,6 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 - [csvveri_sample_top.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample_top.xls) 
 - [csvveri_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample.xls) 
 
-## 検証用CPUの生成ファイル
-- [cpu_maker_2-20261004.zip](https://github.com/user-attachments/files/33026316/cpu_maker_2-20261004.zip)
-
 ---
 
 # CSVPP言語で記述されたツール
@@ -283,6 +280,12 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 # クラスライブラリ
 
 - [C/C++ソースコード生成クラスライブラリ](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_app/cpp_maker_core.xlsx)
+
+---
+
+# 検証用CPUの生成(Verilog版)
+
+- [cpu_maker_2-20261004.zip](https://github.com/user-attachments/files/33026316/cpu_maker_2-20261004.zip)
 
 ---
 
