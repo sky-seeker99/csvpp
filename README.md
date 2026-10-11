@@ -246,7 +246,7 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 
 ## テキストファイルを生成するサンプルファイル
 
-- [text_file_gen_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/text_file_gen_sample.xls) 
+- [text_file_gen_sample.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/text_file_gen_sample.xlsx) 
 
 ## ソースコードのヘッダを差し替えるサンプルファイル
 
@@ -254,18 +254,18 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 
 ## 大量のテキストファイルを生成するサンプルファイル
 
-- [json_file_gen_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/json_file_gen_sample.xls) 
+- [json_file_gen_sample.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/json_file_gen_sample.xlsx) 
 
 
 ## C++コードを生成するサンプルファイル
 
-- [cpp_maker.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/cpp_maker.xls) 
+- [cpp_maker.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/cpp_maker.xlsx) 
 
 
 ## Verilogを生成するサンプルファイル
 
-- [csvveri_sample_top.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample_top.xls) 
-- [csvveri_sample.xls](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample.xls) 
+- [csvveri_sample_top.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample_top.xlsx) 
+- [csvveri_sample.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample.xlsx) 
 
 
 ---
