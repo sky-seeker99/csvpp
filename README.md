@@ -9,7 +9,7 @@
 
 ## Excelからプログラムを生成する
 
-**CSVPP（CSV-Preprocessor system）は、Excelで作成したデータや仕様をもとに、プログラム・スクリプト・バッチファイルなどを自動生成するWindows向けのコード生成システムです。**
+**CSVPP（CSV-Preprocessor system）は、Excelで作成したデータや仕様をもとに、プログラム・スクリプト・バッチファイルなどを自動生成するWindows向けのコード生成システムです。どの様な言語を作るにしても単一のCSVPP言語を記述する事で事足ります。**
 
 Excelにデータや処理内容を記述すると、CSVPPがその定義に従って目的の言語・形式のコードを生成します。
 
@@ -26,6 +26,7 @@ Excelにデータや処理内容を記述すると、CSVPPがその定義に従�
 - Excelのデータを利用した各種テキストファイルの生成
 - C/C++ソースコードの生成
 - Verilog-HDLの生成
+- 検証用CPUを生成する事で検証時間が非常に短縮できます。
 - CSVデータの加工・比較・結合・変換
 - スクリプト・バッチファイルなどの自動生成
 - 仕様作成 → データ作成 → コード生成を一連の流れで処理
@@ -261,7 +262,7 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 ## C++コードを生成するサンプルファイル
 
 - [cpp_maker.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/cpp_maker.xlsx) 
-
+-- [CSVPP_C_C++_CodeGenerationSpecification.md](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/CSVPP_C_C++_CodeGenerationSpecification.md) 
 
 ## Verilogを生成するサンプルファイル
 
