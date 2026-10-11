@@ -261,8 +261,7 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 
 ## C++コードを生成するサンプルファイル
 
-- [cpp_maker.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/cpp_maker.xlsx) 
--- [CSVPP_C_C++_CodeGenerationSpecification.md](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/CSVPP_C_C++_CodeGenerationSpecification.md) 
+- [cpp_maker.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/cpp_maker.xlsx) ... [CSVPP_C_C++_CodeGenerationSpecification.md](https://github.com/sky-seeker99/csvpp/blob/main/csvpp_sample/CSVPP_C_C++_CodeGenerationSpecification.md) 
 
 ## Verilogを生成するサンプルファイル
 
