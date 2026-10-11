@@ -246,7 +246,8 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 
 ## テキストファイルを生成するサンプルファイル
 
-- [text_file_gen_sample.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/text_file_gen_sample.xlsx) 
+- [text_file_gen_sample1.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/text_file_gen_sample1.xlsx) 
+- [text_file_gen_sample2.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/text_file_gen_sample2.xlsx) 
 
 ## ソースコードのヘッダを差し替えるサンプルファイル
 
