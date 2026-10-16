@@ -160,6 +160,14 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 >
 > CSVPPは Microsoft Excel または LibreOffice Calc で使用できます。
 
+# CSVPP-AI連携
+
+- [CSVPP AI連携仕様書 Ver.1.0](https://github.com/sky-seeker99/csvpp/blob/main/chatGTP\CSVPP_C++\CSVPP_AI_Integration_Spec_v1.0.md) 
+- [Employee.xlsx](https://github.com/sky-seeker99/csvpp/blob/main/chatGTP\CSVPP_C++\Employee.xlsx) 
+  → [Employee.cpp](https://github.com/sky-seeker99/csvpp/blob/main/chatGTP\CSVPP_C++\Employee.cpp)
+  / [Employee.h](https://github.com/sky-seeker99/csvpp/blob/main/chatGTP\CSVPP_C++\Employee.h)
+
+
 ---
 
 # まず試してみる
@@ -261,7 +269,7 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 
 ## C++コードを生成するサンプルファイル
 
-- [cpp_maker.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/cpp_maker.xlsx) ... [CSVPP_C_C++_CodeGenerationSpecification.md](https://github.com/sky-seeker99/csvpp/blob/main/csvpp_sample/CSVPP_C_C++_CodeGenerationSpecification.md) 
+- [cpp_maker.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/cpp_maker.xlsx) 
 
 ## Verilogを生成するサンプルファイル
 
