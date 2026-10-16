@@ -162,10 +162,17 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 
 # CSVPP-AI連携
 
-- [CSVPP AI連携仕様書 Ver.1.0](https://github.com/sky-seeker99/csvpp/blob/main/chatGTP\CSVPP_C++\CSVPP_AI_Integration_Spec_v1.0.md) 
-- [Employee.xlsx](https://github.com/sky-seeker99/csvpp/blob/main/chatGTP\CSVPP_C++\Employee.xlsx) 
-  → [Employee.cpp](https://github.com/sky-seeker99/csvpp/blob/main/chatGTP\CSVPP_C++\Employee.cpp)
-  / [Employee.h](https://github.com/sky-seeker99/csvpp/blob/main/chatGTP\CSVPP_C++\Employee.h)
+- [CSVPP AI連携仕様書 Ver.1.0](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/cpp_gen/CSVPP_AI_Integration_Spec_v1.0.md) 
+- [Employee.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Employee.xlsx)
+  -> [Employee.cpp](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Employee.cpp)
+  / [Employee.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Employee.h)
+- [AddressBook.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/AddressBook.xlsx)
+  -> [AddressBook.cpp](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/AddressBook.cpp)
+  / [AddressBook.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/AddressBook.h)
+- [Product.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Product.xlsx)
+  -> [Product.cpp](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Product.cpp)
+  / [Product.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Product.h)
+
 
 
 ---
