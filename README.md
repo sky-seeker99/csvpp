@@ -172,7 +172,9 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 - [Product.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Product.xlsx)
   -> [Product.cpp](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Product.cpp)
   / [Product.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Product.h)
-
+~
+- [CSVPP AI連携仕様書 Ver.2.0](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/cpp_gen/CSVPP_AI_Integration_Spec_v2.0.md) 
+- [Total_cppgen.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Total_cppgen.xlsx)
 
 
 ---
