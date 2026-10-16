@@ -1,4 +1,5 @@
 <!-- CSVPP - Generate C/C++, Verilog-HDL, scripts and text files from Excel data and specifications. -->
+
 <!-- CSVPP (CSV-Preprocessor system) is a code generation system for Windows that automatically generates programs, scripts, batch files, and more based on data and specifications created in Excel. -->
 
 # <img width="272" height="90" alt="csvpp_tag" src="https://github.com/user-attachments/assets/4e7b423a-ee63-4bff-a92e-96e39b48b21e" />
@@ -154,28 +155,22 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 最新版のプログラムをダウンロードして使用してください。
 
 **最新版：2026.10.3**
+
 - [csvpp_system_177a_20261003-1.zip](https://github.com/sky-seeker99/csvpp/releases/download/Ver-1.77a-20261003/csvpp_system_177a_20261003-1.zip)
 
 > ZIPファイルを展開して使用してください。
->
+> 
 > CSVPPは Microsoft Excel または LibreOffice Calc で使用できます。
 
 # CSVPP-AI連携
 
 - [CSVPP AI連携仕様書 Ver.1.0](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/cpp_gen/CSVPP_AI_Integration_Spec_v1.0.md) 
-- [Employee.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Employee.xlsx)
-  -> [Employee.cpp](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Employee.cpp)
-  / [Employee.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Employee.h)
-- [AddressBook.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/AddressBook.xlsx)
-  -> [AddressBook.cpp](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/AddressBook.cpp)
-  / [AddressBook.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/AddressBook.h)
-- [Product.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Product.xlsx)
-  -> [Product.cpp](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Product.cpp)
-  / [Product.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Product.h)
-~
+  - [Employee.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Employee.xlsx)-> [Employee.cpp](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Employee.cpp)/ [Employee.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Employee.h)
+  - [AddressBook.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/AddressBook.xlsx)-> [AddressBook.cpp](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/AddressBook.cpp)/ [AddressBook.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/AddressBook.h)
+  - [Product.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Product.xlsx)-> [Product.cpp](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Product.cpp)/ [Product.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Product.h)
+    
 - [CSVPP AI連携仕様書 Ver.2.0](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/cpp_gen/CSVPP_AI_Integration_Spec_v2.0.md) 
-- [Total_cppgen.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Total_cppgen.xlsx)
-
+  - [Total_cppgen.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Total_cppgen.xlsx)
 
 ---
 
@@ -192,7 +187,6 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 # インストールとまずは試してみる(動画)
 
 <img width="640" height="438" alt="csvpp_install_and_exec" src="https://github.com/user-attachments/assets/ca64f838-b8bd-4e49-8b34-5ed9f7977114" />
-
 
 ---
 
@@ -215,6 +209,7 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 # CSVPPに含まれる主なツール
 
 CSVPPには、コード生成だけでなく、CSVやテキストデータを扱うための複数のツールが含まれています。
+
 - [csvmake.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvmake.exe)  -  Excel→CSV変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/csvmake_manual.md)
 - [csvmake2.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvmake2.exe)  -  CSV→Excel変換   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/csvmake2_manual.md)
 - [csvmake3.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/csvmake3.exe)  -  Excel→CSV変換(大量変換用)   ... [manual](https://github.com/sky-seeker99/csvpp/blob/main/collect/manual/csvmake3_manual.md)
@@ -256,9 +251,7 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 - [retconv3.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/retconv3.exe)  -  FileMaker 用 CSV 改行コード変換  
 - [retconv4.exe](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/retconv4.exe)  -  FileMaker 用 CSV 改行コード変換  
 
-
 ---
-
 
 # サンプルファイル
 
@@ -275,7 +268,6 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 
 - [json_file_gen_sample.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/json_file_gen_sample.xlsx) 
 
-
 ## C++コードを生成するサンプルファイル
 
 - [cpp_maker.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_sample/cpp_maker.xlsx) 
@@ -285,11 +277,9 @@ CSVPPには、コード生成だけでなく、CSVやテキストデータを扱
 - [csvveri_sample_top.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample_top.xlsx) 
 - [csvveri_sample.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvveri_2_sample/csvveri_sample.xlsx) 
 
-
 ---
 
 # CSVPP言語で記述されたツール
-
 
 - [grep_textcut.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_app/grep_textcut.xlsx)  -  拡張Grep&テキスト分割プログラム  
 - [filelist2xls.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/csvpp_app/filelist2xls.xlsx)  -  ディレクトリ＆ファイルリスト作成プログラム   
@@ -339,5 +329,3 @@ CSVPPのプログラムおよびドキュメントは、
 # 更新情報
 
 最新の機能追加やマニュアルについては、GitHubのコミット履歴および本リポジトリを確認してください。
-
-
