@@ -327,6 +327,7 @@ CSVPPのプログラムおよびドキュメントは、
 - [CSVPP AI連携仕様書 Ver.2.0](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/cpp_gen/CSVPP_AI_Integration_Spec_v2.0.md) 
 - [CSVPP C/C++コード生成命令リファレンス](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/cpp_gen/CSVPP_CPP_Command_Reference_AI.md) 
 - [CSVPP AI連携：独自メソッド追加のExcel生成ルール](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/cpp_gen/CSVPP_AI_Custom_Method_Rules_v3_draft.md) 
+- [CSVPP AI連携仕様書 Ver.3.0](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/cpp_gen/CSVPP_AI_Integration_Spec_v3.0.md) 
 
 - 使用したExcelファイル
   - [Employee.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Employee.xlsx)
