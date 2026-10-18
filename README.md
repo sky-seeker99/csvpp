@@ -350,7 +350,7 @@ CSVPPのプログラムおよびドキュメントは、
 ---
 
 # CSVPP-AI連携 (Verilog-RTL生成)
-- [CSVPP AI連携仕様書 Ver.1.0](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/verilog_gen/CSVPP_Verilog_RTL_AI_Integration_Spec_Ver1.0.md)
+- [CSVPP Verilog RTL生成 AI連携仕様書 Ver.1.0](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/verilog_gen/CSVPP_Verilog_RTL_AI_Integration_Spec_Ver1.0.md)
 
 - 使用したExcelファイル
   - [csvveri_rtl.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_gen/csvveri_rtl.xlsx)
