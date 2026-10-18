@@ -328,12 +328,14 @@ CSVPPのプログラムおよびドキュメントは、
 - [CSVPP C/C++コード生成命令リファレンス](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/cpp_gen/CSVPP_CPP_Command_Reference_AI.md) 
 - [CSVPP AI連携：独自メソッド追加のExcel生成ルール](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/cpp_gen/CSVPP_AI_Custom_Method_Rules_v3_draft.md) 
 - [CSVPP AI連携仕様書 Ver.3.0](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/cpp_gen/CSVPP_AI_Integration_Spec_v3.0.md) 
+- [CSVPP AI連携仕様書 Ver.3.1](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/cpp_gen/CSVPP_AI_Integration_Spec_v3.1.md) 
 
 - 使用したExcelファイル
   - [Employee.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Employee.xlsx)
   - [AddressBook.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/AddressBook.xlsx)
   - [Product.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Product.xlsx)
   - [Product_Customer_Order_csvpp.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Product_Customer_Order_csvpp.xlsx)
+  - [BankAccount_csvpp.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/BankAccount_csvpp.xlsx)
 
 - 生成したC++コードファイル
   - [Employee.cpp](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Employee.cpp)
@@ -342,5 +344,7 @@ CSVPPのプログラムおよびドキュメントは、
   - [AddressBook.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/AddressBook.h)
   - [Product.cpp](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Product.cpp)
   - [Product.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/Product.h)
+  - [BankAccount.cpp](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/BankAccount.cpp)
+  - [BankAccount.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/cpp_gen/BankAccount.h)
 
 
