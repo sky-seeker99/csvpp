@@ -349,7 +349,7 @@ CSVPPのプログラムおよびドキュメントは、
 
 ---
 
-# CSVPP-AI連携 (Verilog-RTL生成)
+# CSVPP-AI連携 (Verilog-RTL/Testbenchi生成)
 - [CSVPP Verilog RTL生成 AI連携仕様書 Ver.1.0](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/verilog_gen/CSVPP_Verilog_RTL_AI_Integration_Spec_Ver1.0.md)
 - [CSVPP Verilog RTL・テストベンチ・TOP統合 AI連携仕様書 Ver.2.0](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/verilog_gen/CSVPP_Verilog_RTL_Testbench_TOP_AI_Integration_Spec_Ver2.0.md)
 
@@ -358,7 +358,7 @@ CSVPPのプログラムおよびドキュメントは、
   - [csvveri_test.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_gen/csvveri_test.xlsx)
   - [csvveri_top.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_gen/csvveri_top.xlsx)
 
-- 生成したVerilog-RTLコードファイル
+- 生成したVerilogコードファイル
   - [model.v](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_gen/model.v)
   - [top.v](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_gen/top.v)
   - [test.v](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_gen/test.v)
