@@ -365,3 +365,13 @@ CSVPPのプログラムおよびドキュメントは、
   - [cover.v](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_gen/cover.v)
   - [clk.v](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_gen/clk.v)
 
+# CSVPP-AI連携 (Verilog-検証用CPU生成)
+
+- 生成したExcelファイル
+  - [verilog_cpu_gen.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/cpu_memtest_maker.xlsx)
+ 
+- 生成したVerilogコードファイル
+  - [cpu_memtest.v](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/cpu_memtest.v)
+  - [cpu_memtest.cod](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/cpu_memtest.cod)
+  - [cpu_memtest_lst.csv](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/cpu_memtest_lst.csv)
+
