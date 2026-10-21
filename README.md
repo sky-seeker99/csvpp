@@ -366,6 +366,7 @@ CSVPPのプログラムおよびドキュメントは、
   - [clk.v](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_gen/clk.v)
 
 # CSVPP-AI連携 (Verilog-検証用CPU生成)
+- [CSVPP Verilog検証用CPU生成・シミュレーション環境 AI連携仕様書](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/verilog_cpu_gen/CSVPP_Verilog_CPU_AI_Integration_Spec_v1.0.md)
 
 - 生成したExcelファイル
   - [verilog_cpu_gen.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/cpu_memtest_maker.xlsx)
