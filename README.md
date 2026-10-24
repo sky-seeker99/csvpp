@@ -368,11 +368,25 @@ CSVPPのプログラムおよびドキュメントは、
 # CSVPP-AI連携 (Verilog-検証用CPU生成)
 - [CSVPP Verilog検証用CPU生成・シミュレーション環境 AI連携仕様書](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/verilog_cpu_gen/CSVPP_Verilog_CPU_AI_Integration_Spec_v1.0.md)
 
-- 生成したExcelファイル
-  - [verilog_cpu_gen.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/cpu_memtest_maker.xlsx)
+- 使用したExcelファイル(AI修正版)
+  - [cpu_memtest_maker_fixed.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/cpu_memtest_maker_fixed.xlsx)
+  - [cpu_maker_2_sample_verilog_fixed.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/cpu_maker_2_sample_verilog_fixed.xlsx)
  
 - 生成したVerilogコードファイル
   - [cpu_memtest.v](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/cpu_memtest.v)
   - [cpu_memtest.cod](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/cpu_memtest.cod)
   - [cpu_memtest_lst.csv](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/cpu_memtest_lst.csv)
+  - [top.v](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/top.v)
+  - [target.v](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/target.v)
+  - [rst.v](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/rst.v)
+  - [clk.v](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/clk.v)
+
+- バッチファイル
+  - [sim_go.sh](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/sim_go.sh)
+  - [verilog.lst.txt](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/verilog.lst.txt)
+
+
+
+
+
 
