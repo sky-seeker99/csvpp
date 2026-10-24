@@ -23,12 +23,12 @@ module top;
   wire  we;  // _CELL:[B18]
 
 initial begin 
- $dumpfile("c:\csv\cpu_test.dump"); 
- $dumpvars(1,cpu_for_testbench); 
+ $dumpfile("C:\msys64\home\shigeru\cpu_test\cpu_test.dump"); 
+ $dumpvars(0,top); 
  $dumpvars(1,target); 
 end 
-// # clk(clk) ###############
-  clk clk(  // _CELL:
+// # clkm(clkm) ###############
+  clkm clkm(  // _CELL:
      .clk(clk)  // _CELL:[F4]
     ,.clko(clko)  // _CELL:[F5]
   );
@@ -48,8 +48,8 @@ end
     ,.we(we)  // _CELL:[D18]
   );
 
-// # rst(rst) ###############
-  rst rst(  // _CELL:
+// # rstm(rstm) ###############
+  rstm rstm(  // _CELL:
      .rst(rst)  // _CELL:[G6]
   );
 

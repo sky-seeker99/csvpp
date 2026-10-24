@@ -1,7 +1,7 @@
 // ---------------------
-// clk module
+// clkm module
 // ---------------------
-module clk(
+module clkm(
    clk
   ,clko
 );

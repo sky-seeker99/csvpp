@@ -1,7 +1,7 @@
 // ---------------------
-// rst module
+// rstm module
 // ---------------------
-module rst(
+module rstm(
    rst
 );
 // # port define ########################

@@ -134,7 +134,7 @@ module cpu_memtest(
       reg_area[0] = 32'h00000000;   // _CELL:[A150]
       reg_area[1] = 32'h00000001;   // _CELL:[A151]
       {cmd,parm0,parm1,parm2,parm3,parm4} = prg_area[108];   // _CELL:[A152]
-      if ((parm0 !== 539365409) || (parm1 !== 587465984)) begin  // _CELL:[A153]
+      if ((parm0 !== 539365412) || (parm1 !== 589760000)) begin  // _CELL:[A153]
         $display("addr=108 parm0=%x parm1=%x",parm0,parm1);   // _CELL:[A154]
         $display("[code file(cpu_memtest.cod)] and [verilog file(cpu_memtest.v)] miss match error!!");   // _CELL:[A155]
         $finish;   // _CELL:[A156]
@@ -246,10 +246,10 @@ input dmy;
           reg_area[parm1] = stk_area[reg_area[parm2]] + parm3 - parm4;   // _CELL:[A242]
         end
         if (parm0 == 3) begin  // _CELL:[A244]
-          stack_area_write(reg_area[parm1],parm2 + parm3 - parm4);   // _CELL:[A245]
+          stk_area[reg_area[parm1]] = parm2 + parm3 - parm4;   // _CELL:[A245]
         end
         if (parm0 == 4) begin  // _CELL:[A247]
-          stack_area_write(reg_area[parm1],reg_area[parm2] + parm3 - parm4);   // _CELL:[A248]
+          stk_area[reg_area[parm1]] = reg_area[parm2] + parm3 - parm4;   // _CELL:[A248]
         end
         if (parm0 == 5) begin  // _CELL:[A250]
           reg_area[parm1] = reg_area[parm1] + reg_area[parm2] * parm3 - parm4;   // _CELL:[A251]
