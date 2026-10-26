@@ -388,6 +388,14 @@ CSVPPのプログラムおよびドキュメントは、
 # CSVPP-C++表形式設計言語仕様
 - [CSVPP-C++ 表形式設計言語仕様書 Ver.0.1](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/csvpp-c++/CSVPP-Cpp_Table_Design_Language_Spec_Ver0.1.md)
 
+- AIが生成したCSVPP言語のExcelファイル
+  - [Product_Design_CSVPP.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP.xlsx)
+  - [Product_Design_Ver0.1.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_Ver0.1.xlsx)
+  - [Product_Design_CSVPP_Ver0.2.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver0.2.xlsx)
+  - [Product_Design_CSVPP_Ver0.3.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver0.3.xlsx)
+  - [Product_Design_CSVPP_Ver0.4.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver0.4.xlsx)
+  - [Product_Design_CSVPP_Ver0.5.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver0.5.xlsx)
+  - [Product_Design_CSVPP_Ver0.6.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver0.6.xlsx)
 
 
 
