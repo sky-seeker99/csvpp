@@ -396,7 +396,14 @@ CSVPPのプログラムおよびドキュメントは、
   - [Product_Design_CSVPP_Ver0.4.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver0.4.xlsx)
   - [Product_Design_CSVPP_Ver0.5.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver0.5.xlsx)
   - [Product_Design_CSVPP_Ver0.6.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver0.6.xlsx)
+  - [Product_Design_CSVPP_Ver0.7.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver0.7.xlsx)
+  - [Product_Design_CSVPP_Ver0.8.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver0.8.xlsx)
+  - [Product_Design_CSVPP_Ver0.9.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver0.9.xlsx)
+  - [Product_Design_CSVPP_Ver1.0.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver1.0.xlsx)
 
+- 生成したC++コードファイル
+  - [DesignProduct.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/DesignProduct.h)
+  - [DesignProduct.cpp](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/DesignProduct.cpp)
 
 
 
