@@ -29,3 +29,16 @@ void Product::setPrice(double value){
 void Product::setStock(int value){
   stock = value;
 }
+bool Product::isInStock(){
+  return stock > 0;
+}
+bool Product::reduceStock(int quantity){
+  if (quantity <= 0) {
+      return false;
+  }
+  if (stock < quantity) {
+      return false;
+  }
+  stock -= quantity;
+  return true;
+}

@@ -17,5 +17,7 @@ class Product{
     void setName(std::string value);
     void setPrice(double value);
     void setStock(int value);
+    bool isInStock();
+    bool reduceStock(int quantity);
 };
 #endif  // _DesignProduct_h_
