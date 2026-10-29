@@ -2,6 +2,8 @@
 #ifndef _DesignProduct_h_
 #define _DesignProduct_h_
 class Product{
+};
+class Customer{
   private:
     int id; 
     std::string name; 
@@ -19,5 +21,6 @@ class Product{
     void setStock(int value);
     bool isInStock();
     bool reduceStock(int quantity);
+    bool restock(int quantity);
 };
 #endif  // _DesignProduct_h_
