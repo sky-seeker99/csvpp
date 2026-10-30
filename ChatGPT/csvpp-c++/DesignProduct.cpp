@@ -1,38 +1,38 @@
 #include "DesignProduct.h"
-Customer::Product(int p_id,std::string p_name,double p_price,int p_stock){
+Product::Product(int p_id,std::string p_name,double p_price,int p_stock){
   id = p_id;
   name = p_name;
   price = p_price;
   stock = p_stock;
 }
-int Customer::getId(){
+int Product::getId(){
   return id;
 }
-std::string Customer::getName(){
+std::string Product::getName(){
   return name;
 }
-double Customer::getPrice(){
+double Product::getPrice(){
   return price;
 }
-int Customer::getStock(){
+int Product::getStock(){
   return stock;
 }
-void Customer::setId(int value){
+void Product::setId(int value){
   id = value;
 }
-void Customer::setName(std::string value){
+void Product::setName(std::string value){
   name = value;
 }
-void Customer::setPrice(double value){
+void Product::setPrice(double value){
   price = value;
 }
-void Customer::setStock(int value){
+void Product::setStock(int value){
   stock = value;
 }
-bool Customer::isInStock(){
+bool Product::isInStock(){
   return stock > 0;
 }
-bool Customer::reduceStock(int quantity){
+bool Product::reduceStock(int quantity){
   if (quantity <= 0) {
     return false;
   }
@@ -42,9 +42,26 @@ bool Customer::reduceStock(int quantity){
   stock -= quantity;
   return true;
 }
-bool Customer::restock(int quantity){
+bool Product::restock(int quantity){
   if (quantity <= 0) {
     return false;
   }
   stock += quantity;
+  return true;
+}
+Customer::Customer(int p_id,std::string p_name,std::string p_email){
+  name = p_name;
+  email = p_email;
+}
+int Customer::getId(){
+  return id;
+}
+std::string Customer::getName(){
+  return name;
+}
+std::string Customer::getEmail(){
+  return email;
+}
+void Customer::setEmail(std::string value){
+  email = value;
 }
