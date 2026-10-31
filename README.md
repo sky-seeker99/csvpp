@@ -386,6 +386,7 @@ CSVPPのプログラムおよびドキュメントは、
   - [verilog.lst.txt](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/verilog_cpu_gen/verilog.lst.txt)
 
 # CSVPP-C++表形式設計言語仕様
+- CharGPTにCSVPP言語をコーディングしてもらいました。
 - [CSVPP-C++ 表形式設計言語仕様書 Ver.0.1](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/csvpp-c++/CSVPP-Cpp_Table_Design_Language_Spec_Ver0.1.md)
 - [CSVPP-C++ 表形式設計言語仕様書 Ver.1.0](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/csvpp-c++/CSVPP_CPP_Table_Design_Language_Spec_Ver1.0.md)
 
