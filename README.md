@@ -389,6 +389,7 @@ CSVPPのプログラムおよびドキュメントは、
 - CharGPTにCSVPP言語をコーディングしてもらいました。
 - [CSVPP-C++ 表形式設計言語仕様書 Ver.0.1](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/csvpp-c++/CSVPP-Cpp_Table_Design_Language_Spec_Ver0.1.md)
 - [CSVPP-C++ 表形式設計言語仕様書 Ver.1.0](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/csvpp-c++/CSVPP_CPP_Table_Design_Language_Spec_Ver1.0.md)
+- [CSVPP-C++ 表形式設計言語仕様書 Ver.1.1](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/csvpp-c++/CSVPP_CPP_Table_Design_Language_Spec_Ver1.1.md)
 
 - AIが生成したCSVPP言語のExcelファイル
   - [Product_Design_CSVPP.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP.xlsx)
@@ -407,10 +408,18 @@ CSVPPのプログラムおよびドキュメントは、
   - [Product_Design_CSVPP_Ver1.3.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver1.3.xlsx)
   - [Product_Design_CSVPP_Ver1.4.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver1.4.xlsx)
   - [Product_Design_CSVPP_Ver1.5.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver1.5.xlsx)
+  - [Product_Design_CSVPP_Ver1.6.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver1.6.xlsx)
+  - [Product_Design_CSVPP_Ver1.7.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver1.7.xlsx)
+  - [Product_Design_CSVPP_Ver1.8.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver1.8.xlsx)
+  - [Product_Design_CSVPP_Ver1.9.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP_Ver1.9.xlsx)
 
 - 生成したC++コードファイル
   - [DesignProduct.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/DesignProduct.h)
   - [DesignProduct.cpp](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/DesignProduct.cpp)
+  - [Customer.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Customer.h)
+  - [Customer.cpp](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Customer.cpp)
+  - [Product.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product.h)
+  - [Product.cpp](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product.cpp)
 
 
 
