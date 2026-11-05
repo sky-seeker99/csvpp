@@ -392,6 +392,7 @@ CSVPPのプログラムおよびドキュメントは、
 - [CSVPP-C++ 表形式設計言語仕様書 Ver.1.1](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/csvpp-c++/CSVPP_CPP_Table_Design_Language_Spec_Ver1.1.md)
 - [CSVPP-C++ 表形式設計言語仕様書 Ver.2.0](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/csvpp-c++/CSVPP_CPP_Table_Design_Language_Spec_Ver2.0.md)
 - [CSVPP-C++ 表形式設計言語仕様書 Ver.2.7](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/csvpp-c++/CSVPP_CPP_Design_Specification_Ver2.7.md)
+- [CSVPP-C++ 表形式設計言語仕様書 Ver.2.8](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/csvpp-c++/CSVPP_CPP_Design_Specification_Ver2.8.md)
 
 - AIが生成したCSVPP言語のExcelファイル
   - [Product_Design_CSVPP.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP.xlsx)
@@ -422,6 +423,8 @@ CSVPPのプログラムおよびドキュメントは、
   - [CSVPP_CPP_Design_Ver2.5_MethodKeyFix.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/CSVPP_CPP_Design_Ver2.5_MethodKeyFix.xlsx)
   - [CSVPP_CPP_Design_Ver2.6_CompositeKey.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/CSVPP_CPP_Design_Ver2.6_CompositeKey.xlsx)
   - [CSVPP_CPP_Design_Ver2.7.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/CSVPP_CPP_Design_Ver2.7.xlsx)
+  - [CSVPP_CPP_Design_Ver2.8_Unified_Design_Sheet.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/CSVPP_CPP_Design_Ver2.8_Unified_Design_Sheet.xlsx)
+  - [CSVPP_CPP_Design_Ver2.8_Unified_Design_Sheet_fix1.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/CSVPP_CPP_Design_Ver2.8_Unified_Design_Sheet_fix1.xlsx)
 
 - 生成したC++コードファイル
   - [DesignProduct.h](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/DesignProduct.h)
