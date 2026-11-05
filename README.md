@@ -391,7 +391,7 @@ CSVPPのプログラムおよびドキュメントは、
 - [CSVPP-C++ 表形式設計言語仕様書 Ver.1.0](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/csvpp-c++/CSVPP_CPP_Table_Design_Language_Spec_Ver1.0.md)
 - [CSVPP-C++ 表形式設計言語仕様書 Ver.1.1](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/csvpp-c++/CSVPP_CPP_Table_Design_Language_Spec_Ver1.1.md)
 - [CSVPP-C++ 表形式設計言語仕様書 Ver.2.0](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/csvpp-c++/CSVPP_CPP_Table_Design_Language_Spec_Ver2.0.md)
-- [CSVPP-C++ 表形式設計言語仕様書 Ver.2.7](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/csvpp-c++/CSVPP_CPP_Table_Design_Language_Spec_Ver2.7.md)
+- [CSVPP-C++ 表形式設計言語仕様書 Ver.2.7](https://github.com/sky-seeker99/csvpp/blob/main/ChatGPT/csvpp-c++/CSVPP_CPP_Design_Specification_Ver2.7.md)
 
 - AIが生成したCSVPP言語のExcelファイル
   - [Product_Design_CSVPP.xlsx](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/ChatGPT/csvpp-c++/Product_Design_CSVPP.xlsx)
