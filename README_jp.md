@@ -187,7 +187,7 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 
 詳しい使い方については、リポジトリ内のマニュアルを参照してください。
 
-- [CSVPP設定と使い方](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Setup_and_Usage.xlsx) 
+- [CSVPP設定と使い方](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Setup_and_Usage_jp.xlsx) 
 - [CSVPP言語マニュアル](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_LanguageManual.xlsx) 
 - [CSVPP言語リファレンス](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_LanguageReferenceGuide.xlsx) 
 - [テキストファイル生成と加工](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_TextFile_Generation_and_Processing.xlsx) 
