@@ -191,6 +191,7 @@ For detailed instructions, see the manuals in the repository.
 - [Text File Generation and Processing](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_TextFile_Generation_and_Processing.xlsx) 
 - [Binary File Processing](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_BinaryFile_Processing.xlsx) 
 - [Verilog-HDL Generation](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Verilog_Generation.xlsx)
+- [Generate a Verification CPU (Verilog HDL)](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/cpu_maker_2/CSVPP_Verilog_CPU_Generation.xlsx)
 - [Excel ⇔ CSV Conversion (LibreOffice Edition](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Converting_LibreCalc_CSV.xlsx) 
 - [Excel ⇔ CSV Conversion (Microsoft Excel Edition)](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Converting_Excel_CSV.xlsx)
 - [Excel ⇔ CSV Utility (Filter Program)](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Utility_CSV_tool.xlsx) 
