@@ -192,7 +192,7 @@ CSVの加工、比較、結合、変換など、開発時に発生するさま�
 - [CSVPP言語リファレンス](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_LanguageReferenceGuide_jp.xlsx) 
 - [テキストファイル生成と加工](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_TextFile_Generation_and_Processing_jp.xlsx) 
 - [バイナリファイル加工](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_BinaryFile_Processing.xlsx) 
-- [Verilog-HDL生成](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Verilog_Generation.xlsx)
+- [Verilog-HDL生成](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Verilog_Generation_jp.xlsx)
 - [検証用CPU(Verilog-HDL)生成](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/cpu_maker_2/CSVPP_Verilog_CPU_Generation.xlsx)
 - [Excel⇔CSV変換(Libre Office版](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Converting_LibreCalc_CSV.xlsx) 
 - [Excel⇔CSV変換(Microsoft Excel版)](https://github.com/sky-seeker99/csvpp/raw/refs/heads/main/collect/manual/CSVPP_Converting_Excel_CSV.xlsx)
