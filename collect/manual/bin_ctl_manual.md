@@ -2,11 +2,11 @@
 
 ## 1. About the Program
 
-This program バイナリファイルをユーザーが定義したルールに従って加工するProgramです。
+This program processes binary files according to user-defined rules.
 
-ルールはステートマシンを用いるため、複雑な置換や挿入、削除などが可能です。
+The rules use a state machine, enabling complex operations such as replacing, inserting, and deleting data.
 
-また、File nameにワイルドカードを使用できます。
+Wildcards can also be used in file names.
 
 ## 2. Usage
 
@@ -15,17 +15,15 @@ This is a console program.
 ### Syntax
 
 ```text
-bin_ctl ルールファイル Files to convert [-r] [-buff buffer_size]
+bin_ctl rule_file file_to_process [-r] [-buff buffer_size]
 ```
 
-Specify the full path to the file to convert.
+Specify the full path to the file to process.
 
-The rule file is in CSV format.
+The rule file must be in CSV format.
 
-- `-r`：書き換えは行わず、検索のみを行います。
-- `-buff`: Specifies the buffer size for each read/write operation (KB).
-  通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。
-  The default is 10 KB.
+- `-r`: Searches the file without modifying it.
+- `-buff`: Specifies the buffer size for each read/write operation (KB). This option is usually unnecessary, but a larger value may be useful for large files. The default is 10 KB.
 
 ### Examples
 
@@ -37,9 +35,9 @@ bin_ctl rule.csv c:\csv\*.cpp
 bin_ctl rule.csv c:\csv\*.cpp -r
 ```
 
-## 3. Examples
+## 3. Example
 
-例えば、`aaa.dat` というファイルで、`FF FF` のデータの後にある `A8 10` のデータの次のデータ内容を加工する場合を想定します。
+Suppose you want to modify the data immediately following the `A8 10` data that appears after an `FF FF` sequence in a file named `aaa.dat`.
 
 ### aaa.dat
 
@@ -50,7 +48,7 @@ A8 10 00 00 20 00 00 00 FF FF 03 00 FF FF 01 00
 00 00 00 00 10 10 11 04 00 00 00 00 00 00 00 00
 ```
 
-In this case, create the rule file as follows.
+Create the rule file as follows:
 
 ```text
 #st,IDLE
@@ -65,56 +63,54 @@ In this case, create the rule file as follows.
   #go,IDLE
 ```
 
-`#st` はステートマシンの状態を表します。
+`#st` defines a state in the state machine.
 
-上記の例には、`IDLE` と `SET_A` の状態があります。
+The example has two states: `IDLE` and `SET_A`.
 
-In the `IDLE` state, the program searches for `FF FF`.When `FF FF` is found, `#go` is executed.
+In the `IDLE` state, the program searches for `FF FF`. When it finds the sequence, it executes `#go` to transition to the next state.
 
-`SET_A` 状態では `A8 10` をサーチし、見つかったら次のデータを `56` に書き換え、アドレスを表示します。
+In the `SET_A` state, the program searches for `A8 10`. When found, it changes the following byte to `56` and displays its address.
 
-It then returns to the `IDLE` state.
+The program then returns to the `IDLE` state.
 
-## 4. Example
+## 4. Command Reference
 
-### (1) ステートマシンのState name定義
+### (1) Define State Machine States
 
-Defines state machine state names.
+Defines the state names used by the state machine. Execution starts with the first state defined.
 
-Execution starts with the first state defined.
+The state machine searches for a binary pattern. When a match is found, it executes the commands associated with the state transition, starting at the matching location.
 
-ステートマシンはバイナリのパターンをサーチします。マッチすると、マッチしたところから状態遷移の持つProgramを実行します。
+Define the search data with `#srch`.
 
-サーチデータは `#srch` で定義してください。
+The `srch_offset` variable contains the address where the pattern was found.
 
-`srch_offset` 変数は見つかったアドレスになります。
-
-#### 形式
+#### Syntax
 
 ```text
-#st,State name
-#srch,データ,データ,データ,～
+#st,state_name
+#srch,data,data,data,...
 ```
 
-#### Examples
+#### Example
 
 ```text
 #st,IDLE
 #srch,0x10,0x20,0x30
 ```
 
-### (2) `#if`、`#else`、`#endif` 文
+### (2) `#if`, `#else`, and `#endif` Statements
 
-`#if` は条件分岐を行います。
+`#if` evaluates a conditional expression.
 
-`#else` は `#if` に対する逆の条件になります。
+`#else` specifies the opposite condition of the corresponding `#if` statement.
 
-`#endif` は `#if` に対する終端です。
+`#endif` marks the end of the `#if` statement.
 
-#### 形式
+#### Syntax
 
 ```text
-#if,条件式
+#if,condition
 #else
 #endif
 ```
@@ -135,39 +131,39 @@ Execution starts with the first state defined.
 #endif
 ```
 
-### (3) 代入式
+### (3) Assignment Expressions
 
-変数の定義と計算式の実行を行います。
+Defines variables and evaluates expressions.
 
-#### 形式
+#### Syntax
 
 ```text
-#set,変数名,式
+#set,variable_name,expression
 ```
 
-#### Examples
+#### Example
 
 ```text
 #set,a,b+10
 ```
 
-### (4) 状態移動
+### (4) State Transitions
 
-`#go` は状態遷移の命令です。
+`#go` transitions to another state.
 
-`#act` は状態を遷移させず、指定した状態をアクティブにします。これを指定すると、状態が並列に動作します。
+`#act` activates the specified state without transitioning away from the current state. This allows states to run in parallel.
 
-`#stop` は指定した状態がアクティブのときに停止させます。`#act` や `#go` の指定がある場合は、`#act`、`#go` が優先されます。
+`#stop` stops the specified state if it is active. If `#act` or `#go` is also specified, `#act` and `#go` take precedence.
 
-#### 形式
+#### Syntax
 
 ```text
-#go,Target state
-#act,Target state
-#stop,Target state
+#go,target_state
+#act,target_state
+#stop,target_state
 ```
 
-#### Examples
+#### Example
 
 ```text
 #st,IDLE
@@ -199,17 +195,17 @@ Execution starts with the first state defined.
 #endif
 ```
 
-### (5) バイナリ操作
+### (5) Binary Data Operations
 
-`#chg` はデータの書き換え、削除、挿入を行います。
+`#chg` modifies, deletes, or inserts data.
 
-#### 形式
+#### Syntax
 
 ```text
-#chg,アドレス,対象サイズ,書き換えデータ,書き換えデータ,書き換えデータ,～
+#chg,address,target_size,replacement_data,replacement_data,...
 ```
 
-> 対象サイズ分を削除して、書き換えデータ分を挿入します。挿入データがなければ削除し、対象サイズが0ならば挿入します。
+> The command deletes `target_size` bytes and inserts the replacement data. If no replacement data is specified, it only deletes data. If `target_size` is 0, it only inserts data.
 
 #### Examples
 
@@ -219,53 +215,53 @@ Execution starts with the first state defined.
 #chg,srch_addr+10,0,0x10,a,b
 ```
 
-### (6) 指定アドレスデータ読み出し
+### (6) Read Data at a Specified Address
 
-`#read` 命令は、指定アドレスの内容を読み出します。
+`#read` reads the data at the specified address.
 
-#### 形式
+#### Syntax
 
 ```text
-#read,変数名,アドレス
+#read,variable_name,address
 ```
 
-#### Examples
+#### Example
 
 ```text
 #read,a,srch_addr+10
 ```
 
-### (7) ステートマシンのアクティブ初期設定
+### (7) Initial Active State Settings
 
-`#st_init` は、ステートマシンをアクティブにするための初期設定です。
+`#st_init` specifies the initial states to activate in the state machine.
 
-本設定がない場合は、一番初めに定義したステートマシンがアクティブになります。
+If this setting is omitted, the first state defined is activated.
 
-#### 形式
+#### Syntax
 
 ```text
-#st_init,State 1,State 2–,State n
+#st_init,state1,state2,...,stateN
 ```
 
-#### Examples
+#### Example
 
 ```text
 #st_init,idle,idle_2
 ```
 
-### (10) コンソール表示
+### (10) Console Output
 
-`#printf` は表示を行います。
+`#printf` displays output in the console.
 
-#### 形式
+#### Syntax
 
 ```text
-#printf,書式,式,式,式,式～
+#printf,format,expression,expression,...
 ```
 
-書式は、式を10進表示したい場合は `%I64d`、16進表示したい場合は `%I64x` を指定してください。
+Use `%I64d` in the format string to display an expression in decimal, or `%I64x` to display it in hexadecimal.
 
-#### Examples
+#### Example
 
 ```text
 #printf,addr=%I64x,srch_addr
@@ -273,4 +269,4 @@ Execution starts with the first state defined.
 
 ## 5. Version History
 
-- **Ver 0.90**　仮リリース
+- **Ver 0.90** Preliminary release.

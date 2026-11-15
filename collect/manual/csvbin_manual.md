@@ -2,7 +2,7 @@
 
 ## 1. About the Program
 
-This program CSV fileに記述された内容に従ってバイナリファイルを作成します。
+This program creates a binary file from data described in a CSV file.
 
 It can also apply patches to binary files.
 
@@ -13,18 +13,18 @@ This is a console program.
 ### Syntax
 
 ```text
-csvbin CSV file バイナリファイル [-buff buff_size] [-tag tag_name]
+csvbin csv_file binary_file [-buff buff_size] [-tag tag_name]
 ```
 
 ### Options
 
-- `-buff`: Specifies the buffer size for each read/write operation (KB). Usually not required, but a larger value may help with large files.The default is 10 KB.
-- `-tag`：デフォルトでは `#chg` を使用します。`tag_name` を指定すると、`#chg` の代わりに指定したキーを使用します。
+- `-buff`: Specifies the buffer size used for each read/write operation (KB). This option is usually unnecessary, but a larger value may be useful for large files. The default is 10 KB.
+- `-tag`: The default tag is `#chg`. If `tag_name` is specified, that key is used instead of `#chg`.
 
-※ 数値には16進数を使用できます。先頭に `0x` を付けます。  
-例：`0x1000`、`0xa0df`
+Note: Numbers can be specified in hexadecimal by prefixing them with `0x`.
+Examples: `0x1000`, `0xa0df`
 
-### Examples
+### Example
 
 ```text
 csvbin c:\csv\pict.csv c:\csv\pict.jpg
@@ -40,21 +40,21 @@ csvbin c:\csv\pict.csv c:\csv\pict.jpg
 #chg,'h00000020,'b1110111,'b1110000
 ```
 
-`'h` は16進数、`'b` は2進数、何も付けない場合は10進数として扱います。
+Prefix a value with `'h` to specify hexadecimal or with `'b` to specify binary. Values without a prefix are treated as decimal.
 
-### `#chg`
+### `#chg` Directive
 
-`#chg` は、ファイルの指定位置にデータを書き込みます。
+The `#chg` directive writes data at the specified position in the file.
 
-#### 形式
+#### Syntax
 
 ```text
-#chg,位置,データ1,データ2～,データn
+#chg,position,data1,data2,...,dataN
 ```
 
-### `#chg` の変更
+### Changing the `#chg` Tag
 
-`#chg` を `#key` に変更する場合は、以下のように `-tag` Optionを指定します。
+To use `#key` instead of `#chg`, specify the `-tag` option as follows:
 
 ```text
 csvbin c:\csv\pict.csv c:\csv\pict.jpg -tag #key
@@ -62,9 +62,9 @@ csvbin c:\csv\pict.csv c:\csv\pict.jpg -tag #key
 
 ## 4. Version History
 
-- **Ver 1.00**　初公開！
-- **Ver 1.00**　マニュアルを修正しました。Programの変更はありません。
-- **Ver 1.01**　CSV file読込みライブラリの変更に伴うProgramの変更。機能変更はありません。
-- **Ver 1.02**　`-buff` を追加。4GByteを超えるファイルに対応。
-- **Ver 1.03**　CSV fileのセル内に改行があっても正しく読み込めるようにしました。
-- **Ver 1.04**　`-tag` を追加。
+- **Ver 1.00** Initial release.
+- **Ver 1.00** Updated the manual; no program changes.
+- **Ver 1.01** Updated the program to use a changed CSV reading library; no functional changes.
+- **Ver 1.02** Added the `-buff` option and support for files larger than 4 GB.
+- **Ver 1.03** Fixed CSV reading so that line breaks inside cells are handled correctly.
+- **Ver 1.04** Added the `-tag` option.

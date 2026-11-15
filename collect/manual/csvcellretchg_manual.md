@@ -11,15 +11,13 @@ This is a console program.
 ### Syntax
 
 ```text
-csvcellretchg CSV file [replacement_string] [-dbl_no_cut] [-buff buffer_size]
+csvcellretchg csv_file [replacement_string] [-dbl_no_cut] [-buff buffer_size]
 ```
 
 ### Options
 
-- `-buff`: Specifies the buffer size for each read/write operation (KB).
-  通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。
-  The default is 10 KB.
-- `-dbl_no_cut`：不要なダブルクォーテーションを削除しないようにします。
+- `-buff`: Specifies the buffer size used for each read/write operation (KB). This option is usually unnecessary, but a larger value may be useful for large files. The default is 10 KB.
+- `-dbl_no_cut`: Preserves double quotation marks that would otherwise be removed.
 
 ### Examples
 
@@ -27,16 +25,16 @@ csvcellretchg CSV file [replacement_string] [-dbl_no_cut] [-buff buffer_size]
 csvcellretchg c:\csv\*.csv
 ```
 
-`c:\csv` の拡張子が `.csv` のファイルの改行を削除します。
+Removes line breaks from `.csv` files in `c:\csv`.
 
 ```text
 csvcellretchg c:\csv\*.csv @@@@@
 ```
 
-`c:\csv` の拡張子が `.csv` のファイルの改行を `@@@@@` に置き換えます。
+Replaces line breaks in `.csv` files in `c:\csv` with `@@@@@`.
 
 ## 3. Version History
 
-- **Ver 1.00**　初公開！
-- **Ver 1.01**　4Gバイトを超えるファイルも扱えるようにしました。`-buff` Optionを追加。
-- **Ver 1.02**　`-dbl_no_cut` Optionを追加。
+- **Ver 1.00** Initial release.
+- **Ver 1.01** Added support for files larger than 4 GB and added the `-buff` option.
+- **Ver 1.02** Added the `-dbl_no_cut` option.

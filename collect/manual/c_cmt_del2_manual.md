@@ -11,7 +11,7 @@ This is a console program.
 ### Syntax
 
 ```text
-c_cmt_del2 Files to convert [-r 指定文字] [-buff buffer_size]
+c_cmt_del2 file_to_process [-r string] [-buff buffer_size]
 ```
 
 Specify the full path to the file.
@@ -20,39 +20,37 @@ Wildcards can be used in file names.
 
 ### Options
 
-- `-r`：Preserves comments that contain the specified string.
-- `-buff`: Specifies the buffer size for each read/write operation (KB).
-  通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。
-  The default is 10 KB.
+- `-r`: Preserves comments that contain the specified string.
+- `-buff`: Specifies the buffer size used for each read/write operation (KB). This option is usually unnecessary, but a larger value may be useful for large files. The default is 10 KB.
 
 ### Examples
 
 ```text
-c_cmt_del2 c:\csv\*.cpp -r \
+c_cmt_del2 c:\csv\*.cpp -r \\
 ```
 
 The `-r` option specifies a string that protects matching comments from deletion.
 
-```text
--r \
-```
-
-When specified this way,
+For example, specifying:
 
 ```text
-//\ ～
+-r \\
 ```
 
-や
+preserves comments such as:
 
 ```text
-/*\ ～ */
+//\ ...
 ```
 
-comments are not deleted.
+and
+
+```text
+/*\ ... */
+```
 
 ## 3. Version History
 
-- **Ver 0.90**　初公開！
-- **Ver 0.91**　コメント削除対象外が有効にならなかったバグをフィックス。
-- **Ver 1.00**　4Gバイトを超えるファイルも扱えるようにしました。いろいろとバグフィックス。
+- **Ver 0.90** Initial release.
+- **Ver 0.91** Fixed a bug that prevented the comment exclusion option from taking effect.
+- **Ver 1.00** Added support for files larger than 4 GB and fixed various bugs.

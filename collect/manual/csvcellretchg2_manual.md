@@ -11,17 +11,15 @@ This is a console program.
 ### Syntax
 
 ```text
-csvcellretchg2 Input file nameOutput file name [replacement_string] [-dbl_no_cut] [-buff buffer_size]
+csvcellretchg2 input_file output_file [replacement_string] [-dbl_no_cut] [-buff buffer_size]
 ```
 
-Specify the full path to the file.
+Specify the full paths to the input and output files.
 
 ### Options
 
-- `-buff`: Specifies the buffer size for each read/write operation (KB).
-  通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。
-  The default is 10 KB.
-- `-dbl_no_cut`：不要なダブルクォーテーションを削除しないようにします。
+- `-buff`: Specifies the buffer size used for each read/write operation (KB). This option is usually unnecessary, but a larger value may be useful for large files. The default is 10 KB.
+- `-dbl_no_cut`: Preserves double quotation marks that would otherwise be removed.
 
 ### Examples
 
@@ -29,22 +27,22 @@ Specify the full path to the file.
 csvcellretchg2 c:\csv\in.csv c:\csv\out.csv
 ```
 
-CSV fileの改行を削除します。
+Removes line breaks from the CSV file.
 
 ```text
 csvcellretchg2 c:\csv\in.csv c:\csv\out.csv @@@@@
 ```
 
-CSV fileの改行を `@@@@@` に置き換えます。
+Replaces line breaks in the CSV file with `@@@@@`.
 
 ### Standard Input and Output
 
 Specify `-` as the input file name to read from standard input.
 Specify `-` as the output file name to write to standard output.
 
-Standard outputの場合のLine endingは、必ず `0x0d,0x0a` になりますので注意してください。
+Note that line endings written to standard output are always `0x0D,0x0A`.
 
-### Standard Input and OutputのExample
+### Standard Input and Output Example
 
 ```text
 type c:\csv\in.csv | csvcellretchg2 - - > c:\csv\out.csv
@@ -52,5 +50,5 @@ type c:\csv\in.csv | csvcellretchg2 - - > c:\csv\out.csv
 
 ## 3. Version History
 
-- **Ver 1.01**　初公開！
-- **Ver 1.02**　`-dbl_no_cut` Optionを追加。
+- **Ver 1.01** Initial release.
+- **Ver 1.02** Added the `-dbl_no_cut` option.

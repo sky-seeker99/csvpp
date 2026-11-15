@@ -2,16 +2,16 @@
 
 ## 1. About the Program
 
-Extracts specified fields from a CSV file and generates a new CSV file.
+This program extracts specified fields from a CSV file and creates a new CSV file.
 
 ## 2. Usage
 
 This is a console program.
 
-The syntax is as follows.
+Syntax:
 
 ```text
-csvcut Input CSV file Output CSV file Columns to extract
+csvcut input_csv_file output_csv_file fields_to_extract
 ```
 
 ### Example
@@ -20,33 +20,33 @@ csvcut Input CSV file Output CSV file Columns to extract
 csvcut c:\csv\int.csv c:\csv\out.csv 1,5-9,11
 ```
 
-To use standard input and output, run the command as follows.
+To use standard input and output, run the command as follows:
 
 ```text
 type c:\csv\int.csv | csvcut - - 1,5-9,11 > c:\csv\out.csv
 ```
 
-### 項目の指定方法
+### Specifying Fields
 
 - Field numbering starts at **1**.
-- Input CSV file名に `-` を指定すると、Standard inputを使用します。
-- Output CSV file名に `-` を指定すると、Standard outputを使用します。
+- Specify `-` as the input CSV file name to read from standard input.
+- Specify `-` as the output CSV file name to write to standard output.
 - Separate field numbers with commas (`,`).
 - Use a hyphen (`-`) to specify a range of fields.
 
-例えば、
+For example, specifying:
 
 ```text
 1,5-9,11
 ```
 
-と指定すると、**1、5、6、7、8、9、11** の項目を抜き出します。
+extracts fields **1, 5, 6, 7, 8, 9, and 11**.
 
 ## 3. Version History
 
-- Ver 1.00　初公開
-- Ver 1.01　Standard input・Standard outputの機能を追加。項目を1から数える方式に変更
-- Ver 1.02　ダブルクォーテーションに対応
-- Ver 1.03　第2水準の漢字に対応
-- Ver 1.04　半角スペース削除のバグを修正
-- Ver 1.05　変換エンジンを変更し、項目のデータがどれだけ長くても処理できるように変更
+- Ver 1.00 Initial release.
+- Ver 1.01 Added standard input and output support; changed field numbering to start at 1.
+- Ver 1.02 Added support for double quotation marks.
+- Ver 1.03 Added support for Level 2 kanji characters.
+- Ver 1.04 Fixed a bug that removed half-width spaces.
+- Ver 1.05 Changed the conversion engine so fields can be processed regardless of their length.

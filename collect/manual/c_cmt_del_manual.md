@@ -11,22 +11,20 @@ This is a console program.
 ### Syntax
 
 ```text
-c_cmt_del Input file nameOutput file name [-r 指定文字] [-buff buffer_size]
+c_cmt_del input_file output_file [-r string] [-buff buffer_size]
 ```
 
-Specify the full path to the file.
+Specify the full paths to the input and output files.
 
 ### Options
 
-- `-r`：Preserves comments that contain the specified string.
-- `-buff`: Specifies the buffer size for each read/write operation (KB).
-  通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。
-  The default is 10 KB.
+- `-r`: Preserves comments that contain the specified string.
+- `-buff`: Specifies the buffer size used for each read/write operation (KB). This option is usually unnecessary, but a larger value may be useful for large files. The default is 10 KB.
 
 ### Examples
 
 ```text
-c_cmt_del c:\csv\in.cpp c:\csv\out.cpp -r \
+c_cmt_del c:\csv\in.cpp c:\csv\out.cpp -r \\
 ```
 
 ```text
@@ -35,27 +33,27 @@ type c:\csv\in.cpp | c_cmt_del - - > c:\csv\out.cpp
 
 The `-r` option specifies a string that protects matching comments from deletion.
 
-```text
--r \
-```
-
-When specified this way,
+For example, specifying:
 
 ```text
-//\ ～
+-r \\
 ```
 
-や
+preserves comments such as:
 
 ```text
-/*\ ～ */
+//\ ...
 ```
 
-comments are not deleted.
+and
+
+```text
+/*\ ... */
+```
 
 ## 3. Version History
 
-- **Ver 0.90**　初公開！
-- **Ver 0.91**　指定文字列を含むコメントを削除しない指定を追加。
-- **Ver 0.92**　高速化しました。
-- **Ver 1.00**　4Gバイトを超えるファイルも扱えるようにしました。いろいろとバグフィックス。
+- **Ver 0.90** Initial release.
+- **Ver 0.91** Added an option to preserve comments containing a specified string.
+- **Ver 0.92** Improved performance.
+- **Ver 1.00** Added support for files larger than 4 GB and fixed various bugs.

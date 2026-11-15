@@ -11,22 +11,22 @@ This is a console program.
 ### Syntax
 
 ```text
-csvhtml CSV file name HTML file name
+csvhtml csv_file html_file
 ```
 
-### Examples
+### Example
 
 ```text
 csvhtml c:\csv\in.csv c:\csv\out.html
 ```
 
-## 3. 変換内容
+## 3. Conversion Details
 
-変換内容を以下に示します。
+The following examples show how the conversion works.
 
 ### Example 1
 
-**変換前**
+**Before**
 
 ```text
 #cmd,<!--AAAAA
@@ -36,7 +36,7 @@ csvhtml c:\csv\in.csv c:\csv\out.html
 #cmd,//-->
 ```
 
-**Converted to**
+**After**
 
 ```html
 <!--AAAAA
@@ -48,14 +48,14 @@ cmd2
 
 ### Example 2
 
-**変換前**
+**Before**
 
 ```text
 #tag,HTML
 #tag,HEAD
 ```
 
-**Converted to**
+**After**
 
 ```html
 <HTML><HEAD>
@@ -63,14 +63,14 @@ cmd2
 
 ### Example 3
 
-**変換前**
+**Before**
 
 ```text
 #tag,META,name,"GENERATOR"
 #tag,META,content,"xxx WebSphere XXXXpage Builder V6.0.0 for Windows"
 ```
 
-**Converted to**
+**After**
 
 ```html
 <META name="GENERATOR" content="xxx WebSphere XXXXpage Builder V6.0.0 for Windows">
@@ -78,7 +78,7 @@ cmd2
 
 ### Example 4
 
-**変換前**
+**Before**
 
 ```text
 #tag,!DOCTYPE,HTML
@@ -86,7 +86,7 @@ cmd2
 #tag,!DOCTYPE,"-//W3C//DTD HTML 4.01 Transitional//EN"
 ```
 
-**Converted to**
+**After**
 
 ```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -94,7 +94,7 @@ cmd2
 
 ### Example 5
 
-**変換前**
+**Before**
 
 ```text
 #tag,TD,width,"645"
@@ -102,7 +102,7 @@ cmd2
 #tag,FONT,face,"MS Gothic"
 #wr,CSV
 #tag,/FONT
-#wr,File-to-Verilog-HDL (RTL) Conversion Program
+#wr,-to-Verilog-HDL (RTL) Conversion Program
 #tag,FONT,face,"MS Gothic"
 #wr,Ver1.00
 #tag,/FONT
@@ -113,15 +113,15 @@ cmd2
 #tag,/TD
 ```
 
-**Converted to**
+**After**
 
 ```html
-<TD width="645"><B><FONT face="ＭＳ ゴシック">CSV</FONT>ファイル→Verilog-HDL（ＲＴＬ） 変換Program <FONT face="ＭＳ ゴシック">Ver1.00</FONT> <A href="csvvrtl100.lzh">csvvrtｌ100.LZH (148KB)</A></B></TD>
+<TD width="645"><B><FONT face="MS Gothic">CSV</FONT>-to-Verilog-HDL (RTL) Conversion Program <FONT face="MS Gothic">Ver1.00</FONT> <A href="csvvrtl100.lzh">csvvrtｌ100.LZH (148KB)</A></B></TD>
 ```
 
 ### Example 6
 
-**変換前**
+**Before**
 
 ```text
 #tag,BR
@@ -129,7 +129,7 @@ cmd2
 #tag,BR
 ```
 
-**Converted to**
+**After**
 
 ```html
 <BR><BR>
@@ -137,7 +137,7 @@ cmd2
 
 ### Example 7
 
-**変換前**
+**Before**
 
 ```text
 #rc_mode
@@ -145,29 +145,29 @@ cmd2
 #tag,!doctype,public
 #tag,!doctype,"-//w3c//dtd html 4.0 transitional//EN"
 #rcode
-#tag,html,lang,"ja"
+#tag,html,lang,"en"
 #rcode
 #tag,head
 #rcode
 ```
 
-**Converted to**
+**After**
 
 ```html
 <!doctype html public "-//w3c//dtd html 4.0 transitional//EN">
-<html lang="ja">
+<html lang="en">
 <head>
 ```
 
-`#rc_mode` は、`#rcode` が改行であることを示します。  
-`#rc_mode` 以降は、`#rcode` 以外では改行しません。
+`#rc_mode` indicates that `#rcode` represents a line break.
+After `#rc_mode` is specified, line breaks are inserted only at `#rcode` directives.
 
 ## 4. Version History
 
-- **Ver 1.00**　初公開！
-- **Ver 1.00a**　仕様ミスを修正。
-- **Ver 1.00b**　バグフィックス。
-- **マニュアル修正**　マニュアルを修正しました。Programの変更はありません。
-- **Ver 1.01**　第2水準の漢字に対応。
-- **Ver 1.02**　半角スペースが文字の両脇にあっても削除しないようにしました。
-- **Ver 1.03**　`#rc_mode`、`#rcode` を追加。
+- **Ver 1.00** Initial release.
+- **Ver 1.00a** Fixed a specification error.
+- **Ver 1.00b** Bug fixes.
+- **Manual update** Updated the manual; no program changes.
+- **Ver 1.01** Added support for Level 2 kanji characters.
+- **Ver 1.02** Prevented spaces surrounding text from being removed.
+- **Ver 1.03** Added the `#rc_mode` and `#rcode` directives.

@@ -2,7 +2,7 @@
 
 ## 1. About the Program
 
-Creates a JPEG image from a CSV file containing YCbCr or RGB components.
+This program creates a JPEG image from a CSV file containing YCbCr or RGB component data.
 
 ## 2. Usage
 
@@ -11,7 +11,7 @@ This is a console program.
 ### Syntax
 
 ```text
-csvjpeg CSV file JPEGファイル [bmp]
+csvjpeg csv_file jpeg_file [bmp]
 ```
 
 ### Examples
@@ -45,15 +45,14 @@ csvjpeg c:\csv\pict.csv c:\csv\pict.bmp bmp
 
 ### Specifying Numeric Values
 
-データおよび座標は、先頭に `'h` または `0x` を付けると16進数になります。
+Prefix data values and coordinates with `'h` or `0x` to specify hexadecimal values.
 
-If no prefix is used, the value is interpreted as decimal.
+If no prefix is used, values are interpreted as decimal.
 
 ## 4. Version History
 
-- **Ver 1.00**　初公開！
-- **Ver 1.00**　マニュアルを修正しました。Programの変更はありません。
-- **Ver 1.01**　画素データが1桁だとエラーになる不具合を修正。  
-  また、`0x` による16進数指定と、10進数指定に対応。
-- **Ver 1.02**　BMPファイルを出力できるようにしました。
-- **Ver 1.03**　CSV file読込みライブラリの変更に伴うProgramの変更。機能変更はありません。
+- **Ver 1.00** Initial release.
+- **Ver 1.00** Updated the manual; no program changes.
+- **Ver 1.01** Fixed a bug that caused an error when pixel data had only one digit. Added support for hexadecimal values prefixed with `0x` and for decimal values.
+- **Ver 1.02** Added the ability to output BMP files.
+- **Ver 1.03** Updated the program to use a changed CSV reading library; no functional changes.
