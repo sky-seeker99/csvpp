@@ -1,38 +1,38 @@
-# CSVファイル→バイナリファイル変換プログラム
+# CSV-to-Binary Conversion Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-本プログラムは、CSVファイルに記述された内容に従ってバイナリファイルを作成します。
+This program CSV fileに記述された内容に従ってバイナリファイルを作成します。
 
-また、バイナリファイルにパッチを適用することもできます。
+It can also apply patches to binary files.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-csvbin CSVファイル バイナリファイル [-buff buff_size] [-tag tag_name]
+csvbin CSV file バイナリファイル [-buff buff_size] [-tag tag_name]
 ```
 
-### オプション
+### Options
 
-- `-buff`：1回の読み書きに使用するバッファサイズを指定します（単位：KByte）。通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。指定しない場合は10KByteとなります。
+- `-buff`: Specifies the buffer size for each read/write operation (KB). Usually not required, but a larger value may help with large files.The default is 10 KB.
 - `-tag`：デフォルトでは `#chg` を使用します。`tag_name` を指定すると、`#chg` の代わりに指定したキーを使用します。
 
 ※ 数値には16進数を使用できます。先頭に `0x` を付けます。  
 例：`0x1000`、`0xa0df`
 
-### 使用例
+### Examples
 
 ```text
 csvbin c:\csv\pict.csv c:\csv\pict.jpg
 ```
 
-## 3. CSVファイル
+## 3. CSV File Format
 
-### 例
+### Example
 
 ```text
 #chg,'h00000000,'hFF,'hD8,'hFF,'hE0
@@ -54,17 +54,17 @@ csvbin c:\csv\pict.csv c:\csv\pict.jpg
 
 ### `#chg` の変更
 
-`#chg` を `#key` に変更する場合は、以下のように `-tag` オプションを指定します。
+`#chg` を `#key` に変更する場合は、以下のように `-tag` Optionを指定します。
 
 ```text
 csvbin c:\csv\pict.csv c:\csv\pict.jpg -tag #key
 ```
 
-## 4. 履歴
+## 4. Version History
 
 - **Ver 1.00**　初公開！
-- **Ver 1.00**　マニュアルを修正しました。プログラムの変更はありません。
-- **Ver 1.01**　CSVファイル読込みライブラリの変更に伴うプログラムの変更。機能変更はありません。
+- **Ver 1.00**　マニュアルを修正しました。Programの変更はありません。
+- **Ver 1.01**　CSV file読込みライブラリの変更に伴うProgramの変更。機能変更はありません。
 - **Ver 1.02**　`-buff` を追加。4GByteを超えるファイルに対応。
-- **Ver 1.03**　CSVファイルのセル内に改行があっても正しく読み込めるようにしました。
+- **Ver 1.03**　CSV fileのセル内に改行があっても正しく読み込めるようにしました。
 - **Ver 1.04**　`-tag` を追加。

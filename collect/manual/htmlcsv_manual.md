@@ -1,32 +1,32 @@
-# HTMLファイル→CSVファイル変換プログラム
+# HTML-to-CSV Conversion Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-HTMLファイルをCSVファイルに変換します。
+HTMLファイルをCSV fileに変換します。
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-htmlcsv [-r] HTMLファイル名 CSVファイル名
+htmlcsv [-r] HTML file name CSV file name
 ```
 
-### 使用例
+### Examples
 
 ```text
 htmlcsv c:\csv\in.html c:\csv\out.csv
 htmlcsv -r c:\csv\in.html c:\csv\out.csv
 ```
 
-`-r` オプションを指定した場合は、改行まで変換します。  
-（タグ内の改行は無視します。）
+`-r` Optionを指定した場合は、改行まで変換します。  
+（Line breaks inside tags are ignored.します。）
 
 ## 3. 変換内容
 
-### 例1
+### Example 1
 
 **変換前**
 
@@ -38,7 +38,7 @@ cmd2
 //-->
 ```
 
-**変換後**
+**Converted to**
 
 ```text
 #cmd,<!--AAAAA
@@ -48,7 +48,7 @@ cmd2
 #cmd,//-->
 ```
 
-### 例2
+### Example 2
 
 **変換前**
 
@@ -56,14 +56,14 @@ cmd2
 <HTML><HEAD>
 ```
 
-**変換後**
+**Converted to**
 
 ```text
 #tag,HTML
 #tag,HEAD
 ```
 
-### 例3
+### Example 3
 
 **変換前**
 
@@ -71,14 +71,14 @@ cmd2
 <META name="GENERATOR" content="xxx WebSphere XXXXpage Builder V6.0.0 for Windows">
 ```
 
-**変換後**
+**Converted to**
 
 ```text
 #tag,META,name,"GENERATOR"
 #tag,META,content,"xxx WebSphere XXXXpage Builder V6.0.0 for Windows"
 ```
 
-### 例4
+### Example 4
 
 **変換前**
 
@@ -86,7 +86,7 @@ cmd2
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 ```
 
-**変換後**
+**Converted to**
 
 ```text
 #tag,!DOCTYPE,HTML
@@ -94,24 +94,24 @@ cmd2
 #tag,!DOCTYPE,"-//W3C//DTD HTML 4.01 Transitional//EN"
 ```
 
-### 例5
+### Example 5
 
 **変換前**
 
 ```html
-<TD width="645"><B><FONT face="ＭＳ ゴシック">CSV</FONT>ファイル→Verilog-HDL（ＲＴＬ） 変換プログラム <FONT face="ＭＳ ゴシック">Ver1.00</FONT> <A href="csvvrtl100.lzh">csvvrtｌ100.LZH (148KB)</A></B></TD>
+<TD width="645"><B><FONT face="ＭＳ ゴシック">CSV</FONT>ファイル→Verilog-HDL（ＲＴＬ） 変換Program <FONT face="ＭＳ ゴシック">Ver1.00</FONT> <A href="csvvrtl100.lzh">csvvrtｌ100.LZH (148KB)</A></B></TD>
 ```
 
-**変換後**
+**Converted to**
 
 ```text
 #tag,TD,width,"645"
 #tag,B
-#tag,FONT,face,"ＭＳ ゴシック"
+#tag,FONT,face,"MS Gothic"
 #wr,CSV
 #tag,/FONT
-#wr,ファイル→Verilog-HDL（ＲＴＬ） 変換プログラム
-#tag,FONT,face,"ＭＳ ゴシック"
+#wr,File-to-Verilog-HDL (RTL) Conversion Program
+#tag,FONT,face,"MS Gothic"
 #wr,Ver1.00
 #tag,/FONT
 #tag,A,href,"csvvrtl100.lzh"
@@ -121,7 +121,7 @@ cmd2
 #tag,/TD
 ```
 
-### 例6
+### Example 6
 
 **変換前**
 
@@ -129,7 +129,7 @@ cmd2
 <BR><BR>
 ```
 
-**変換後**
+**Converted to**
 
 ```text
 #tag,BR
@@ -137,9 +137,9 @@ cmd2
 #tag,BR
 ```
 
-### 例7
+### Example 7
 
-`-r` オプションを付けて実行した場合。
+`-r` Optionを付けて実行した場合。
 
 **変換前**
 
@@ -149,7 +149,7 @@ cmd2
 <head>
 ```
 
-**変換後**
+**Converted to**
 
 ```text
 #rc_mode
@@ -166,10 +166,10 @@ cmd2
 `#rc_mode` は、`#rcode` があることを示します。  
 `#rcode` は、テキストファイル上での改行を示します。
 
-## 4. 履歴
+## 4. Version History
 
 - **Ver 1.00**　初公開！
 - **Ver 1.00a**　仕様ミスを修正。
 - **Ver 1.01**　第2水準の漢字に対応。
 - **Ver 1.02**　いろいろなバグをフィックス。
-- **Ver 1.03**　リターンコードまで詳細に調べるモードを追加。
+- **Ver 1.03**　リターンコードまで詳細に調べるModeを追加。

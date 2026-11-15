@@ -1,45 +1,45 @@
-# Excel用CSVファイル改行変換プログラム2
+# CSV Line Break Conversion for Excel 2
 
 （`0x0D` → `0x0D 0x0A`）
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-本プログラムは、CSVMAKE用のフィルタとして作られています。
+This program was designed as a filter for CSVMAKE.
 
-単体でも動作します。
+It can also be run as a standalone program.
 
-変換内容は、`retconv` の逆変換を行います。
+Performs the reverse conversion of `retconv`.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-retconv2 変換前CSVファイル 変換後CSVファイル [-buff buffer_size]
+retconv2 変換前CSV file Converted toCSV file [-buff buffer_size]
 ```
 
-### オプション
+### Options
 
-- `-buff`：1回の読み書きに使用するバッファサイズを指定します（単位：KByte）。通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。指定しない場合は10KByteとなります。
+- `-buff`: Specifies the buffer size for each read/write operation (KB). Usually not required, but a larger value may help with large files.The default is 10 KB.
 
-### 使用例
+### Examples
 
 ```text
 retconv2 c:\csv\bbb.csv c:\csv\ccc.csv
 ```
 
-### CSVMAKEでフィルタプログラムとして使用する場合
+### CSVMAKEでフィルタProgramとして使用する場合
 
 ```text
 csvmake d:\aaa.xls c:\csv retconv2 csv
 ```
 
-## 3. 履歴
+## 3. Version History
 
 - **Ver 1.00**　初公開！
-- **Ver 1.00**　マニュアルを修正しました。プログラムの変更はありません。
+- **Ver 1.00**　マニュアルを修正しました。Programの変更はありません。
 - **Ver 1.01**　パラメータ数が2つ以上の場合でも、エラーにせず実行するようにしました。
 - **Ver 1.02**　第2水準の漢字に対応。
-- **Ver 1.05**　4Gバイトを超えるファイルも扱えるようにしました。`-buff` オプションを追加。
+- **Ver 1.05**　4Gバイトを超えるファイルも扱えるようにしました。`-buff` Optionを追加。

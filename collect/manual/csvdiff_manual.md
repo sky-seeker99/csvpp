@@ -1,12 +1,12 @@
-# CSVファイルDIFFプログラム
+# CSV Diff Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-特定のデータ列のみを対象として、セル単位でデータのミスマッチチェックを行うプログラムです。
+Compares selected data columns cell by cell and reports mismatches.
 
 ### チェック対象
 
-例えば、以下のようなCSVファイルがあるとします。
+例えば、以下のようなCSV fileがあるとします。
 
 ```text
 #key,900,200,300,300,44444444444444444
@@ -77,7 +77,7 @@
 #key,200,304d
 ```
 
-この2つのファイルを本プログラムでDIFFすると、以下のように出力されます。
+この2つのファイルをThis programでDIFFすると、以下のように出力されます。
 
 ```text
 1   |#key,900,200,300,300,44444444 |x|1   |#key,900,200                  
@@ -108,38 +108,38 @@
     |                              | |20  |                              
 ```
 
-`#key` の行だけをチェックし、データが正しければ `o`、違っていれば `x` と表示されます。チェック対象外の行はブランクになります。
+Only rows beginning with `#key` are checked. Matching data is marked `o`; mismatches are marked `x`.Rows outside the comparison scope are left blank.
 
-`[SKIP]` がある場合はチェックをスキップし、`-` と表示されます。
+If `[SKIP]` is present, the row is skipped and displayed as `-`.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-実行形式は以下のとおりです。
+The syntax is as follows.
 
 ```text
-csvdiff チェック文字列 ファイル1 ファイル2 [-m ミスマッチ最大数] [-w 横の表示文字数] [-d] [-dbl_no_cut] [-integer]
+csvdiff Key string File 1 File 2 [-m maximum_mismatches] [-w display_width] [-d] [-dbl_no_cut] [-integer]
 ```
 
-### 引数・オプション
+### 引数・Option
 
-- **チェック文字列**  
-  「1. ソフトの紹介」で説明した `#key` に相当する文字列を指定します。
-- **ファイル1、ファイル2**  
-  チェック対象となる2つのファイルを指定します。
-- **`-m` オプション**  
-  指定したミスマッチ数に達するとチェックを終了します。`0` を指定するとすべてチェックします。デフォルト値は `20` です。
-- **`-w` オプション**  
-  横方向の表示文字数を指定します。デフォルト値は `30` です。
-- **`-d` オプション**  
-  チェックの詳細を表示します。
-- **`-dbl_no_cut` オプション**  
-  ダブルクォーテーションを削除しません。
-- **`-integer` オプション**  
-  データを数値としてチェックします。
+- **Key string**  
+  Specify the string corresponding to `#key`, as described in “1. About the Program.”
+- **File 1、File 2**  
+  Specify the two files to compare.
+- **`-m` Option**  
+  Stops the comparison when the specified mismatch count is reached.Specify `0` to check all data. The default is `20`.
+- **`-w` Option**  
+  横方向の表示文字数を指定します。Default valueは `30` です。
+- **`-d` Option**  
+  Displays comparison details.
+- **`-dbl_no_cut` Option**  
+  Does not remove double quotation marks.
+- **`-integer` Option**  
+  Compares data as numbers.
 
-`-integer` オプションを指定すると、以下のように前ゼロがある場合でも、`0x` を付けた16進数を含めて数値としてチェックできます。
+`-integer` Optionを指定すると、以下のように前ゼロがある場合でも、`0x` を付けた16進数を含めて数値としてチェックできます。
 
 ```text
 19    |#key,0xc8,-500                |o|20    |#key,200,-000500              
@@ -160,9 +160,9 @@ csvdiff -dbl_no_cut -w 80 -m 0 -d #key aaa.csv bbb.csv
 csvdiff -integer #key aaa.csv bbb.csv
 ```
 
-## 3. 履歴
+## 3. Version History
 
 - Ver 1.00　初公開
-- Ver 1.01　`-dbl_no_cut` オプションを追加。4GBを超えるファイルも扱えるように変更
+- Ver 1.01　`-dbl_no_cut` Optionを追加。4GBを超えるファイルも扱えるように変更
 - Ver 1.02　データに `[SKIP]` を記述するとチェックしない機能を追加
-- Ver 1.03　`-integer` オプションを追加
+- Ver 1.03　`-integer` Optionを追加

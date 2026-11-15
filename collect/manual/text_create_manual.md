@@ -1,34 +1,34 @@
-# テキストファイル生成プログラム
+# Text File GenerationProgram
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-本プログラムは、テキストファイルをさまざまなパターンで生成するプログラムです。
+This program generates text files using a variety of patterns.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-実行形式は以下のとおりです。
+The syntax is as follows.
 
 ```text
 text_create ルールファイル [-buff buffer_size]
 ```
 
-ルールファイル名はフルパスで指定してください。
+ルールSpecify the full path to the file.
 
-ルールファイルはCSV形式のファイルです。
+The rule file is in CSV format.
 
-`-buff` は、1回の読み書きに使用するバッファサイズ（単位：KByte）を指定します。通常は指定する必要はありませんが、ファイルサイズが大きい場合などには、大きな値を指定すると有効です。指定しない場合は10 KByteです。
+`-buff` は、1回の読み書きに使用するバッファサイズ（単位：KByte）を指定します。通常は指定する必要はありませんが、ファイルサイズが大きい場合などには、大きな値を指定すると有効です。The default is 10 KB.
 
-### 例
+### Example
 
 ```text
 text_create rule.csv
 ```
 
-## 3. 使用例
+## 3. Examples
 
-以下にCSVファイルの例を示します。
+The following is an example CSV file.
 
 ```csv
 #file,ptn3.txt
@@ -78,11 +78,11 @@ text_create rule.csv
 #key,cc
 ```
 
-### キーとデータの割り振り
+### Assigning Keys and Data
 
 `#write` または `#writeln` の次のデータがキーとなり、その後のデータがそのキーに対応するデータになります。
 
-上記の例では、キーは `aa`、`bb`、`cc` となり、それぞれのキーに対するデータは以下のようになります。
+In the example above,キーは `aa`、`bb`、`cc` となり、それぞれのキーに対するデータはThe result is as follows.
 
 #### `[aa]`
 
@@ -118,24 +118,24 @@ ccCCCCCCCCCCCCCCCCCCCCC8
 ccCCCCCCCCCCCCCCCCCCCCC9
 ```
 
-これらのデータが、それぞれのファイルに割り振られて出力されます。
+The data is distributed to and written to the corresponding files.
 
-### ファイルへの出力
+### Writing to Files
 
-`ptn1.txt` は以下のキーを対象とします。
+`ptn1.txt` はThe following keys are included.
 
 ```text
 [aa]
 ```
 
-`ptn2.txt` は以下のキーを対象とします。
+`ptn2.txt` はThe following keys are included.
 
 ```text
 [bb]
 [cc]
 ```
 
-`ptn3.txt` は以下のキーを対象とします。
+`ptn3.txt` はThe following keys are included.
 
 ```text
 [cc]
@@ -143,7 +143,7 @@ ccCCCCCCCCCCCCCCCCCCCCC9
 
 `[dd]` は存在しないキーのため、出力されません。
 
-その後、以下のキーが対象となります。
+その後、The following keys are included.
 
 ```text
 [aa]
@@ -151,7 +151,7 @@ ccCCCCCCCCCCCCCCCCCCCCC9
 [cc]
 ```
 
-### 出力結果
+### Output
 
 #### `ptn1.txt`
 
@@ -221,10 +221,10 @@ ccCCCCCCCCCCCCCCCCCCCCC9
 **形式**
 
 ```text
-#file,ファイル名
+#file,File name
 ```
 
-**使用例**
+**Example**
 
 ```text
 #file,c:\aaa.txt
@@ -238,7 +238,7 @@ ccCCCCCCCCCCCCCCCCCCCCC9
 #key,パターン名
 ```
 
-**使用例**
+**Example**
 
 ```text
 #key,aaa
@@ -249,11 +249,11 @@ ccCCCCCCCCCCCCCCCCCCCCC9
 **形式**
 
 ```text
-#write,パターン名,文字列データ     -> 改行なし
-#writeln,パターン名,文字列データ   -> 改行あり
+#write,パターン名,String data    -> 改行なし
+#writeln,パターン名,String data  -> 改行あり
 ```
 
-**使用例**
+**Example**
 
 ```text
 #write,aaa,ABCDEFGHIJKLMN
@@ -267,20 +267,20 @@ ccCCCCCCCCCCCCCCCCCCCCC9
 **形式**
 
 ```text
-#sp,パターン名,左スペース数
-#sp++,パターン名,現在の左スペース数から加算する数
-#sp--,パターン名,現在の左スペース数から減算する数
+#sp,パターン名,Number of leading spaces
+#sp++,パターン名,Amount to add to the current number of leading spaces
+#sp--,パターン名,Amount to subtract from the current number of leading spaces
 #sp_push,パターン名,保存キー
 #sp_pop,パターン名,保存キー
 ```
 
-- `#sp`：左スペース数を指定した値に設定します。
-- `#sp++`：現在の左スペース数に指定した値を加算します。
-- `#sp--`：現在の左スペース数から指定した値を減算します。
-- `#sp_push`：現在の左スペース数を指定した保存キーに保存します。
-- `#sp_pop`：保存キーに保存されている左スペース数を、現在の左スペース数に設定します。
+- `#sp`：Number of leading spacesを指定した値に設定します。
+- `#sp++`：現在のNumber of leading spacesに指定した値を加算します。
+- `#sp--`：現在のNumber of leading spacesから指定した値を減算します。
+- `#sp_push`：現在のNumber of leading spacesを指定した保存キーに保存します。
+- `#sp_pop`：保存キーに保存されているNumber of leading spacesを、現在のNumber of leading spacesに設定します。
 
-**使用例**
+**Example**
 
 ```text
 #writeln,aa,if (a==0){
@@ -290,7 +290,7 @@ ccCCCCCCCCCCCCCCCCCCCCC9
 #writeln,aa,}
 ```
 
-出力結果：
+Output：
 
 ```text
 if (a==0){
@@ -308,7 +308,7 @@ if (a==0){
 #writeln,aa,}
 ```
 
-出力結果：
+Output：
 
 ```text
 if (a==0){
@@ -321,10 +321,10 @@ if (a==0){
 **形式**
 
 ```text
-#wr_file,パターン名,読み込むファイル名
+#wr_file,パターン名,File to read
 ```
 
-**使用例**
+**Example**
 
 ```text
 #wr_file,aaa,c:\aaa.dat
@@ -341,7 +341,7 @@ if (a==0){
 
 上記のように記述すると、複数のファイルの内容がマージされて出力されます。
 
-## 5. 履歴
+## 5. Version History
 
 - Ver 1.00　リリース
 - Ver 1.01　`#wr` を `#write`、`#writeln` に変更

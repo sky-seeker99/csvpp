@@ -1,30 +1,30 @@
-# テキストファイル加工プログラム
+# Text File Processing Program
 
-テキストファイル加工プログラム
+Text File Processing Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-本プログラムは、テキストファイルをユーザーが定義したルールに従って加工するプログラムです。
-ルールにはステートマシンを使用しているため、複雑な置換、挿入、削除などの処理が可能です。
-また、ファイル名にはワイルドカードを使用できます。
+This program processes text files according to user-defined rules.
+Because the rules use a state machine, they can perform complex replacements, insertions, deletions, and other operations.
+Wildcards can also be used in file names.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
-実行形式は以下のとおりです。
-text_ctl ルールファイル 変換ファイル名 [`-r`] [`-l` ログファイル] [`-buff` buffer_size]
+This is a console program.
+The syntax is as follows.
+text_ctl ルールファイル Files to convert [`-r`] [`-l` ログファイル] [`-buff` buffer_size]
 
-変換ファイル名はフルパスで指定してください。
-ルールファイルはCSV形式のファイルです。
-`-r` を指定すると、ファイルの書き換えは行わず、検索のみを実行します。
-`-buff`は一回の読み書きに要する大きさ(単位はKByte)を指定します。通常は指定しませんが、ファイルサイズが大きい場合などには大きな値を指定すると有効です。指定しない場合は10 KByteです。
+Specify the full path to the file to convert.
+The rule file is in CSV format.
+Specify `-r` to search without modifying the file.
+`-buff`は一回の読み書きに要する大きさ(単位はKByte)を指定します。通常は指定しませんが、ファイルサイズが大きい場合などには大きな値を指定すると有効です。The default is 10 KB.
 
 例は以下の通りです。
 text_ctl rule.csv c:\csv\*.cpp
 text_ctl rule.csv c:\csv\*.cpp `-r`
 text_ctl rule.csv c:\csv\*.cpp `-r` `-l` log.txt
 
-## 3. 使用例
+## 3. Examples
 
 例えば、aaa.v というファイルの module ～ endmodule 間の内容を加工する場合を想定します。
 
@@ -42,7 +42,7 @@ module zzz
 ～
 endmodule
 
-この時、以下のようにルールファイルを作成します。
+At this point,Create a rule file as follows.
 
 `#st`,IDLE
 `#if`,module
@@ -59,10 +59,10 @@ endmodule
 `#endif`
 
 `#st`はステートマシンの状態を表します。
-上記の例には、IDLE と SET_A の2つの状態があります。
-IDLE 状態では、テキストの1行に module があり、endmodule が存在しない場合に `#printf` と `#go` を実行します。
+The example above has two states: IDLE and SET_A.
+IDLE stateでは、テキストの1行に module があり、endmodule が存在しない場合に `#printf` と `#go` を実行します。
 `#printf` はその行を表示します。`#go` はステートを SET_A に移します。
-SET_A 状態では、endmodule が存在した場合に IDLE 状態へ戻ります。
+SET_A stateでは、endmodule が存在した場合に IDLE stateへ戻ります。
 
 上記の記述例から具体的に加工の方法を加えますと、
 
@@ -98,26 +98,26 @@ SET_A 状態では、endmodule が存在した場合に IDLE 状態へ戻りま�
 
 上記のように記述します。
 
-SET_A 状態で always がある場合、// sync_reset "reset"
+SET_A stateで always がある場合、// sync_reset "reset"
 を行として追加します。
 case の場合、その行の末尾に // paralellcase
-を追加します。`#@@#` は読み込んだ対象の文字列に置き換えられます。
+を追加します。`#@@#` is replaced with the matched text.
 # register define ############################
 を見つけた時はその行を削除します。
 ~reset_n を見つけた場合、~reset_n を ~rst_n に置換します。
 
 ## 4. コマンドの詳細
 
-### 1.ステートマシンの状態名定義
+### 1.ステートマシンのState name定義
 
-ステートマシンの状態名を定義します。
+Defines state machine state names.
 最初に定義された状態から実行されます。
 
 **形式**
 
-`#st`,状態名
+`#st`,State name
 
-**使用例**
+**Example**
 
 `#st`,IDLE
 
@@ -127,16 +127,16 @@ case の場合、その行の末尾に // paralellcase
 `#noif` は、指定した文字列が存在しないことを比較します。
 `#else` は、if 文に対する逆の条件になります。
 `#endif` は、`#if` / `#noif` に対する終端です。
-オプションに `aA_same` を指定すると、アルファベットの大文字と小文字を同一として検索します。
+Optionに `aA_same` を指定すると、アルファベットの大文字と小文字を同一として検索します。
 
 **形式**
 
-`#if`,比較文字列,[`aA_same`]
-`#noif`,比較文字列,[`aA_same`]
+`#if`,Comparison string,[`aA_same`]
+`#noif`,Comparison string,[`aA_same`]
 `#else`
 `#endif`
 
-**使用例**
+**Example**
 
 `#if`,module
   `#printf`,msg1
@@ -161,7 +161,7 @@ case の場合、その行の末尾に // paralellcase
 
 //,～,
 
-**使用例**
+**Example**
 
 //,`#if`,module
 
@@ -173,11 +173,11 @@ case の場合、その行の末尾に // paralellcase
 
 **形式**
 
-`#go`,指定状態
-`#act`,指定状態
-`#st`op,指定状態
+`#go`,Target state
+`#act`,Target state
+`#st`op,Target state
 
-**使用例**
+**Example**
 
 `#st`,IDLE
 `#if`,module
@@ -210,10 +210,10 @@ case の場合、その行の末尾に // paralellcase
 
 **形式**
 
-`#ins`,挿入文字列
-`#ins`_after,挿入文字列
+`#ins`,Text to insert
+`#ins`_after,Text to insert
 
-**使用例**
+**Example**
 
 `#ins`,aaaaaaa
 `#ins`_after,aaaaaaa
@@ -226,23 +226,23 @@ case の場合、その行の末尾に // paralellcase
 
 `#del`
 
-**使用例**
+**Example**
 
 `#del`
 
 ### 6.行加工
 
-`#chg` 命令は、行を加工します。`#@@#` は、読み込んだテキストを置き換える文字列です。
+`#chg` 命令は、行を加工します。`#@@#` is replaced with the text that was read.
 
 **形式**
 
-`#chg`,加工指定
+`#chg`,Processing instruction
 
-**使用例**
+**Example**
 
 `#chg`,`#@@#` // aaa
 
-例えば、読み込んだテキストが case(xxx) の場合、case(xxx) // aaa のように変換されます。
+例えば、For example, if the input text is `case(xxx)`, it is converted to `case(xxx) // aaa`.
 
 ### 7.文字列置換
 
@@ -250,23 +250,23 @@ case の場合、その行の末尾に // paralellcase
 
 **形式**
 
-`#replace`,置換前文字列,置換後文字列,[`aA_same`]
-オプションに `aA_same` を指定すると、アルファベットの大文字と小文字を同一として置換します。
+`#replace`,Text to find,Replacement text,[`aA_same`]
+Optionに `aA_same` を指定すると、アルファベットの大文字と小文字を同一として置換します。
 
-**使用例**
+**Example**
 
 `#replace`,reset_n,rst_n
 `#replace`,reset_n,rst_n,`aA_same`
 
 ### 8.デバッグ
 
-`#debug` は、CSVファイルを読み込んだ状況を表示します。
+`#debug` は、CSV fileを読み込んだ状況を表示します。
 
 **形式**
 
 `#debug`
 
-**使用例**
+**Example**
 
 `#debug`
 
@@ -276,9 +276,9 @@ case の場合、その行の末尾に // paralellcase
 
 **形式**
 
-`#st`_init,状態1,状態2～,状態n
+`#st`_init,State 1,State 2–,State n
 
-**使用例**
+**Example**
 
 `#st`_init,idle,idle_2
 
@@ -288,9 +288,9 @@ case の場合、その行の末尾に // paralellcase
 
 **形式**
 
-`#log`,前の行数,後の行数
+`#log`,Number of preceding lines,Number of following lines
 
-**使用例**
+**Example**
 
 `#log`,3,4
 
@@ -302,7 +302,7 @@ case の場合、その行の末尾に // paralellcase
 
 `#line_chg`,行数,内容
 
-**使用例**
+**Example**
 
 `#line_chg`,100,aaaaadd
 
@@ -316,7 +316,7 @@ case の場合、その行の末尾に // paralellcase
 
 `#itrace`
 
-**使用例**
+**Example**
 
 `#itrace`
 
@@ -328,7 +328,7 @@ case の場合、その行の末尾に // paralellcase
 
 `#trace`
 
-**使用例**
+**Example**
 
 `#trace`
 
@@ -340,7 +340,7 @@ case の場合、その行の末尾に // paralellcase
 
 `#retdel`
 
-**使用例**
+**Example**
 
 `#retdel`
 
@@ -352,18 +352,18 @@ case の場合、その行の末尾に // paralellcase
 
 **形式**
 
-`#ins`_file,テキストファイル名
-`#ins`_file_after,テキストファイル名
+`#ins`_file,Text file name
+`#ins`_file_after,Text file name
 
-**使用例**
+**Example**
 
 `#ins`_file,ccc.txt
 `#ins`_file_after,ccc.txt
 
-## 5. 履歴
+## 5. Version History
 
 Ver 0.90  仮リリース
-Ver 0.91  `-r` オプション追加
+Ver 0.91  `-r` Option追加
 Ver 0.92  バグフィックス、すべてのステートが終わった時、サーチ＆書き換えを終わらせるようにした。
 　　　　　初期ステート名を複数指定できるようにした。ログをとる機能を追加しました。
 Ver 0.93  バグフィックス
@@ -373,8 +373,8 @@ Ver 0.97  `#ins`_afterを追加
 Ver 0.98  高速化しました。不要なリターンコードを付加していたバグをフィックス。
 Ver 1.00  バックグラウンドジョブで走らせるようにしました。
 Ver 1.01  コマンドがNULLの時、エラーで停止してしまうバグをフィックス
-Ver 1.02  4Gバイト超のファイルも扱えるようにしました。`-buff`オプション追加
-Ver 1.03  CSVファイルのCELL内に改行があっても正しく読めるようにした。
-Ver 1.04  オプションの`aA_same`追加
-Ver 1.04a オプションの`aA_same`のバグフィックス
+Ver 1.02  4Gバイト超のファイルも扱えるようにしました。`-buff`Option追加
+Ver 1.03  CSV fileのCELL内に改行があっても正しく読めるようにした。
+Ver 1.04  Optionの`aA_same`追加
+Ver 1.04a Optionの`aA_same`のバグフィックス
 Ver 1.05  `#ins`_file,`#ins`_file_afterを追加

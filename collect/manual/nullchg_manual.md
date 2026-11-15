@@ -1,28 +1,28 @@
-# NULL削除・置換プログラム
+# NULL Removal and Replacement Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-テキストファイル（特にCSVファイル）に混ざっているNULLを削除したり、半角スペースや指定したユニークコードに変換したりするプログラムです。
+テキストファイル（特にCSV file）に混ざっているNULLを削除したり、半角スペースや指定したユニークコードに変換したりするProgramです。
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-nullchg 入力ファイル 出力ファイル [-chgsp] [-chg ユニークコード] [-buff buffer_size]
+nullchg Input file Output file [-chgsp] [-chg replacement_string] [-buff buffer_size]
 ```
 
-### オプション
+### Options
 
-- `-buff`：1回の読み書きに使用するバッファサイズを指定します（単位：KByte）。通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。指定しない場合は10KByteとなります。
+- `-buff`: Specifies the buffer size for each read/write operation (KB). Usually not required, but a larger value may help with large files.The default is 10 KB.
 - `-chgsp`：NULLを半角スペースに変換します。
 - `-chg`：NULLを指定したユニークコードに変換します。
 
 ※ `-chgsp`、`-chg` のどちらも指定しない場合は、NULLを削除します。
 
-### 使用例
+### Examples
 
 ```text
 nullchg.exe Sheet1.csv Sheet1.csv.del
@@ -30,6 +30,6 @@ nullchg.exe Sheet1.csv Sheet1.csv.sp -chgsp
 nullchg.exe Sheet1.csv Sheet1.csv.uniq -chg [[NULL]]
 ```
 
-## 3. 履歴
+## 3. Version History
 
 - **Ver 1.00**　初公開！

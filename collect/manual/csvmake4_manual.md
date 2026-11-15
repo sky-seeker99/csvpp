@@ -1,24 +1,24 @@
-# CSVファイル→Excelファイル変換プログラム拡張版
+# Extended CSV-to-Excel Conversion Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
 指定したディレクトリ内のすべてのCSV形式のファイルの内容をExcelファイルに追加します。
 
-また、ファイル名がシート名になるため、すでにシートが存在する場合は内容をコピーして、該当するシートに内容だけを貼り付けます。
+また、File nameがシート名になるため、すでにシートが存在する場合は内容をコピーして、該当するシートに内容だけを貼り付けます。
 
-（書式、図形などのデータ以外はそのまま保持されます。）
+（Formatting, shapes, and other non-data elements are preserved.）
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-csvmake4 Excelファイル名 CSVファイルのあるディレクトリ [-nv] [-new] [-proc] [-xml] [-paste] [フィルタプログラム] [拡張子]
+csvmake4 ExcelFile name CSV fileのあるディレクトリ [-nv] [-new] [-proc] [-xml] [-paste] [フィルタProgram] [拡張子]
 ```
 
-### オプション
+### Options
 
 - `-proc`  
   `csvmake4` 実行後、Excelのプロセスが残っていないかチェックし、残っていた場合は削除します。
@@ -27,21 +27,21 @@ csvmake4 Excelファイル名 CSVファイルのあるディレクトリ [-nv] [
   Excelの画面を表示しません。
 
 - `-new`  
-  Excelファイルを新規に作成します。
+  Creates a new Excel workbook.
 
 - `-xml`  
   XMLフォーマットで出力します。Excelファイルの拡張子を `xml` にしてください。
 
 - `-paste`  
-  CSVファイル内の数式文字列を、そのままExcelファイルに貼り付けます。
+  CSV file内の数式文字列を、そのままExcelファイルに貼り付けます。
 
-例えば、次のCSVファイルがある場合、
+例えば、次のCSV fileがある場合、
 
 ```text
 a,"=A1"
 ```
 
-`-paste` オプションを指定しない場合は、
+`-paste` Optionを指定しない場合は、
 
 ```text
 a,a
@@ -49,7 +49,7 @@ a,a
 
 という結果のみExcelファイルにコピーされます。
 
-`-paste` オプションを指定すると、
+`-paste` Optionを指定すると、
 
 ```text
 a,=A1
@@ -57,7 +57,7 @@ a,=A1
 
 となります。
 
-### 使用例
+### Examples
 
 ```text
 csvmake4 d:\aaa.xls c:\csv
@@ -66,16 +66,16 @@ csvmake4 d:\aaa.xls c:\csv -nv
 csvmake4 d:\aaa.xls c:\csv -nv -new
 ```
 
-## 3. フィルタプログラムについて
+## 3. フィルタProgramについて
 
-フィルタプログラムは、CSVファイルへの変換前に実行されるCSVファイル変換プログラムです。
+フィルタProgramは、CSV fileへの変換前に実行されるCSV file変換Programです。
 
-変換されたCSVファイルをExcelファイルに追加します。
+変換されたCSV fileをExcelファイルに追加します。
 
-フィルタプログラム（またはバッチファイル）を自分で作成する場合は、以下の引数を使用してください。
+フィルタProgram（またはバッチファイル）を自分で作成する場合は、Use the following arguments.
 
 1. **第1引数**：変換前ファイル
-2. **第2引数**：変換後CSVファイル
+2. **第2引数**：Converted toCSV file
 
 ## 4. 賢い使用方法
 
@@ -87,15 +87,15 @@ csvmake4 d:\aaa.xls c:\csv -nv -new
 csvmake d:\aaa.xls %1
 ```
 
-このファイルを作成したら、このバッチファイルに対して、複数のCSVファイルがあるディレクトリを選択してドラッグ＆ドロップします。
+このファイルを作成したら、このバッチファイルに対して、複数のCSV fileがあるディレクトリを選択してドラッグ＆ドロップします。
 
-すると、プログラムが起動して、`d:\aaa.xls` にシートを追加または更新します。
+すると、Programが起動して、`d:\aaa.xls` にシートを追加または更新します。
 
-## 5. 履歴
+## 5. Version History
 
 - **Ver 1.00**　初公開！
-- **Ver 1.01**　フィルタプログラムの機能を追加。  
-  マニュアルを修正しました。プログラムの変更はありません。
-- **Ver 1.02**　`-nv`、`-new` オプションを追加。xlsファイルがない場合は新規にファイルを作成します。
-- **Ver 1.03**　フィルタプログラムを使用した際、CSVファイルのあるディレクトリに空白があると正しく動作しなかった不具合を修正。
-- **Ver 1.04**　`-proc`、`-xml`、`-paste` オプションを追加。
+- **Ver 1.01**　フィルタProgramの機能を追加。  
+  マニュアルを修正しました。Programの変更はありません。
+- **Ver 1.02**　`-nv`、`-new` Optionを追加。xlsファイルがない場合は新規にファイルを作成します。
+- **Ver 1.03**　フィルタProgramを使用した際、CSV fileのあるディレクトリに空白があると正しく動作しなかった不具合を修正。
+- **Ver 1.04**　`-proc`、`-xml`、`-paste` Optionを追加。

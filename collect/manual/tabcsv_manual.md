@@ -1,44 +1,44 @@
-# TABファイル→CSVファイル変換プログラム
+# TAB-to-CSV Conversion Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-本プログラムは、CSVMAKE2用のフィルタとして作られています。
+This program was designed as a filter for CSVMAKE2.
 
-単体でも動作します。
+It can also be run as a standalone program.
 
-TABファイルをCSVファイルに変換します。
+Converts TAB files to CSV files.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-tabcsv TABファイル CSVファイル [-buff buffer_size] [-dbl_no_cut]
+tabcsv TAB file CSV file [-buff buffer_size] [-dbl_no_cut]
 ```
 
-### オプション
+### Options
 
-- `-buff`：1回の読み書きに使用するバッファサイズを指定します（単位：KByte）。通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。指定しない場合は10KByteとなります。
+- `-buff`: Specifies the buffer size for each read/write operation (KB). Usually not required, but a larger value may help with large files.The default is 10 KB.
 - `-dbl_no_cut`：不要なダブルクォーテーションを削除しないようにします。
 
-### 使用例
+### Examples
 
 ```text
 tabcsv c:\csv\bbb.txt c:\csv\ccc.csv
 ```
 
-### CSVMAKE2でフィルタプログラムとして使用する場合
+### CSVMAKE2でフィルタProgramとして使用する場合
 
 ```text
 csvmake2 d:\aaa.xls -x tabcsv c:\csv\bbb.txt c:\csv\ccc.txt
 ```
 
-## 3. 履歴
+## 3. Version History
 
 - **Ver 1.00**　初公開！
-- **Ver 1.00**　マニュアルを修正しました。プログラムの変更はありません。
+- **Ver 1.00**　マニュアルを修正しました。Programの変更はありません。
 - **Ver 1.01**　パラメータ数が2つ以上の場合でも、エラーにせず実行するようにしました。
 - **Ver 1.02**　第2水準の漢字に対応。
-- **Ver 1.03**　4Gバイトを超えるファイルも扱えるようにしました。`-buff`、`-dbl_no_cut` オプションを追加。
+- **Ver 1.03**　4Gバイトを超えるファイルも扱えるようにしました。`-buff`、`-dbl_no_cut` Optionを追加。

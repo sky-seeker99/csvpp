@@ -1,26 +1,26 @@
-# CSVファイル項目抽出プログラム
+# CSV Field Extraction Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-CSVファイルから指定した項目を抜き出して、CSVファイルを生成するプログラムです。
+Extracts specified fields from a CSV file and generates a new CSV file.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-実行形式は以下のとおりです。
+The syntax is as follows.
 
 ```text
-csvcut 入力CSVファイル 出力CSVファイル 抽出項目
+csvcut Input CSV file Output CSV file Columns to extract
 ```
 
-### 例
+### Example
 
 ```text
 csvcut c:\csv\int.csv c:\csv\out.csv 1,5-9,11
 ```
 
-標準入力・標準出力を使用する場合は、以下のように指定します。
+To use standard input and output, run the command as follows.
 
 ```text
 type c:\csv\int.csv | csvcut - - 1,5-9,11 > c:\csv\out.csv
@@ -28,11 +28,11 @@ type c:\csv\int.csv | csvcut - - 1,5-9,11 > c:\csv\out.csv
 
 ### 項目の指定方法
 
-- 項目番号は **1から数えます**。
-- 入力CSVファイル名に `-` を指定すると、標準入力を使用します。
-- 出力CSVファイル名に `-` を指定すると、標準出力を使用します。
-- 項目はカンマ（`,`）で区切って指定します。
-- 項目の範囲を指定する場合は、ハイフン（`-`）を使用します。
+- Field numbering starts at **1**.
+- Input CSV file名に `-` を指定すると、Standard inputを使用します。
+- Output CSV file名に `-` を指定すると、Standard outputを使用します。
+- Separate field numbers with commas (`,`).
+- Use a hyphen (`-`) to specify a range of fields.
 
 例えば、
 
@@ -42,10 +42,10 @@ type c:\csv\int.csv | csvcut - - 1,5-9,11 > c:\csv\out.csv
 
 と指定すると、**1、5、6、7、8、9、11** の項目を抜き出します。
 
-## 3. 履歴
+## 3. Version History
 
 - Ver 1.00　初公開
-- Ver 1.01　標準入力・標準出力の機能を追加。項目を1から数える方式に変更
+- Ver 1.01　Standard input・Standard outputの機能を追加。項目を1から数える方式に変更
 - Ver 1.02　ダブルクォーテーションに対応
 - Ver 1.03　第2水準の漢字に対応
 - Ver 1.04　半角スペース削除のバグを修正

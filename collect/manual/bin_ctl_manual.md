@@ -1,33 +1,33 @@
-# バイナリファイル加工プログラム
+# Binary File Processing Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-本プログラムは、バイナリファイルをユーザーが定義したルールに従って加工するプログラムです。
+This program バイナリファイルをユーザーが定義したルールに従って加工するProgramです。
 
 ルールはステートマシンを用いるため、複雑な置換や挿入、削除などが可能です。
 
-また、ファイル名にワイルドカードを使用できます。
+また、File nameにワイルドカードを使用できます。
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-bin_ctl ルールファイル 変換ファイル名 [-r] [-buff buffer_size]
+bin_ctl ルールファイル Files to convert [-r] [-buff buffer_size]
 ```
 
-変換ファイル名はフルパスで指定してください。
+Specify the full path to the file to convert.
 
-ルールファイルはCSV形式のファイルです。
+The rule file is in CSV format.
 
 - `-r`：書き換えは行わず、検索のみを行います。
-- `-buff`：1回の読み書きに使用するバッファサイズを指定します（単位：KByte）。
+- `-buff`: Specifies the buffer size for each read/write operation (KB).
   通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。
-  指定しない場合は10KByteとなります。
+  The default is 10 KB.
 
-### 使用例
+### Examples
 
 ```text
 bin_ctl rule.csv c:\csv\*.cpp
@@ -37,7 +37,7 @@ bin_ctl rule.csv c:\csv\*.cpp
 bin_ctl rule.csv c:\csv\*.cpp -r
 ```
 
-## 3. 使用例
+## 3. Examples
 
 例えば、`aaa.dat` というファイルで、`FF FF` のデータの後にある `A8 10` のデータの次のデータ内容を加工する場合を想定します。
 
@@ -50,7 +50,7 @@ A8 10 00 00 20 00 00 00 FF FF 03 00 FF FF 01 00
 00 00 00 00 10 10 11 04 00 00 00 00 00 00 00 00
 ```
 
-この場合、以下のようにルールファイルを作成します。
+In this case, create the rule file as follows.
 
 ```text
 #st,IDLE
@@ -69,21 +69,21 @@ A8 10 00 00 20 00 00 00 FF FF 03 00 FF FF 01 00
 
 上記の例には、`IDLE` と `SET_A` の状態があります。
 
-`IDLE` 状態では `FF FF` をサーチしています。`FF FF` が見つかったとき、`#go` を実行します。
+In the `IDLE` state, the program searches for `FF FF`.When `FF FF` is found, `#go` is executed.
 
 `SET_A` 状態では `A8 10` をサーチし、見つかったら次のデータを `56` に書き換え、アドレスを表示します。
 
-その後、`IDLE` 状態に戻ります。
+It then returns to the `IDLE` state.
 
-## 4. 使用例
+## 4. Example
 
-### (1) ステートマシンの状態名定義
+### (1) ステートマシンのState name定義
 
-ステートマシンの状態名を定義します。
+Defines state machine state names.
 
-一番初めに定義された状態から実行されます。
+Execution starts with the first state defined.
 
-ステートマシンはバイナリのパターンをサーチします。マッチすると、マッチしたところから状態遷移の持つプログラムを実行します。
+ステートマシンはバイナリのパターンをサーチします。マッチすると、マッチしたところから状態遷移の持つProgramを実行します。
 
 サーチデータは `#srch` で定義してください。
 
@@ -92,11 +92,11 @@ A8 10 00 00 20 00 00 00 FF FF 03 00 FF FF 01 00
 #### 形式
 
 ```text
-#st,状態名
+#st,State name
 #srch,データ,データ,データ,～
 ```
 
-#### 使用例
+#### Examples
 
 ```text
 #st,IDLE
@@ -119,7 +119,7 @@ A8 10 00 00 20 00 00 00 FF FF 03 00 FF FF 01 00
 #endif
 ```
 
-#### 使用例
+#### Examples
 
 ```text
 #if,a==0x90
@@ -145,7 +145,7 @@ A8 10 00 00 20 00 00 00 FF FF 03 00 FF FF 01 00
 #set,変数名,式
 ```
 
-#### 使用例
+#### Examples
 
 ```text
 #set,a,b+10
@@ -162,12 +162,12 @@ A8 10 00 00 20 00 00 00 FF FF 03 00 FF FF 01 00
 #### 形式
 
 ```text
-#go,指定状態
-#act,指定状態
-#stop,指定状態
+#go,Target state
+#act,Target state
+#stop,Target state
 ```
 
-#### 使用例
+#### Examples
 
 ```text
 #st,IDLE
@@ -211,7 +211,7 @@ A8 10 00 00 20 00 00 00 FF FF 03 00 FF FF 01 00
 
 > 対象サイズ分を削除して、書き換えデータ分を挿入します。挿入データがなければ削除し、対象サイズが0ならば挿入します。
 
-#### 使用例
+#### Examples
 
 ```text
 #chg,srch_addr+10,1,a+b
@@ -229,7 +229,7 @@ A8 10 00 00 20 00 00 00 FF FF 03 00 FF FF 01 00
 #read,変数名,アドレス
 ```
 
-#### 使用例
+#### Examples
 
 ```text
 #read,a,srch_addr+10
@@ -244,10 +244,10 @@ A8 10 00 00 20 00 00 00 FF FF 03 00 FF FF 01 00
 #### 形式
 
 ```text
-#st_init,状態1,状態2～,状態n
+#st_init,State 1,State 2–,State n
 ```
 
-#### 使用例
+#### Examples
 
 ```text
 #st_init,idle,idle_2
@@ -265,12 +265,12 @@ A8 10 00 00 20 00 00 00 FF FF 03 00 FF FF 01 00
 
 書式は、式を10進表示したい場合は `%I64d`、16進表示したい場合は `%I64x` を指定してください。
 
-#### 使用例
+#### Examples
 
 ```text
 #printf,addr=%I64x,srch_addr
 ```
 
-## 5. 履歴
+## 5. Version History
 
 - **Ver 0.90**　仮リリース

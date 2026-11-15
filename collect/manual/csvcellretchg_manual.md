@@ -1,27 +1,27 @@
-# CSVファイルセル内改行コード変換プログラム
+# CSV Cell Line Break Conversion Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-本プログラムは、Excelで出力したCSVファイルのデータ内の改行を削除、または特定の文字列に変換するプログラムです。
+This program removes line breaks from data in CSV files exported by Excel or replaces them with a specified string.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-csvcellretchg CSVファイル [変換文字列] [-dbl_no_cut] [-buff buffer_size]
+csvcellretchg CSV file [replacement_string] [-dbl_no_cut] [-buff buffer_size]
 ```
 
-### オプション
+### Options
 
-- `-buff`：1回の読み書きに使用するバッファサイズを指定します（単位：KByte）。
+- `-buff`: Specifies the buffer size for each read/write operation (KB).
   通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。
-  指定しない場合は10KByteとなります。
+  The default is 10 KB.
 - `-dbl_no_cut`：不要なダブルクォーテーションを削除しないようにします。
 
-### 使用例
+### Examples
 
 ```text
 csvcellretchg c:\csv\*.csv
@@ -35,8 +35,8 @@ csvcellretchg c:\csv\*.csv @@@@@
 
 `c:\csv` の拡張子が `.csv` のファイルの改行を `@@@@@` に置き換えます。
 
-## 3. 履歴
+## 3. Version History
 
 - **Ver 1.00**　初公開！
-- **Ver 1.01**　4Gバイトを超えるファイルも扱えるようにしました。`-buff` オプションを追加。
-- **Ver 1.02**　`-dbl_no_cut` オプションを追加。
+- **Ver 1.01**　4Gバイトを超えるファイルも扱えるようにしました。`-buff` Optionを追加。
+- **Ver 1.02**　`-dbl_no_cut` Optionを追加。

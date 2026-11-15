@@ -1,29 +1,29 @@
-# CSVファイル→XMLファイル変換プログラム
+# CSV-to-XML Conversion Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-本プログラムは、CSVファイルをXMLファイルに変換するプログラムです。
+This program converts CSV files to XML files.
 
-2GB以上のデータにも対応しています。
+Supports data larger than 2 GB.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-csvxml csv_file xml_file [-tag タグ設定ファイル] [-header ヘッダファイル] [-buff サイズ] [-e]
+csvxml csv_file xml_file [-tag tag_config_file] [-header header_file] [-buff size] [-e]
 ```
 
-### オプション
+### Options
 
 - `-e`：エスケープコードへの変換を行いません。
-- `-tag`：タグ設定ファイルを指定します。
-- `-header`：ヘッダファイルを指定します。
-- `-buff`：1回の読み書きに使用するバッファサイズを指定します（単位：KByte）。通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。指定しない場合は10KByteとなります。
+- `-tag`：タグ設定Specifies a file.
+- `-header`：ヘッダSpecifies a file.
+- `-buff`: Specifies the buffer size for each read/write operation (KB). Usually not required, but a larger value may help with large files.The default is 10 KB.
 
-### 使用例
+### Examples
 
 ```text
 csvxml data.csv data.xml
@@ -55,10 +55,10 @@ csvxml data.csv data.xml -tag tag.csv -header header.txt
 #### 形式
 
 ```text
-#total_tag,全体を定義するタグ名
+#total_tag,root tag name
 ```
 
-#### 使用例
+#### Examples
 
 ```text
 #total_tag,DOC
@@ -69,10 +69,10 @@ csvxml data.csv data.xml -tag tag.csv -header header.txt
 #### 形式
 
 ```text
-#record_tag,レコード単位のタグ名
+#record_tag,record tag name
 ```
 
-#### 使用例
+#### Examples
 
 ```text
 #record_tag,REC
@@ -83,16 +83,16 @@ csvxml data.csv data.xml -tag tag.csv -header header.txt
 #### 形式
 
 ```text
-#tag,項目のタグ名
+#tag,field tag name
 ```
 
-#### 使用例
+#### Examples
 
 ```text
 #tag,suuryo
 ```
 
-### (4) エスケープコード変換
+### (4) Escape conversion
 
 XMLでは、以下の文字がエスケープコードに変換されます。
 
@@ -104,23 +104,23 @@ XMLでは、以下の文字がエスケープコードに変換されます。
 | `"`（二重引用符） | `&quot;` |
 | `'`（単一引用符） | `&apos;` |
 
-`-e` オプションを指定すると、このエスケープコードへの変換を行いません。
+The `-e` option disables this escaping.
 
 ## 4. ヘッダファイル
 
-ヘッダファイルには、XMLファイルの1行目と2行目に記述する内容を指定します。
+The header file specifies the contents of the first and second lines of the XML file.
 
-### 例
+### Example
 
 ```xml
 <?xml version="1.0" encoding="Shift_JIS"?>
 <?xml:stylesheet type="text/xsl" href="aaa.xsl"?>
 ```
 
-詳細については、XMLの規格を参照してください。
+For details, refer to the XML specification.
 
-## 5. 履歴
+## 5. Version History
 
 - **Ver 1.00**　リリース
-- **Ver 1.01**　ヘッダファイル、タグ設定ファイルをオプション指定にしました。
-- **Ver 1.02**　エスケープコード変換機能を追加。`-e` オプションを追加。
+- **Ver 1.01**　ヘッダファイル、タグ設定ファイルをOptionにしました。
+- **Ver 1.02**　エスケープコード変換機能を追加。`-e` Optionを追加。

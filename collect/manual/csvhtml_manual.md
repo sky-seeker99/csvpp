@@ -1,20 +1,20 @@
-# CSVファイル→HTMLファイル変換プログラム
+# CSV-to-HTML Conversion Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-CSVファイルからHTMLファイルに変換します。
+Converts CSV files to HTML files.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-csvhtml CSVファイル名 HTMLファイル名
+csvhtml CSV file name HTML file name
 ```
 
-### 使用例
+### Examples
 
 ```text
 csvhtml c:\csv\in.csv c:\csv\out.html
@@ -24,7 +24,7 @@ csvhtml c:\csv\in.csv c:\csv\out.html
 
 変換内容を以下に示します。
 
-### 例1
+### Example 1
 
 **変換前**
 
@@ -36,7 +36,7 @@ csvhtml c:\csv\in.csv c:\csv\out.html
 #cmd,//-->
 ```
 
-**変換後**
+**Converted to**
 
 ```html
 <!--AAAAA
@@ -46,7 +46,7 @@ cmd2
 //-->
 ```
 
-### 例2
+### Example 2
 
 **変換前**
 
@@ -55,13 +55,13 @@ cmd2
 #tag,HEAD
 ```
 
-**変換後**
+**Converted to**
 
 ```html
 <HTML><HEAD>
 ```
 
-### 例3
+### Example 3
 
 **変換前**
 
@@ -70,13 +70,13 @@ cmd2
 #tag,META,content,"xxx WebSphere XXXXpage Builder V6.0.0 for Windows"
 ```
 
-**変換後**
+**Converted to**
 
 ```html
 <META name="GENERATOR" content="xxx WebSphere XXXXpage Builder V6.0.0 for Windows">
 ```
 
-### 例4
+### Example 4
 
 **変換前**
 
@@ -86,24 +86,24 @@ cmd2
 #tag,!DOCTYPE,"-//W3C//DTD HTML 4.01 Transitional//EN"
 ```
 
-**変換後**
+**Converted to**
 
 ```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 ```
 
-### 例5
+### Example 5
 
 **変換前**
 
 ```text
 #tag,TD,width,"645"
 #tag,B
-#tag,FONT,face,"ＭＳ ゴシック"
+#tag,FONT,face,"MS Gothic"
 #wr,CSV
 #tag,/FONT
-#wr,ファイル→Verilog-HDL（ＲＴＬ） 変換プログラム
-#tag,FONT,face,"ＭＳ ゴシック"
+#wr,File-to-Verilog-HDL (RTL) Conversion Program
+#tag,FONT,face,"MS Gothic"
 #wr,Ver1.00
 #tag,/FONT
 #tag,A,href,"csvvrtl100.lzh"
@@ -113,13 +113,13 @@ cmd2
 #tag,/TD
 ```
 
-**変換後**
+**Converted to**
 
 ```html
-<TD width="645"><B><FONT face="ＭＳ ゴシック">CSV</FONT>ファイル→Verilog-HDL（ＲＴＬ） 変換プログラム <FONT face="ＭＳ ゴシック">Ver1.00</FONT> <A href="csvvrtl100.lzh">csvvrtｌ100.LZH (148KB)</A></B></TD>
+<TD width="645"><B><FONT face="ＭＳ ゴシック">CSV</FONT>ファイル→Verilog-HDL（ＲＴＬ） 変換Program <FONT face="ＭＳ ゴシック">Ver1.00</FONT> <A href="csvvrtl100.lzh">csvvrtｌ100.LZH (148KB)</A></B></TD>
 ```
 
-### 例6
+### Example 6
 
 **変換前**
 
@@ -129,13 +129,13 @@ cmd2
 #tag,BR
 ```
 
-**変換後**
+**Converted to**
 
 ```html
 <BR><BR>
 ```
 
-### 例7
+### Example 7
 
 **変換前**
 
@@ -151,7 +151,7 @@ cmd2
 #rcode
 ```
 
-**変換後**
+**Converted to**
 
 ```html
 <!doctype html public "-//w3c//dtd html 4.0 transitional//EN">
@@ -162,12 +162,12 @@ cmd2
 `#rc_mode` は、`#rcode` が改行であることを示します。  
 `#rc_mode` 以降は、`#rcode` 以外では改行しません。
 
-## 4. 履歴
+## 4. Version History
 
 - **Ver 1.00**　初公開！
 - **Ver 1.00a**　仕様ミスを修正。
 - **Ver 1.00b**　バグフィックス。
-- **マニュアル修正**　マニュアルを修正しました。プログラムの変更はありません。
+- **マニュアル修正**　マニュアルを修正しました。Programの変更はありません。
 - **Ver 1.01**　第2水準の漢字に対応。
 - **Ver 1.02**　半角スペースが文字の両脇にあっても削除しないようにしました。
 - **Ver 1.03**　`#rc_mode`、`#rcode` を追加。

@@ -1,39 +1,39 @@
-# CSVファイル→Excelファイル変換プログラム
+# CSV-to-Excel Conversion Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-CSV形式のファイルの内容をExcelファイルに追加するプログラムです。
+CSV形式のファイルの内容をExcelファイルに追加するProgramです。
 
-また、CSVファイルの名前がシート名になります。すでに該当するシートが存在する場合は、その内容をコピーして、該当するシートに内容だけを貼り付けます。
+The CSV file name is used as the worksheet name.If a worksheet with that name already exists, its contents are copied and only the data is pasted into the matching sheet.
 
-※書式、図形などのデータ以外はそのまま保持されます。
+Formatting, shapes, and other non-data elements are preserved.
 
 > **注意**
 > - Excelファイルが存在しない場合はエラーになります。新規に作成する場合は、あらかじめExcelファイルを新規作成してください。
 > - シート名が半角で32文字以上の場合は、31文字として処理します。
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-実行形式は以下のとおりです。
+The syntax is as follows.
 
 ```text
-csvmake2 Excelファイル名 [-x フィルタプログラム] [-nv] [-new] [-paste] [-xml] [-proc] CSVファイル名1 CSVファイル名2 … CSVファイル名n
+csvmake2 ExcelFile name [-x フィルタProgram] [-nv] [-new] [-paste] [-xml] [-proc] CSV file name1 CSV file name2 … CSV file namen
 ```
 
-### オプション
+### Options
 
 - **`-proc`**  
   `csvmake2` 実行後にExcelのプロセスが残っていないかチェックし、残っていた場合は削除します。
 - **`-nv`**  
-  Excelの画面を表示しないようにします。
+  Hides the Excel window.
 - **`-new`**  
-  Excelファイルを新規に作成します。
+  Creates a new Excel workbook.
 - **`-xml`**  
-  XML形式で出力します。Excelファイル名の拡張子を `xml` にしてください。
+  XML形式で出力します。ExcelFile nameの拡張子を `xml` にしてください。
 - **`-paste`**  
-  CSVファイル内の数式を、そのままExcelファイルに貼り付けます。
+  CSV file内の数式を、そのままExcelファイルに貼り付けます。
 
 例えば、以下の内容のファイルがあるとします。
 
@@ -41,13 +41,13 @@ csvmake2 Excelファイル名 [-x フィルタプログラム] [-nv] [-new] [-pa
 a,"=A1"
 ```
 
-オプションを指定しない場合は、以下の結果だけがExcelファイルにコピーされます。
+Optionを指定しない場合は、以下の結果だけがExcelファイルにコピーされます。
 
 ```text
 a,a
 ```
 
-`-paste` オプションを指定すると、以下のようになります。
+`-paste` Optionを指定すると、The result is as follows.
 
 ```text
 a,=A1
@@ -61,16 +61,16 @@ csvmake2 d:aa.xls -nv c:\csvbb.csv c:\csv\ccc.csv
 csvmake2 d:aa.xls -x retconv c:\csvbb.csv c:\csv\ccc.csv
 ```
 
-## 3. フィルタプログラムについて
+## 3. フィルタProgramについて
 
-フィルタプログラムは、CSVファイルを変換する前に実行されるCSVファイル変換プログラムです。
+A filter program converts the CSV file before it is imported into the Excel workbook.
 
-変換後のCSVファイルをExcelファイルに追加します。
+Converted toのCSV fileをExcelファイルに追加します。
 
-フィルタプログラム（またはバッチファイル）を自分で作成する場合は、以下の引数を使用してください。
+フィルタProgram（またはバッチファイル）を自分で作成する場合は、Use the following arguments.
 
-1. **1番目の引数**：変換前CSVファイル
-2. **2番目の引数**：変換後CSVファイル
+1. **1番目の引数**：変換前CSV file
+2. **2番目の引数**：Converted toCSV file
 
 ## 4. 賢い使用方法
 
@@ -82,32 +82,32 @@ csvmake2 d:aa.xls -x retconv c:\csvbb.csv c:\csv\ccc.csv
 csvmake d:aa.xls %1 %2 %3 %4 %5 %6 %7 %8 %9
 ```
 
-このバッチファイルを作成したら、バッチファイルに対して複数のCSVファイルを選択してドラッグ＆ドロップします。
+このバッチファイルを作成したら、バッチファイルに対して複数のCSV fileを選択してドラッグ＆ドロップします。
 
-すると、プログラムが起動し、`d:aa.xls` にシートを追加または更新します。
+すると、Programが起動し、`d:aa.xls` にシートを追加または更新します。
 
 ## 5. 注意点
 
 Excel 2003の環境では、マクロのセキュリティレベルを以下に設定する必要があります。
 
-**ツール → オプション → マクロセキュリティ**
+**ツール → Option → マクロセキュリティ**
 
 - セキュリティレベルを「高」から「中」に変更
 - 信頼できる発行元を削除
 
-## 6. 履歴
+## 6. Version History
 
 - Ver 1.00　初公開
 - Ver 1.01　コピー後、毎回保存するように変更
-- Ver 1.02　フィルタプログラムの機能を追加
-- ――――――　マニュアルを修正（プログラムの変更はありません）
-- Ver 1.03　Excelの画面を表示しないオプションを追加。相対パスで実行可能に変更。バグを修正
-- Ver 1.04　`-nv` オプションのバグを修正
+- Ver 1.02　フィルタProgramの機能を追加
+- ――――――　マニュアルを修正（Programの変更はありません）
+- Ver 1.03　Excelの画面を表示しないOptionを追加。相対パスで実行可能に変更。バグを修正
+- Ver 1.04　`-nv` Optionのバグを修正
 - Ver 1.05　シート名が半角で32文字以上の場合は31文字として処理
-- Ver 1.06　Excelファイルが使用中の場合もCSVファイルの表示（エラー表示）を行うように変更
+- Ver 1.06　Excelファイルが使用中の場合もCSV fileの表示（エラー表示）を行うように変更
 - Ver 1.07　指定したExcelファイルがない場合、新規にファイルを作成するように変更
-- Ver 1.08　`-new` オプションを追加
-- Ver 1.09　フィルタプログラムを使用した場合、CSVファイルのパスに空白があると正しく動作しなかったバグを修正
-- Ver 1.10　`-paste` オプションを追加
-- Ver 1.11　`-xml` オプションを追加
-- Ver 1.12　`-proc` オプションを追加
+- Ver 1.08　`-new` Optionを追加
+- Ver 1.09　フィルタProgramを使用した場合、CSV fileのパスに空白があると正しく動作しなかったバグを修正
+- Ver 1.10　`-paste` Optionを追加
+- Ver 1.11　`-xml` Optionを追加
+- Ver 1.12　`-proc` Optionを追加

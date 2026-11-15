@@ -1,42 +1,42 @@
-# SJIS-EUC変換プログラム2
+# Shift-JIS/EUC-JP Conversion Program 2
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-本プログラムは、SJISコードとEUCコードを相互に変換するコンソールプログラムです。
+This console program converts between Shift-JIS and EUC-JP encodings.
 
-ファイル名にはワイルドカードを使用できます。
+Wildcards can be used in file names.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-eucsjis2 sjis_euc|euc_sjis 変換前ファイル名 変換後ファイル名
+eucsjis2 sjis_euc|euc_sjis Input file nameOutput file name
 ```
 
-ファイル名はフルパスで指定してください。
+Specify the full path to the file.
 
 ### 変換方法
 
-- `sjis_euc`：SJISからEUCに変換します。このとき、改行コードは `0x0A` に変換します。
-- `euc_sjis`：EUCからSJISに変換します。このとき、改行コードは `0x0D, 0x0A` に変換します。
+- `sjis_euc`：SJISからEUCに変換します。このとき、Line endingは `0x0A` に変換します。
+- `euc_sjis`：EUCからSJISに変換します。このとき、Line endingは `0x0D, 0x0A` に変換します。
 
-### 改行コードを指定する場合
+### Line endingを指定する場合
 
-- `sjis_euc_win` / `euc_sjis_win`：改行コードを `0x0D, 0x0A` に変換します。
-- `sjis_euc_unix` / `euc_sjis_unix`：改行コードを `0x0A` に変換します。
+- `sjis_euc_win` / `euc_sjis_win`：Line endingを `0x0D, 0x0A` に変換します。
+- `sjis_euc_unix` / `euc_sjis_unix`：Line endingを `0x0A` に変換します。
 
-### 標準入力・標準出力
+### Standard Input and Output
 
-変換前ファイル名に `-` を指定すると、標準入力になります。
+Specify `-` as the input file name to read from standard input.
 
-変換後ファイル名に `-` を指定すると、標準出力になります。
+Specify `-` as the output file name to write to standard output.
 
-標準出力を使用する場合、改行コードは必ず `0x0D, 0x0A` になりますので注意してください。
+Standard outputを使用する場合、Line endingは必ず `0x0D, 0x0A` になりますので注意してください。
 
-### 使用例
+### Examples
 
 ```text
 eucsjis2 sjis_euc c:\csv\in.txt c:\csv\out.txt
@@ -68,7 +68,7 @@ SJISコードの漢字で外字を使用する場合は、`eucsjis.exe` のあ�
 #sjis_euc,250,83,74,-77,107
 ```
 
-## 4. 履歴
+## 4. Version History
 
 - **Ver 1.00**　初公開！
 - **Ver 1.02**　外字の変換規則をファイルで指定できるようにしました。

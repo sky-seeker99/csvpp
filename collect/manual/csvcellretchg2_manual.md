@@ -1,56 +1,56 @@
-# CSVファイルセル内改行コード変換プログラム 2
+# CSV Cell Line Break Conversion Program 2
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-本プログラムは、Excelで出力したCSVファイルのデータ内の改行を削除、または特定の文字列に変換するプログラムです。
+This program removes line breaks from data in CSV files exported by Excel or replaces them with a specified string.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-csvcellretchg2 変換前ファイル名 変換後ファイル名 [変換文字列] [-dbl_no_cut] [-buff buffer_size]
+csvcellretchg2 Input file nameOutput file name [replacement_string] [-dbl_no_cut] [-buff buffer_size]
 ```
 
-ファイル名はフルパスで指定してください。
+Specify the full path to the file.
 
-### オプション
+### Options
 
-- `-buff`：1回の読み書きに使用するバッファサイズを指定します（単位：KByte）。
+- `-buff`: Specifies the buffer size for each read/write operation (KB).
   通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。
-  指定しない場合は10KByteとなります。
+  The default is 10 KB.
 - `-dbl_no_cut`：不要なダブルクォーテーションを削除しないようにします。
 
-### 使用例
+### Examples
 
 ```text
 csvcellretchg2 c:\csv\in.csv c:\csv\out.csv
 ```
 
-CSVファイルの改行を削除します。
+CSV fileの改行を削除します。
 
 ```text
 csvcellretchg2 c:\csv\in.csv c:\csv\out.csv @@@@@
 ```
 
-CSVファイルの改行を `@@@@@` に置き換えます。
+CSV fileの改行を `@@@@@` に置き換えます。
 
-### 標準入力・標準出力
+### Standard Input and Output
 
-変換前ファイル名に `-` を指定すると、標準入力になります。
-変換後ファイル名に `-` を指定すると、標準出力になります。
+Specify `-` as the input file name to read from standard input.
+Specify `-` as the output file name to write to standard output.
 
-標準出力の場合の改行コードは、必ず `0x0d,0x0a` になりますので注意してください。
+Standard outputの場合のLine endingは、必ず `0x0d,0x0a` になりますので注意してください。
 
-### 標準入力・標準出力の使用例
+### Standard Input and OutputのExample
 
 ```text
 type c:\csv\in.csv | csvcellretchg2 - - > c:\csv\out.csv
 ```
 
-## 3. 履歴
+## 3. Version History
 
 - **Ver 1.01**　初公開！
-- **Ver 1.02**　`-dbl_no_cut` オプションを追加。
+- **Ver 1.02**　`-dbl_no_cut` Optionを追加。

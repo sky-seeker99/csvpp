@@ -1,29 +1,29 @@
-# CSVファイル→TABファイル変換プログラム
+# CSV-to-TAB Conversion Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-本プログラムは、CSVMAKE用のフィルタとして作られています。
+This program was designed as a filter for CSVMAKE.
 
-単体でも動作します。
+It can also be run as a standalone program.
 
-CSVファイルをTABファイルに変換します。
+Converts CSV files to TAB-delimited files.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-csvtab CSVファイル TABファイル [-buff buffer_size] [-dbl_no_cut]
+csvtab CSV file TAB file [-buff buffer_size] [-dbl_no_cut]
 ```
 
-### オプション
+### Options
 
-- `-buff`：1回の読み書きに使用するバッファサイズを指定します（単位：KByte）。通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。指定しない場合は10KByteとなります。
+- `-buff`: Specifies the buffer size for each read/write operation (KB). Usually not required, but a larger value may help with large files.The default is 10 KB.
 - `-dbl_no_cut`：不要なダブルクォーテーションを削除しないようにします。
 
-### 使用例
+### Examples
 
 ```text
 csvtab c:\csv\bbb.csv c:\csv\ccc.txt
@@ -33,22 +33,22 @@ csvtab c:\csv\bbb.csv c:\csv\ccc.txt
 type c:\csv\bbb.csv | csvtab - - > c:\csv\ccc.txt
 ```
 
-※ CSVファイル名に `-` を指定すると、標準入力になります。  
-※ TABファイル名に `-` を指定すると、標準出力になります。
+※ Specify `-` as the CSV file name to read from standard input.  
+※ Specify `-` as the TAB file name to write to standard output.
 
-### CSVMAKEでフィルタプログラムとして使用する場合
+### CSVMAKEでフィルタProgramとして使用する場合
 
 ```text
 csvmake d:\aaa.xls c:\csv csvtab txt
 ```
 
-## 3. 履歴
+## 3. Version History
 
 - **Ver 1.00**　初公開！
-- **Ver 1.00**　マニュアルを修正しました。プログラムの変更はありません。
+- **Ver 1.00**　マニュアルを修正しました。Programの変更はありません。
 - **Ver 1.01**　パラメータ数が2つ以上の場合でも、エラーにせず実行するようにしました。
 - **Ver 1.02**　第2水準の漢字に対応。
 - **Ver 1.03**　半角スペースが文字の両側にあっても削除しないようにしました。
-- **Ver 1.04**　最終行に改行が追加されてしまうバグを修正。標準入力、標準出力の機能を追加。
-- **Ver 1.05**　4Gバイトを超えるファイルも扱えるようにしました。`-buff`、`-dbl_no_cut` オプションを追加。
+- **Ver 1.04**　最終行に改行が追加されてしまうバグを修正。Standard input、Standard outputの機能を追加。
+- **Ver 1.05**　4Gバイトを超えるファイルも扱えるようにしました。`-buff`、`-dbl_no_cut` Optionを追加。
 - **Ver 1.06**　ダブルクォーテーション付きデータの処理にバグがあり、修正しました。

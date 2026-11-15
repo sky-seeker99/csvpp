@@ -1,20 +1,20 @@
-# CSVファイル横マージプログラム
+# Horizontal CSV Merge Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-複数のCSVファイルを横方向にマージするプログラムです。
+This program merges multiple CSV files horizontally.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-実行形式は以下のとおりです。
+The syntax is as follows.
 
 ```text
-csvmerge CSVファイル1 CSVファイル2 CSVファイル3 .... > マージファイル
+csvmerge CSV file 1 CSV file 2 CSV file 3 .... > Merged output
 ```
 
-### 例
+### Example
 
 ```text
 csvmerge sample1.csv sample2.csv > out.csv
@@ -36,7 +36,7 @@ dd5,ee6,ff7
 dd6,ee7,ff8
 ```
 
-上記の2つのCSVファイルをマージすると、以下のようになります。
+上記の2つのCSV fileをマージすると、The result is as follows.
 
 #### `out.csv`
 
@@ -47,9 +47,9 @@ aa2,bb3,cc4,dd6,ee7,ff8
 ,,,dd7,ee8,ff9
 ```
 
-このように、複数のCSVファイルを横方向に結合します。
+This is how multiple CSV files are combined horizontally.
 
-## 3. 履歴
+## 3. Version History
 
 - Ver 1.00　初公開
 - Ver 1.01　バグ修正

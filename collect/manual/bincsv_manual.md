@@ -1,35 +1,35 @@
-# バイナリファイル→CSVファイル変換プログラム
+# Binary-to-CSV Conversion Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-本プログラムは、バイナリファイルをCSVファイル形式でダンプ出力するコンソールプログラムです。
+This console program dumps binary files in CSV format.
 
-16進数、10進数、2進数での表示に対応しています。
+Supports hexadecimal, decimal, and binary output.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-bincsv [-b|-d] バイナリファイル CSVファイル [-start start_address] [-size size] [-buff buff_size] [-width width_size]
+bincsv [-b|-d] バイナリファイル CSV file [-start start_address] [-size size] [-buff buff_size] [-width width_size]
 ```
 
-### オプション
+### Options
 
-- オプションを指定しない場合は、16進数で表示します。
-- `-d`：10進数で表示します。
-- `-b`：2進数で表示します。
-- `-start`：読み出しを開始するアドレスを指定します。指定しない場合は、ファイルの先頭から読み出します。
-- `-size`：読み出すサイズを指定します。指定しない場合は、ファイル全体を読み出します。
+- If no option is specified, values are displayed in hexadecimal.
+- `-d`: Displays values in decimal.
+- `-b`: Displays values in binary.
+- `-start`: Specifies the address at which reading starts.If omitted, reading starts at the beginning of the file.
+- `-size`：読み出すサイズを指定します。If omitted, the entire file is read.
 - `-width`：1行あたりのバイト数を指定します。
-- `-buff`：1回の読み書きに使用するバッファサイズを指定します（単位：KByte）。通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。指定しない場合は10KByteとなります。
+- `-buff`: Specifies the buffer size for each read/write operation (KB). Usually not required, but a larger value may help with large files.The default is 10 KB.
 
 ※ 数値には16進数を使用できます。先頭に `0x` を付けます。  
 例：`0x1000`、`0xa0df`
 
-### 使用例
+### Examples
 
 ```text
 bincsv c:\csv\pict.jpg c:\csv\pict.csv
@@ -37,7 +37,7 @@ bincsv -d c:\csv\pict.jpg c:\csv\pict.csv
 bincsv -b c:\csv\pict.jpg c:\csv\pict.csv
 ```
 
-## 3. CSVファイル
+## 3. CSV File Format
 
 ### 出力例
 
@@ -50,10 +50,10 @@ bincsv -b c:\csv\pict.jpg c:\csv\pict.csv
 #chg,'h00007D30,'h89,'h50,'h11,'hDC,'h7F,'h92,'h09,'hC1,'h41,'h6C,'hBF,'hFF,'hD9
 ```
 
-## 4. 履歴
+## 4. Version History
 
 - **Ver 1.00**　初公開！
-- **Ver 1.00**　マニュアルを修正しました。プログラムの変更はありません。
+- **Ver 1.00**　マニュアルを修正しました。Programの変更はありません。
 - **Ver 1.01**　10進数、2進数にも対応しました。
 - **Ver 1.02**　`-start`、`-size`、`-buff` を追加。4GByteを超えるファイルに対応しました。
-- **Ver 1.03**　`-width` オプションを追加。
+- **Ver 1.03**　`-width` Optionを追加。

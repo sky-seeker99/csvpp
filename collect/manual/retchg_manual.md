@@ -1,35 +1,35 @@
-# 改行コード変換プログラム
+# Line Ending Conversion Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-本プログラムは、Windows用、Mac用、UNIX用の各改行コードを相互に変換するコンソールプログラムです。
+This console program converts between Windows, Mac, and Unix line endings.
 
-ファイル名にはワイルドカードを使用できます。
+Wildcards can be used in file names.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-retchg -m|-w|-u 変換ファイル名 [-buff buffer_size]
+retchg -m|-w|-u Files to convert [-buff buffer_size]
 ```
 
-変換ファイル名はフルパスで指定してください。
+Specify the full path to the file to convert.
 
-### オプション
+### Options
 
-- `-m`：Mac用改行コードに変換します。
-- `-w`：Windows用改行コードに変換します。
-- `-u`：Unix用改行コードに変換します。
-- `-buff`：1回の読み書きに使用するバッファサイズを指定します（単位：KByte）。
+- `-m`：Mac用Line endingに変換します。
+- `-w`：Windows用Line endingに変換します。
+- `-u`：Unix用Line endingに変換します。
+- `-buff`: Specifies the buffer size for each read/write operation (KB).
 
 `-buff` は通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。
 
 指定しない場合は、10KByteとなります。
 
-### 使用例
+### Examples
 
 ```text
 retchg -w c:\csv\*.txt
@@ -47,7 +47,7 @@ retchg -u c:\csv\*.csv
 retchg -u c:\csv\*.csv -buff 100
 ```
 
-## 3. 履歴
+## 3. Version History
 
 - **Ver 1.00**　初公開！
 - **Ver 1.01**　第2水準の漢字に対応。

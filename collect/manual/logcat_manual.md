@@ -1,29 +1,29 @@
-# LOG連結プログラム
+# Log Concatenation Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-ログファイルを連結して、一つのファイルにするプログラムです。
+Concatenates log files into a single file.
 
-また、ファイルの行数が指定した境界の行数を超えた場合、先頭から指定した行数まで削除することができます。
+また、ファイルの行数が指定したThreshold line countを超えた場合、先頭から指定した行数まで削除することができます。
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-logcat 入力ファイル 出力ファイル
-logcat -msg 出力ファイル "メッセージ"
-logcat -cut 出力ファイル 境界の行数 削減後行数
+logcat Input file Output file
+logcat -msg Output file "Message"
+logcat -cut Output file Threshold line count Line count after trimming
 ```
 
-### オプション
+### Options
 
-- `-msg`：メッセージを出力ファイルに追加します。
-- `-cut`：出力ファイルの行数が境界の行数を超えた場合、先頭から行を削除し、削減後行数まで行数を減らします。
+- `-msg`：MessageをOutput fileに追加します。
+- `-cut`：Output fileの行数がThreshold line countを超えた場合、先頭から行を削除し、Line count after trimmingまで行数を減らします。
 
-### 使用例
+### Examples
 
 ```text
 logcat c:\csv\aaa.log c:\csv\out.log
@@ -31,7 +31,7 @@ logcat -msg c:\csv\out.log "startting program"
 logcat -cut c:\csv\out.log 20000 10000
 ```
 
-## 3. 履歴
+## 3. Version History
 
 - **Ver 1.00**　初公開！
 - **Ver 1.01**　`-msg`、`-cut` を追加。

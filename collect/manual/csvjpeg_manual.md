@@ -1,29 +1,29 @@
-# CSVファイル（YCbCr/RGB）→JPEGファイル変換プログラム
+# CSV (YCbCr/RGB)-to-JPEG Conversion Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-本プログラムは、YCbCr成分またはRGB成分に変換したCSVファイルから、JPEGファイルを出力するプログラムです。
+Creates a JPEG image from a CSV file containing YCbCr or RGB components.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-csvjpeg CSVファイル JPEGファイル [bmp]
+csvjpeg CSV file JPEGファイル [bmp]
 ```
 
-### 使用例
+### Examples
 
 ```text
 csvjpeg c:\csv\pict.csv c:\csv\pict.jpg
 csvjpeg c:\csv\pict.csv c:\csv\pict.bmp bmp
 ```
 
-## 3. CSVファイル
+## 3. CSV File Format
 
-### RGBの場合
+### RGB Format
 
 ```text
 //,X-Size,Y-Size
@@ -33,7 +33,7 @@ csvjpeg c:\csv\pict.csv c:\csv\pict.bmp bmp
 #RGB,1,0,'h9f,'hc3,'hcf
 ```
 
-### YCbCrの場合
+### YCbCr Format
 
 ```text
 //,X-Size,Y-Size
@@ -43,17 +43,17 @@ csvjpeg c:\csv\pict.csv c:\csv\pict.bmp bmp
 #YCbCr,1,0,'hb9,'h8c,'h6d
 ```
 
-### 数値の指定方法
+### Specifying Numeric Values
 
 データおよび座標は、先頭に `'h` または `0x` を付けると16進数になります。
 
-先頭に何も付けない場合は、10進数として指定します。
+If no prefix is used, the value is interpreted as decimal.
 
-## 4. 履歴
+## 4. Version History
 
 - **Ver 1.00**　初公開！
-- **Ver 1.00**　マニュアルを修正しました。プログラムの変更はありません。
+- **Ver 1.00**　マニュアルを修正しました。Programの変更はありません。
 - **Ver 1.01**　画素データが1桁だとエラーになる不具合を修正。  
   また、`0x` による16進数指定と、10進数指定に対応。
 - **Ver 1.02**　BMPファイルを出力できるようにしました。
-- **Ver 1.03**　CSVファイル読込みライブラリの変更に伴うプログラムの変更。機能変更はありません。
+- **Ver 1.03**　CSV file読込みライブラリの変更に伴うProgramの変更。機能変更はありません。

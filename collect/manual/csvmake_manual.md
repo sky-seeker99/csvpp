@@ -1,31 +1,31 @@
-# Excelファイル→CSVファイル変換プログラム
+# Excel-to-CSV Conversion Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-Excelファイルの全シートをCSV形式のファイルとして出力するソフトです。
+This utility exports every worksheet in an Excel workbook as a CSV file.
 
-CSV形式のファイルを作成するためだけにExcelを開くのが面倒な場合に便利です。
+Useful when you want to create CSV files without having to open Excel.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-実行形式は以下のとおりです。
+The syntax is as follows.
 
 ```text
-csvmake Excelファイル名 出力先ディレクトリ [フィルタプログラム] [拡張子] [-tmp] [-proc] [-s シート名 シート名・・・] [-S シート名 シート名・・・]
+csvmake ExcelFile name 出力先ディレクトリ [フィルタProgram] [拡張子] [-tmp] [-proc] [-s シート名 シート名・・・] [-S シート名 シート名・・・]
 ```
 
-### オプション
+### Options
 
 - **`-s`**  
-  変換したいシート名を指定します。ワイルドカードが使用できます。
+  Specifies worksheet names to convert. Wildcards can be used.
 - **`-S`**  
-  変換したくないシート名を指定します。ワイルドカードが使用できます。
+  Specifies worksheet names to exclude. Wildcards can be used.
 - **`-tmp`**  
-  CSVファイルを一度テンポラリに出力してから、元のCSVファイルにコピーします。
+  Writes the CSV file to a temporary file first, then copies it to the destination CSV file.
 - **`-proc`**  
-  `csvmake` 実行後にExcelのプロセスが残っていないかチェックし、残っていた場合は削除します。
+  After `csvmake` runs, checks for any remaining Excel processes and terminates them.
 
 ### 実行例
 
@@ -36,14 +36,14 @@ csvmake aaa.xls c:\csv -s aaa bbb sheet* -S sheet_x*
 csvmake aaa.xls c:\csv csvtab txt -s aaa bbb sheet* -S sheet_x*
 ```
 
-## 3. フィルタプログラムについて
+## 3. フィルタProgramについて
 
-フィルタプログラムは、CSVファイルへの変換後に実行されるファイル変換プログラムです。
+A filter program converts files after they have been converted to CSV.
 
-フィルタプログラム（またはバッチファイル）を自分で作成する場合は、以下の引数を使用してください。
+フィルタProgram（またはバッチファイル）を自分で作成する場合は、Use the following arguments.
 
-1. **1番目の引数**：変換前CSVファイル
-2. **2番目の引数**：変換後ファイル
+1. **1番目の引数**：変換前CSV file
+2. **2番目の引数**：Converted toファイル
 3. **3番目の引数**：シーケンス番号（3桁、前ゼロ付き）
 4. **4番目の引数**：出力先ディレクトリ名
 5. **5番目の引数**：シート名
@@ -60,17 +60,17 @@ csvmake %1 c:\csv
 
 このバッチファイルを作成したら、バッチファイルに対してExcelファイル（xlsファイル）をドラッグ＆ドロップします。
 
-するとプログラムが起動し、CSVファイルを作成します。
+するとProgramが起動し、Creates a CSV file.
 
-## 5. 履歴
+## 5. Version History
 
 - Ver 1.00　初公開
-- Ver 1.01　フィルタプログラムの機能を追加
-- ――――――　マニュアルを修正（プログラムの変更はありません）
+- Ver 1.01　フィルタProgramの機能を追加
+- ――――――　マニュアルを修正（Programの変更はありません）
 - Ver 1.02　変換したいシート名、変換したくないシート名を指定できるように変更
-- Ver 1.03　フィルタプログラムのパラメータを追加
+- Ver 1.03　フィルタProgramのパラメータを追加
 - Ver 1.04　Excelファイルを相対パスで指定するとエラーになるバグを修正
-- Ver 1.05　出力先に書き込めない場合にエラーメッセージを出力するように変更
+- Ver 1.05　出力先に書き込めない場合にエラーMessageを出力するように変更
 - Ver 1.06　出力先を相対パスにした場合の不具合を修正
-- Ver 1.07　フィルタプログラムを使用した場合、出力先ディレクトリに空白があると正しく動作しなかったバグを修正
-- Ver 1.08　`-proc`、`-tmp` オプションを追加
+- Ver 1.07　フィルタProgramを使用した場合、出力先ディレクトリに空白があると正しく動作しなかったバグを修正
+- Ver 1.08　`-proc`、`-tmp` Optionを追加

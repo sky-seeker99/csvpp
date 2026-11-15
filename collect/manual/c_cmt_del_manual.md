@@ -1,29 +1,29 @@
-# コメント削除プログラム
+# Comment Removal Program
 
-## 1. ソフトの紹介
+## 1. About the Program
 
-本プログラムは、C/C++ソースのコメント（`// ～`、`/* ～ */`）を削除するコンソールプログラムです。
+This console program removes comments (`// ...` and `/* ... */`) from C/C++ source files.
 
-## 2. 使用方法
+## 2. Usage
 
-本プログラムはコンソールプログラムです。
+This is a console program.
 
-### 実行形式
+### Syntax
 
 ```text
-c_cmt_del 変換前ファイル名 変換後ファイル名 [-r 指定文字] [-buff buffer_size]
+c_cmt_del Input file nameOutput file name [-r 指定文字] [-buff buffer_size]
 ```
 
-ファイル名はフルパスで指定してください。
+Specify the full path to the file.
 
-### オプション
+### Options
 
-- `-r`：指定した文字列を含むコメントを削除しないようにします。
-- `-buff`：1回の読み書きに使用するバッファサイズを指定します（単位：KByte）。
+- `-r`：Preserves comments that contain the specified string.
+- `-buff`: Specifies the buffer size for each read/write operation (KB).
   通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。
-  指定しない場合は10KByteとなります。
+  The default is 10 KB.
 
-### 使用例
+### Examples
 
 ```text
 c_cmt_del c:\csv\in.cpp c:\csv\out.cpp -r \
@@ -33,13 +33,13 @@ c_cmt_del c:\csv\in.cpp c:\csv\out.cpp -r \
 type c:\csv\in.cpp | c_cmt_del - - > c:\csv\out.cpp
 ```
 
-`-r` オプションは、コメントを削除しないための指定です。
+The `-r` option specifies a string that protects matching comments from deletion.
 
 ```text
 -r \
 ```
 
-と指定した場合は、
+When specified this way,
 
 ```text
 //\ ～
@@ -51,9 +51,9 @@ type c:\csv\in.cpp | c_cmt_del - - > c:\csv\out.cpp
 /*\ ～ */
 ```
 
-のコメントを削除しません。
+comments are not deleted.
 
-## 3. 履歴
+## 3. Version History
 
 - **Ver 0.90**　初公開！
 - **Ver 0.91**　指定文字列を含むコメントを削除しない指定を追加。
