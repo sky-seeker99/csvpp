@@ -4,7 +4,7 @@
 
 This program converts CSV files to XML files.
 
-Supports data larger than 2 GB.
+It supports data larger than 2 GB.
 
 ## 2. Usage
 
@@ -18,10 +18,10 @@ csvxml csv_file xml_file [-tag tag_config_file] [-header header_file] [-buff siz
 
 ### Options
 
-- `-e`：エスケープコードへの変換を行いません。
-- `-tag`：タグ設定Specifies a file.
-- `-header`：ヘッダSpecifies a file.
-- `-buff`: Specifies the buffer size for each read/write operation (KB). Usually not required, but a larger value may help with large files.The default is 10 KB.
+- `-e`: Disables conversion to escape codes.
+- `-tag`: Specifies the tag configuration file.
+- `-header`: Specifies the header file.
+- `-buff`: Specifies the buffer size used for each read/write operation (KB). This option is usually unnecessary, but a larger value may help with large files. The default is 10 KB.
 
 ### Examples
 
@@ -30,11 +30,11 @@ csvxml data.csv data.xml
 csvxml data.csv data.xml -tag tag.csv -header header.txt
 ```
 
-## 3. タグ設定ファイル
+## 3. Tag Configuration File
 
-タグ設定ファイルでは、全体を定義するタグ名、レコード単位のタグ名、項目のタグ名を指定します。
+The tag configuration file specifies the root tag name, the record tag name, and the tag names for fields.
 
-### 設定例
+### Configuration Example
 
 ```text
 #total_tag,DOC
@@ -44,71 +44,71 @@ csvxml data.csv data.xml -tag tag.csv -header header.txt
 #tag,suuryo
 ```
 
-タグを指定しない場合は、以下のタグ名になります。
+If no tags are specified, the following default names are used:
 
-- 全体を定義するタグ名：`DOC`
-- レコード単位のタグ名：`REC`
-- 項目のタグ名：`TAG` + 番号
+- Root tag: `DOC`
+- Record tag: `REC`
+- Field tags: `TAG` followed by the field number
 
-### (1) 全体を定義するタグ名の指定
+### (1) Specify the Root Tag Name
 
-#### 形式
+#### Syntax
 
 ```text
-#total_tag,root tag name
+#total_tag,root_tag_name
 ```
 
-#### Examples
+#### Example
 
 ```text
 #total_tag,DOC
 ```
 
-### (2) レコード単位のタグ名の指定
+### (2) Specify the Record Tag Name
 
-#### 形式
+#### Syntax
 
 ```text
-#record_tag,record tag name
+#record_tag,record_tag_name
 ```
 
-#### Examples
+#### Example
 
 ```text
 #record_tag,REC
 ```
 
-### (3) 項目のタグ名の指定
+### (3) Specify Field Tag Names
 
-#### 形式
+#### Syntax
 
 ```text
-#tag,field tag name
+#tag,field_tag_name
 ```
 
-#### Examples
+#### Example
 
 ```text
 #tag,suuryo
 ```
 
-### (4) Escape conversion
+### (4) Escape Conversion
 
-XMLでは、以下の文字がエスケープコードに変換されます。
+In XML, the following characters are converted to escape codes:
 
-| 文字 | エスケープコード |
+| Character | Escape code |
 |---|---|
-| `&`（アンパサンド） | `&amp;` |
-| `>`（大なり記号） | `&gt;` |
-| `<`（小なり記号） | `&lt;` |
-| `"`（二重引用符） | `&quot;` |
-| `'`（単一引用符） | `&apos;` |
+| `&` (ampersand) | `&amp;` |
+| `>` (greater-than sign) | `&gt;` |
+| `<` (less-than sign) | `&lt;` |
+| `"` (double quotation mark) | `&quot;` |
+| `'` (single quotation mark) | `&apos;` |
 
 The `-e` option disables this escaping.
 
-## 4. ヘッダファイル
+## 4. Header File
 
-The header file specifies the contents of the first and second lines of the XML file.
+The header file specifies the content to place on the first and second lines of the XML file.
 
 ### Example
 
@@ -121,6 +121,6 @@ For details, refer to the XML specification.
 
 ## 5. Version History
 
-- **Ver 1.00**　リリース
-- **Ver 1.01**　ヘッダファイル、タグ設定ファイルをOptionにしました。
-- **Ver 1.02**　エスケープコード変換機能を追加。`-e` Optionを追加。
+- **Ver 1.00** Released.
+- **Ver 1.01** Made the header file and tag configuration file selectable through options.
+- **Ver 1.02** Added escape code conversion and the `-e` option.

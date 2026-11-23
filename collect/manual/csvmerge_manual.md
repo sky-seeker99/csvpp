@@ -2,16 +2,16 @@
 
 ## 1. About the Program
 
-This program merges multiple CSV files horizontally.
+This program merges multiple CSV files horizontally, combining their columns by row.
 
 ## 2. Usage
 
 This is a console program.
 
-The syntax is as follows.
+Syntax:
 
 ```text
-csvmerge CSV file 1 CSV file 2 CSV file 3 .... > Merged output
+csvmerge csv_file1 csv_file2 csv_file3 ... > merged_file
 ```
 
 ### Example
@@ -36,7 +36,7 @@ dd5,ee6,ff7
 dd6,ee7,ff8
 ```
 
-上記の2つのCSV fileをマージすると、The result is as follows.
+Merging the two CSV files above produces the following result.
 
 #### `out.csv`
 
@@ -51,5 +51,5 @@ This is how multiple CSV files are combined horizontally.
 
 ## 3. Version History
 
-- Ver 1.00　初公開
-- Ver 1.01　バグ修正
+- Ver 1.00 Initial release.
+- Ver 1.01 Bug fix.

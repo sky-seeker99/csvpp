@@ -2,11 +2,11 @@
 
 ## 1. About the Program
 
-指定したディレクトリ内のすべてのCSV形式のファイルの内容をExcelファイルに追加します。
+Adds the contents of all CSV files in a specified directory to an Excel workbook.
 
-また、File nameがシート名になるため、すでにシートが存在する場合は内容をコピーして、該当するシートに内容だけを貼り付けます。
+Each CSV file name is used as a worksheet name. If a worksheet with that name already exists, its contents are copied and only the data is pasted into the matching sheet.
 
-（Formatting, shapes, and other non-data elements are preserved.）
+Formatting, shapes, and other non-data elements are preserved.
 
 ## 2. Usage
 
@@ -15,47 +15,34 @@ This is a console program.
 ### Syntax
 
 ```text
-csvmake4 ExcelFile name CSV fileのあるディレクトリ [-nv] [-new] [-proc] [-xml] [-paste] [フィルタProgram] [拡張子]
+csvmake4 excel_file csv_directory [-nv] [-new] [-proc] [-xml] [-paste] [filter_program] [extension]
 ```
 
 ### Options
 
-- `-proc`  
-  `csvmake4` 実行後、Excelのプロセスが残っていないかチェックし、残っていた場合は削除します。
+- `-proc`: After `csvmake4` runs, checks for any remaining Excel processes and terminates them.
+- `-nv`: Hides the Excel window.
+- `-new`: Creates a new Excel workbook.
+- `-xml`: Outputs in XML format. Use `xml` as the Excel file extension.
+- `-paste`: Pastes formula strings from the CSV file into the Excel workbook as formulas.
 
-- `-nv`  
-  Excelの画面を表示しません。
-
-- `-new`  
-  Creates a new Excel workbook.
-
-- `-xml`  
-  XMLフォーマットで出力します。Excelファイルの拡張子を `xml` にしてください。
-
-- `-paste`  
-  CSV file内の数式文字列を、そのままExcelファイルに貼り付けます。
-
-例えば、次のCSV fileがある場合、
+For example, suppose a CSV file contains:
 
 ```text
 a,"=A1"
 ```
 
-`-paste` Optionを指定しない場合は、
+Without the `-paste` option, only the following result is copied to the Excel workbook:
 
 ```text
 a,a
 ```
 
-という結果のみExcelファイルにコピーされます。
-
-`-paste` Optionを指定すると、
+With the `-paste` option, the result is:
 
 ```text
 a,=A1
 ```
-
-となります。
 
 ### Examples
 
@@ -66,36 +53,35 @@ csvmake4 d:\aaa.xls c:\csv -nv
 csvmake4 d:\aaa.xls c:\csv -nv -new
 ```
 
-## 3. フィルタProgramについて
+## 3. Filter Programs
 
-フィルタProgramは、CSV fileへの変換前に実行されるCSV file変換Programです。
+A filter program converts files to CSV before they are imported into the Excel workbook.
 
-変換されたCSV fileをExcelファイルに追加します。
+The converted CSV files are then added to the workbook.
 
-フィルタProgram（またはバッチファイル）を自分で作成する場合は、Use the following arguments.
+If you create your own filter program or batch file, use the following arguments:
 
-1. **第1引数**：変換前ファイル
-2. **第2引数**：Converted toCSV file
+1. **Argument 1**: Source file
+2. **Argument 2**: Converted CSV file
 
-## 4. 賢い使用方法
+## 4. Convenient Use
 
-`d:\aaa.xls` に出力したい場合は、以下のバッチファイルを作成します。
+To output to `d:\aaa.xls`, create a batch file as follows.
 
-### バッチファイルの中身
+### Batch File Contents
 
 ```bat
 csvmake d:\aaa.xls %1
 ```
 
-このファイルを作成したら、このバッチファイルに対して、複数のCSV fileがあるディレクトリを選択してドラッグ＆ドロップします。
+After creating this batch file, select the directory containing the CSV files and drag and drop it onto the batch file.
 
-すると、Programが起動して、`d:\aaa.xls` にシートを追加または更新します。
+The program starts and adds or updates worksheets in `d:\aaa.xls`.
 
 ## 5. Version History
 
-- **Ver 1.00**　初公開！
-- **Ver 1.01**　フィルタProgramの機能を追加。  
-  マニュアルを修正しました。Programの変更はありません。
-- **Ver 1.02**　`-nv`、`-new` Optionを追加。xlsファイルがない場合は新規にファイルを作成します。
-- **Ver 1.03**　フィルタProgramを使用した際、CSV fileのあるディレクトリに空白があると正しく動作しなかった不具合を修正。
-- **Ver 1.04**　`-proc`、`-xml`、`-paste` Optionを追加。
+- **Ver 1.00** Initial release.
+- **Ver 1.01** Added filter program support. Updated the manual; no program changes.
+- **Ver 1.02** Added the `-nv` and `-new` options. If the XLS file does not exist, a new workbook is created.
+- **Ver 1.03** Fixed a bug that caused failures when the directory containing CSV files had spaces and a filter program was used.
+- **Ver 1.04** Added the `-proc`, `-xml`, and `-paste` options.

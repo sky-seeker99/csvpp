@@ -2,7 +2,7 @@
 
 ## 1. About the Program
 
-HTMLファイルをCSV fileに変換します。
+Converts HTML files to CSV files.
 
 ## 2. Usage
 
@@ -11,7 +11,7 @@ This is a console program.
 ### Syntax
 
 ```text
-htmlcsv [-r] HTML file name CSV file name
+htmlcsv [-r] html_file csv_file
 ```
 
 ### Examples
@@ -21,14 +21,13 @@ htmlcsv c:\csv\in.html c:\csv\out.csv
 htmlcsv -r c:\csv\in.html c:\csv\out.csv
 ```
 
-`-r` Optionを指定した場合は、改行まで変換します。  
-（Line breaks inside tags are ignored.します。）
+With the `-r` option, line breaks are also processed. Line breaks inside tags are ignored.
 
-## 3. 変換内容
+## 3. Conversion Details
 
 ### Example 1
 
-**変換前**
+**Before**
 
 ```html
 <!--AAAAA
@@ -38,7 +37,7 @@ cmd2
 //-->
 ```
 
-**Converted to**
+**After**
 
 ```text
 #cmd,<!--AAAAA
@@ -50,13 +49,13 @@ cmd2
 
 ### Example 2
 
-**変換前**
+**Before**
 
 ```html
 <HTML><HEAD>
 ```
 
-**Converted to**
+**After**
 
 ```text
 #tag,HTML
@@ -65,13 +64,13 @@ cmd2
 
 ### Example 3
 
-**変換前**
+**Before**
 
 ```html
 <META name="GENERATOR" content="xxx WebSphere XXXXpage Builder V6.0.0 for Windows">
 ```
 
-**Converted to**
+**After**
 
 ```text
 #tag,META,name,"GENERATOR"
@@ -80,13 +79,13 @@ cmd2
 
 ### Example 4
 
-**変換前**
+**Before**
 
 ```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 ```
 
-**Converted to**
+**After**
 
 ```text
 #tag,!DOCTYPE,HTML
@@ -96,13 +95,13 @@ cmd2
 
 ### Example 5
 
-**変換前**
+**Before**
 
 ```html
-<TD width="645"><B><FONT face="ＭＳ ゴシック">CSV</FONT>ファイル→Verilog-HDL（ＲＴＬ） 変換Program <FONT face="ＭＳ ゴシック">Ver1.00</FONT> <A href="csvvrtl100.lzh">csvvrtｌ100.LZH (148KB)</A></B></TD>
+<TD width="645"><B><FONT face="MS Gothic">CSV</FONT>file-to-Verilog-HDL (RTL) Conversion Program <FONT face="MS Gothic">Ver1.00</FONT> <A href="csvvrtl100.lzh">csvvrtｌ100.LZH (148KB)</A></B></TD>
 ```
 
-**Converted to**
+**After**
 
 ```text
 #tag,TD,width,"645"
@@ -110,7 +109,7 @@ cmd2
 #tag,FONT,face,"MS Gothic"
 #wr,CSV
 #tag,/FONT
-#wr,File-to-Verilog-HDL (RTL) Conversion Program
+#wr,file-to-Verilog-HDL (RTL) Conversion Program
 #tag,FONT,face,"MS Gothic"
 #wr,Ver1.00
 #tag,/FONT
@@ -123,13 +122,13 @@ cmd2
 
 ### Example 6
 
-**変換前**
+**Before**
 
 ```html
 <BR><BR>
 ```
 
-**Converted to**
+**After**
 
 ```text
 #tag,BR
@@ -139,17 +138,17 @@ cmd2
 
 ### Example 7
 
-`-r` Optionを付けて実行した場合。
+When run with the `-r` option:
 
-**変換前**
+**Before**
 
 ```html
 <!doctype html public "-//w3c//dtd html 4.0 transitional//EN">
-<html lang="ja">
+<html lang="en">
 <head>
 ```
 
-**Converted to**
+**After**
 
 ```text
 #rc_mode
@@ -157,19 +156,19 @@ cmd2
 #tag,!doctype,public
 #tag,!doctype,"-//w3c//dtd html 4.0 transitional//EN"
 #rcode
-#tag,html,lang,"ja"
+#tag,html,lang,"en"
 #rcode
 #tag,head
 #rcode
 ```
 
-`#rc_mode` は、`#rcode` があることを示します。  
-`#rcode` は、テキストファイル上での改行を示します。
+`#rc_mode` indicates that `#rcode` is used to represent a line break.
+`#rcode` represents a line break in the text file.
 
 ## 4. Version History
 
-- **Ver 1.00**　初公開！
-- **Ver 1.00a**　仕様ミスを修正。
-- **Ver 1.01**　第2水準の漢字に対応。
-- **Ver 1.02**　いろいろなバグをフィックス。
-- **Ver 1.03**　リターンコードまで詳細に調べるModeを追加。
+- **Ver 1.00** Initial release.
+- **Ver 1.00a** Fixed a specification error.
+- **Ver 1.01** Added support for Level 2 kanji characters.
+- **Ver 1.02** Fixed various bugs.
+- **Ver 1.03** Added a mode for detailed inspection of line ending codes.

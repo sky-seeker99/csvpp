@@ -2,7 +2,7 @@
 
 ## 1. About the Program
 
-Exports JPEG or BMP image data as CSV containing YCbCr or RGB components.
+This program exports image data from JPEG or BMP files as CSV containing YCbCr or RGB components.
 
 ## 2. Usage
 
@@ -11,7 +11,7 @@ This is a console program.
 ### Syntax
 
 ```text
-jpegcsv JPEGファイル CSV file RGB|YCbCr [bmp]
+jpegcsv jpeg_file csv_file RGB|YCbCr [bmp]
 ```
 
 ### Examples
@@ -20,19 +20,19 @@ jpegcsv JPEGファイル CSV file RGB|YCbCr [bmp]
 jpegcsv c:\csv\pict.jpg c:\csv\pict.csv RGB
 ```
 
-RGB成分に変換します。
+Converts the image data to RGB components.
 
 ```text
 jpegcsv c:\csv\pict.jpg c:\csv\pict.csv YCbCr
 ```
 
-YCbCr成分に変換します。
+Converts the image data to YCbCr components.
 
 ```text
 jpegcsv c:\csv\pict.bmp c:\csv\pict.csv YCbCr bmp
 ```
 
-BMPファイルをYCbCr成分に変換します。
+Converts a BMP file to YCbCr components.
 
 ## 3. CSV File Format
 
@@ -58,7 +58,6 @@ BMPファイルをYCbCr成分に変換します。
 
 ## 4. Version History
 
-- **Ver 1.00**　初公開！
-- **Ver 1.01**　変換を強化。  
-  マニュアルを修正しました。Programの変更はありません。
-- **Ver 1.02**　BMPファイル変換機能を追加。
+- **Ver 1.00** Initial release.
+- **Ver 1.01** Improved the conversion. Updated the manual; no program changes.
+- **Ver 1.02** Added BMP file conversion support.

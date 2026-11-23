@@ -13,20 +13,20 @@ This is a console program.
 ### Syntax
 
 ```text
-eucsjis2 sjis_euc|euc_sjis Input file nameOutput file name
+eucsjis2 sjis_euc|euc_sjis input_file output_file
 ```
 
-Specify the full path to the file.
+Specify the full paths to the input and output files.
 
-### 変換方法
+### Conversion Modes
 
-- `sjis_euc`：SJISからEUCに変換します。このとき、Line endingは `0x0A` に変換します。
-- `euc_sjis`：EUCからSJISに変換します。このとき、Line endingは `0x0D, 0x0A` に変換します。
+- `sjis_euc`: Converts Shift-JIS to EUC-JP. Line endings are converted to `0x0A`.
+- `euc_sjis`: Converts EUC-JP to Shift-JIS. Line endings are converted to `0x0D, 0x0A`.
 
-### Line endingを指定する場合
+### Selecting the Line Ending Format
 
-- `sjis_euc_win` / `euc_sjis_win`：Line endingを `0x0D, 0x0A` に変換します。
-- `sjis_euc_unix` / `euc_sjis_unix`：Line endingを `0x0A` に変換します。
+- `sjis_euc_win` / `euc_sjis_win`: Converts line endings to `0x0D, 0x0A`.
+- `sjis_euc_unix` / `euc_sjis_unix`: Converts line endings to `0x0A`.
 
 ### Standard Input and Output
 
@@ -34,7 +34,7 @@ Specify `-` as the input file name to read from standard input.
 
 Specify `-` as the output file name to write to standard output.
 
-Standard outputを使用する場合、Line endingは必ず `0x0D, 0x0A` になりますので注意してください。
+Note that line endings written to standard output are always `0x0D, 0x0A`.
 
 ### Examples
 
@@ -43,25 +43,25 @@ eucsjis2 sjis_euc c:\csv\in.txt c:\csv\out.txt
 type c:\csv\in.txt | eucsjis2 euc_sjis - - > c:\csv\out.txt
 ```
 
-## 3. 外字の変換
+## 3. Converting User-Defined Characters
 
-SJISコードの漢字で外字を使用する場合は、`eucsjis.exe` のあるディレクトリに `eucsjis.csv` ファイルを置きます。
+To convert user-defined characters in Shift-JIS encoded text, place an `eucsjis.csv` file in the directory containing `eucsjis.exe`.
 
-`eucsjis.csv` には、変換規則を記述します。
+Define the conversion rules in `eucsjis.csv`.
 
-添付の `eucsjis.csv` ファイルには、作者が調査したSJISコードからEUCコードへの変換規則が記述されています。
+The included `eucsjis.csv` contains rules researched by the author for converting Shift-JIS codes to EUC-JP codes.
 
-### フォーマット
+### Format
 
 ```text
-#sjis_euc,1文字目のコード,2文字目のコード上限,2文字目のコード下限,1文字目のコード差分,2文字目のコード差分
-#euc_sjis,1文字目のコード,2文字目のコード上限,2文字目のコード下限,1文字目のコード差分,2文字目のコード差分
+#sjis_euc,first_byte_code,second_byte_code_upper_limit,second_byte_code_lower_limit,first_byte_code_offset,second_byte_code_offset
+#euc_sjis,first_byte_code,second_byte_code_upper_limit,second_byte_code_lower_limit,first_byte_code_offset,second_byte_code_offset
 ```
 
-- `#sjis_euc`：SJISコードからEUCコードへの変換規則を指定します。
-- `#euc_sjis`：EUCコードからSJISコードへの変換規則を指定します。
+- `#sjis_euc`: Specifies rules for converting Shift-JIS codes to EUC-JP codes.
+- `#euc_sjis`: Specifies rules for converting EUC-JP codes to Shift-JIS codes.
 
-### 設定例
+### Configuration Example
 
 ```text
 #sjis_euc,250,73,64,2,177
@@ -70,7 +70,7 @@ SJISコードの漢字で外字を使用する場合は、`eucsjis.exe` のあ�
 
 ## 4. Version History
 
-- **Ver 1.00**　初公開！
-- **Ver 1.02**　外字の変換規則をファイルで指定できるようにしました。
-- **Ver 1.02a**　不要なリターンコードを付加していたバグを修正。
-- **Ver 1.03**　高速化しました。
+- **Ver 1.00** Initial release.
+- **Ver 1.02** Added the ability to specify user-defined character conversion rules in a file.
+- **Ver 1.02a** Fixed a bug that added unnecessary carriage return codes.
+- **Ver 1.03** Improved performance.

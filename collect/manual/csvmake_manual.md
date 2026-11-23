@@ -4,30 +4,26 @@
 
 This utility exports every worksheet in an Excel workbook as a CSV file.
 
-Useful when you want to create CSV files without having to open Excel.
+It is useful when you need to create CSV files without opening Excel.
 
 ## 2. Usage
 
 This is a console program.
 
-The syntax is as follows.
+Syntax:
 
 ```text
-csvmake ExcelFile name 出力先ディレクトリ [フィルタProgram] [拡張子] [-tmp] [-proc] [-s シート名 シート名・・・] [-S シート名 シート名・・・]
+csvmake excel_file output_directory [filter_program] [extension] [-tmp] [-proc] [-s worksheet_name worksheet_name ...] [-S worksheet_name worksheet_name ...]
 ```
 
 ### Options
 
-- **`-s`**  
-  Specifies worksheet names to convert. Wildcards can be used.
-- **`-S`**  
-  Specifies worksheet names to exclude. Wildcards can be used.
-- **`-tmp`**  
-  Writes the CSV file to a temporary file first, then copies it to the destination CSV file.
-- **`-proc`**  
-  After `csvmake` runs, checks for any remaining Excel processes and terminates them.
+- **`-s`**: Specifies the worksheet names to convert. Wildcards can be used.
+- **`-S`**: Specifies the worksheet names to exclude from conversion. Wildcards can be used.
+- **`-tmp`**: Writes each CSV file to a temporary file first, then copies it to the destination.
+- **`-proc`**: After `csvmake` runs, checks for any remaining Excel processes and terminates them.
 
-### 実行例
+### Examples
 
 ```text
 csvmake aaa.xls c:\csv
@@ -36,41 +32,41 @@ csvmake aaa.xls c:\csv -s aaa bbb sheet* -S sheet_x*
 csvmake aaa.xls c:\csv csvtab txt -s aaa bbb sheet* -S sheet_x*
 ```
 
-## 3. フィルタProgramについて
+## 3. Filter Programs
 
-A filter program converts files after they have been converted to CSV.
+A filter program converts a file after it has been exported to CSV.
 
-フィルタProgram（またはバッチファイル）を自分で作成する場合は、Use the following arguments.
+If you create your own filter program or batch file, use the following arguments:
 
-1. **1番目の引数**：変換前CSV file
-2. **2番目の引数**：Converted toファイル
-3. **3番目の引数**：シーケンス番号（3桁、前ゼロ付き）
-4. **4番目の引数**：出力先ディレクトリ名
-5. **5番目の引数**：シート名
+1. **Argument 1**: Source CSV file
+2. **Argument 2**: Output file
+3. **Argument 3**: Sequence number (three digits, zero-padded)
+4. **Argument 4**: Output directory name
+5. **Argument 5**: Worksheet name
 
-## 4. 賢い使用方法
+## 4. Convenient Use
 
-`c:\csv` ディレクトリに出力したい場合は、以下のバッチファイルを作成します。
+To export files to the `c:\csv` directory, create a batch file as follows.
 
-### バッチファイルの内容
+### Batch File Contents
 
 ```bat
 csvmake %1 c:\csv
 ```
 
-このバッチファイルを作成したら、バッチファイルに対してExcelファイル（xlsファイル）をドラッグ＆ドロップします。
+After creating this batch file, drag and drop an Excel workbook (`.xls` file) onto it.
 
-するとProgramが起動し、Creates a CSV file.
+The program starts and creates the CSV files.
 
 ## 5. Version History
 
-- Ver 1.00　初公開
-- Ver 1.01　フィルタProgramの機能を追加
-- ――――――　マニュアルを修正（Programの変更はありません）
-- Ver 1.02　変換したいシート名、変換したくないシート名を指定できるように変更
-- Ver 1.03　フィルタProgramのパラメータを追加
-- Ver 1.04　Excelファイルを相対パスで指定するとエラーになるバグを修正
-- Ver 1.05　出力先に書き込めない場合にエラーMessageを出力するように変更
-- Ver 1.06　出力先を相対パスにした場合の不具合を修正
-- Ver 1.07　フィルタProgramを使用した場合、出力先ディレクトリに空白があると正しく動作しなかったバグを修正
-- Ver 1.08　`-proc`、`-tmp` Optionを追加
+- Ver 1.00 Initial release.
+- Ver 1.01 Added filter program support.
+- Manual update; no program changes.
+- Ver 1.02 Added the ability to specify worksheets to include or exclude from conversion.
+- Ver 1.03 Added parameters for filter programs.
+- Ver 1.04 Fixed a bug that occurred when an Excel file was specified using a relative path.
+- Ver 1.05 Added an error message when the output destination cannot be written to.
+- Ver 1.06 Fixed an issue with using a relative path for the output destination.
+- Ver 1.07 Fixed a bug that caused the program to fail when the output directory contained spaces and a filter program was used.
+- Ver 1.08 Added the `-proc` and `-tmp` options.
