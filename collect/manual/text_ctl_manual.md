@@ -1,380 +1,451 @@
 # Text File Processing Program
 
-Text File Processing Program
+This program applies user-defined rules to process text files.
 
 ## 1. About the Program
 
-This program processes text files according to user-defined rules.
-Because the rules use a state machine, they can perform complex replacements, insertions, deletions, and other operations.
-Wildcards can also be used in file names.
+This program processes text files according to user-defined rules. Because the rules use a state machine, they can perform complex replacements, insertions, deletions, and other operations. Wildcards can also be used in file names.
 
 ## 2. Usage
 
 This is a console program.
-The syntax is as follows.
-text_ctl ルールファイル Files to convert [`-r`] [`-l` ログファイル] [`-buff` buffer_size]
 
-Specify the full path to the file to convert.
-The rule file is in CSV format.
-Specify `-r` to search without modifying the file.
-`-buff`は一回の読み書きに要する大きさ(単位はKByte)を指定します。通常は指定しませんが、ファイルサイズが大きい場合などには大きな値を指定すると有効です。The default is 10 KB.
+### Syntax
 
-例は以下の通りです。
+```text
+text_ctl rule_file file_to_convert [-r] [-l log_file] [-buff buffer_size]
+```
+
+Specify the full path to the file to convert. The rule file must be in CSV format.
+
+- `-r`: Searches without modifying the file.
+- `-l`: Specifies a log file.
+- `-buff`: Specifies the buffer size used for each read/write operation (KB). This option is usually unnecessary, but a larger value may help with large files. The default is 10 KB.
+
+### Examples
+
+```text
 text_ctl rule.csv c:\csv\*.cpp
-text_ctl rule.csv c:\csv\*.cpp `-r`
-text_ctl rule.csv c:\csv\*.cpp `-r` `-l` log.txt
+text_ctl rule.csv c:\csv\*.cpp -r
+text_ctl rule.csv c:\csv\*.cpp -r -l log.txt
+```
 
 ## 3. Examples
 
-例えば、aaa.v というファイルの module ～ endmodule 間の内容を加工する場合を想定します。
+Suppose you want to process the contents between `module` and `endmodule` in a file named `aaa.v`.
 
-### aaa.v
+### `aaa.v`
 
+```verilog
 module xxx
-～
+...
 endmodule
 
 module yyy
-～
+...
 endmodule
 
 module zzz
-～
+...
 endmodule
+```
 
-At this point,Create a rule file as follows.
+Create a rule file as follows:
 
-`#st`,IDLE
-`#if`,module
-  `#noif`,endmodule
-    `#printf`,Step1
-    `#go`,SET_A
-  `#endif`
-`#endif`
+```text
+#st,IDLE
+#if,module
+  #noif,endmodule
+    #printf,Step1
+    #go,SET_A
+  #endif
+#endif
 
-`#st`,SET_A
-`#if`,endmodule
-  `#go`,IDLE
-`#else`
-`#endif`
+#st,SET_A
+#if,endmodule
+  #go,IDLE
+#else
+#endif
+```
 
-`#st`はステートマシンの状態を表します。
-The example above has two states: IDLE and SET_A.
-IDLE stateでは、テキストの1行に module があり、endmodule が存在しない場合に `#printf` と `#go` を実行します。
-`#printf` はその行を表示します。`#go` はステートを SET_A に移します。
-SET_A stateでは、endmodule が存在した場合に IDLE stateへ戻ります。
+`#st` defines a state in the state machine. The example above has two states: `IDLE` and `SET_A`.
 
-上記の記述例から具体的に加工の方法を加えますと、
+In the `IDLE` state, if a line contains `module` but does not contain `endmodule`, the program executes `#printf` and `#go`. `#printf` displays the line, and `#go` changes the state to `SET_A`.
 
-`#st`,IDLE
-`#if`,module
-  `#noif`,endmodule
-    `#printf`,Step1
-    `#go`,SET_A
-  `#endif`
-`#endif`
+In the `SET_A` state, when a line containing `endmodule` is found, the state changes back to `IDLE`.
 
-`#st`,SET_A
-`#if`,endmodule
-  `#go`,IDLE
-`#else`
-  `#if`,always
-    `#printf`,always
-    `#ins`,"// sync_reset ""reset"""
-  `#endif`
-  `#if`,case
-    `#printf`,register
-    `#chg`,`#@@#` // paralellcase
-  `#endif`
-  `#if`,# register define ############################
-    `#printf`,delete
-    `#del`
-  `#endif`
-  `#if`,~reset_n
-    `#printf`,repalce
-    `#replace`,~reset_n,~rst_n
-  `#endif`
-`#endif`
+You can extend the example with specific processing rules as follows:
 
-上記のように記述します。
+```text
+#st,IDLE
+#if,module
+  #noif,endmodule
+    #printf,Step1
+    #go,SET_A
+  #endif
+#endif
 
-SET_A stateで always がある場合、// sync_reset "reset"
-を行として追加します。
-case の場合、その行の末尾に // paralellcase
-を追加します。`#@@#` is replaced with the matched text.
-# register define ############################
-を見つけた時はその行を削除します。
-~reset_n を見つけた場合、~reset_n を ~rst_n に置換します。
+#st,SET_A
+#if,endmodule
+  #go,IDLE
+#else
+  #if,always
+    #printf,always
+    #ins,"// sync_reset ""reset"""
+  #endif
+  #if,case
+    #printf,register
+    #chg,#@@# // parallel_case
+  #endif
+  #if,# register define ############################
+    #printf,delete
+    #del
+  #endif
+  #if,~reset_n
+    #printf,replace
+    #replace,~reset_n,~rst_n
+  #endif
+#endif
+```
 
-## 4. コマンドの詳細
+With these rules:
 
-### 1.ステートマシンのState name定義
+- In the `SET_A` state, when a line contains `always`, the line `// sync_reset "reset"` is inserted.
+- When a line contains `case`, `// parallel_case` is appended to that line. `#@@#` is replaced with the matched text.
+- A line containing `# register define ############################` is deleted.
+- When `~reset_n` is found, it is replaced with `~rst_n`.
 
-Defines state machine state names.
-最初に定義された状態から実行されます。
+## 4. Command Reference
 
-**形式**
+### 1. Define State Machine States
 
-`#st`,State name
+Defines state names for the state machine. Execution starts with the first state defined.
 
-**Example**
+**Syntax**
 
-`#st`,IDLE
-
-### 2.`#if`,`#noif`,`#else`,`#endif`文
-
-`#if` は、指定した文字列が存在するかどうかを比較します。
-`#noif` は、指定した文字列が存在しないことを比較します。
-`#else` は、if 文に対する逆の条件になります。
-`#endif` は、`#if` / `#noif` に対する終端です。
-Optionに `aA_same` を指定すると、アルファベットの大文字と小文字を同一として検索します。
-
-**形式**
-
-`#if`,Comparison string,[`aA_same`]
-`#noif`,Comparison string,[`aA_same`]
-`#else`
-`#endif`
+```text
+#st,state_name
+```
 
 **Example**
 
-`#if`,module
-  `#printf`,msg1
-`#endif`
+```text
+#st,IDLE
+```
 
-`#noif`,endmodule
-  `#printf`,msg2
-`#else`
-  `#printf`,msg3
-`#endif`
+### 2. `#if`, `#noif`, `#else`, and `#endif` Statements
 
-`#if`,module,`aA_same`
-  `#printf`,msg1
-`#endif`
+`#if` checks whether the specified string exists in the line. `#noif` checks that the specified string does not exist. `#else` specifies the inverse condition of the corresponding `#if` or `#noif`. `#endif` marks the end of the conditional block.
 
-### 3.コメントアウト
+Specify `aA_same` to search without distinguishing uppercase and lowercase letters.
 
-// がコメントアウトを示します。
-// がある行はコメントとして扱われます。
+**Syntax**
 
-**形式**
+```text
+#if,comparison_string,[aA_same]
+#noif,comparison_string,[aA_same]
+#else
+#endif
+```
 
-//,～,
+**Examples**
 
-**Example**
+```text
+#if,module
+  #printf,msg1
+#endif
+```
 
-//,`#if`,module
+```text
+#noif,endmodule
+  #printf,msg2
+#else
+  #printf,msg3
+#endif
+```
 
-### 4.状態移動
+```text
+#if,module,aA_same
+  #printf,msg1
+#endif
+```
 
-`#go` は状態遷移の命令です。
-`#act` は状態を遷移させず、指定した状態をアクティブにします。これを指定すると、状態が並列に動作します。
-`#st`op は、指定した状態がアクティブな場合に、その状態を停止させます。`#act` または `#go` の指定がある場合は、`#act`、`#go` が優先されます。
+### 3. Comments
 
-**形式**
+A line beginning with `//` is treated as a comment.
 
-`#go`,Target state
-`#act`,Target state
-`#st`op,Target state
+**Syntax**
 
-**Example**
-
-`#st`,IDLE
-`#if`,module
-  `#noif`,endmodule
-    `#go`,SET_A
-    `#act`,SET_B
-  `#endif`
-`#endif`
-
-`#st`,SET_A
-`#if`,endmodule
-  `#st`op,SET_B
-  `#go`,IDLE
-`#else`
-  `#if`,always
-    `#printf`,always
-  `#endif`
-`#endif`
-
-`#st`,SET_B
-`#if`,sample1_fp
-  `#printf`,printf
-`#endif`
-
-### 5.行挿入
-
-`#ins` / `#ins`_after 命令は、指定した文字列を行として挿入します。
-`#ins` は、検索文字列を含む行の前に挿入します。
-`#ins`_after は、検索文字列を含む行の後に挿入します。
-
-**形式**
-
-`#ins`,Text to insert
-`#ins`_after,Text to insert
+```text
+//,comment_text
+```
 
 **Example**
 
-`#ins`,aaaaaaa
-`#ins`_after,aaaaaaa
+```text
+//,#if,module
+```
 
-### 6.行削除
+### 4. State Transitions
 
-`#del` 命令は、指定した行を削除します。
+`#go` transitions to the specified state.
 
-**形式**
+`#act` activates the specified state without transitioning away from the current state. This allows states to run in parallel.
 
-`#del`
+`#stop` stops the specified state if it is active. If `#act` or `#go` is also specified, `#act` and `#go` take precedence.
 
-**Example**
+**Syntax**
 
-`#del`
-
-### 6.行加工
-
-`#chg` 命令は、行を加工します。`#@@#` is replaced with the text that was read.
-
-**形式**
-
-`#chg`,Processing instruction
+```text
+#go,target_state
+#act,target_state
+#stop,target_state
+```
 
 **Example**
 
-`#chg`,`#@@#` // aaa
+```text
+#st,IDLE
+#if,module
+  #noif,endmodule
+    #go,SET_A
+    #act,SET_B
+  #endif
+#endif
 
-例えば、For example, if the input text is `case(xxx)`, it is converted to `case(xxx) // aaa`.
+#st,SET_A
+#if,endmodule
+  #stop,SET_B
+  #go,IDLE
+#else
+  #if,always
+    #printf,always
+  #endif
+#endif
 
-### 7.文字列置換
+#st,SET_B
+#if,sample1_fp
+  #printf,printf
+#endif
+```
 
-`#replace` 命令は、指定した文字列を置換します。
+### 5. Insert Lines
 
-**形式**
+`#ins` and `#ins_after` insert the specified text as a line. `#ins` inserts it before a line containing the search string. `#ins_after` inserts it after that line.
 
-`#replace`,Text to find,Replacement text,[`aA_same`]
-Optionに `aA_same` を指定すると、アルファベットの大文字と小文字を同一として置換します。
+**Syntax**
 
-**Example**
-
-`#replace`,reset_n,rst_n
-`#replace`,reset_n,rst_n,`aA_same`
-
-### 8.デバッグ
-
-`#debug` は、CSV fileを読み込んだ状況を表示します。
-
-**形式**
-
-`#debug`
-
-**Example**
-
-`#debug`
-
-### 9.ステートマシンのアクティブ初期設定
-
-`#st`_init は、ステートマシンをアクティブにするための初期設定です。この設定がない場合は、最初に定義したステートマシンがアクティブになります。
-
-**形式**
-
-`#st`_init,State 1,State 2–,State n
+```text
+#ins,text_to_insert
+#ins_after,text_to_insert
+```
 
 **Example**
 
-`#st`_init,idle,idle_2
+```text
+#ins,aaaaaaa
+#ins_after,aaaaaaa
+```
 
-### 10.ログ収集
+### 6. Delete a Line
 
-`#log` は、指定した箇所を基準として、前の n 行から後の m 行までの内容をログとして収集します。出力形式は `#line_chg` に従います。
+`#del` deletes the current line.
 
-**形式**
+**Syntax**
 
-`#log`,Number of preceding lines,Number of following lines
-
-**Example**
-
-`#log`,3,4
-
-### 11.指定行の書き換え
-
-`#line_chg` は、指定した行を書き換えます。
-
-**形式**
-
-`#line_chg`,行数,内容
+```text
+#del
+```
 
 **Example**
 
-`#line_chg`,100,aaaaadd
+```text
+#del
+```
 
-※内容にカンマがある時は内容をダブルコーテーションで括って下さい。また、内容にダブルコーテーションがある時は２回ダブルコーテーションを記述してください。
+### 6. Modify a Line
 
-### 12.命令のトレース
+`#chg` modifies a line. `#@@#` is replaced with the text that was read.
 
-`#itrace` は、命令をトレースします。
+**Syntax**
 
-**形式**
-
-`#itrace`
-
-**Example**
-
-`#itrace`
-
-### 13.バッファのトレース
-
-`#trace` は、バッファをトレースします。
-
-**形式**
-
-`#trace`
+```text
+#chg,modification
+```
 
 **Example**
 
-`#trace`
+```text
+#chg,#@@# // aaa
+```
 
-### 14.改行削除
+For example, if the input text is `case(xxx)`, it becomes `case(xxx) // aaa`.
 
-`#retdel` は、改行を削除し、次の行とつなげます。
+### 7. Replace a String
 
-**形式**
+`#replace` replaces the specified string.
 
-`#retdel`
+**Syntax**
+
+```text
+#replace,text_to_find,replacement_text,[aA_same]
+```
+
+Specify `aA_same` to replace text without distinguishing uppercase and lowercase letters.
+
+**Examples**
+
+```text
+#replace,reset_n,rst_n
+#replace,reset_n,rst_n,aA_same
+```
+
+### 8. Debugging
+
+`#debug` displays information about how the CSV file was read.
+
+**Syntax**
+
+```text
+#debug
+```
 
 **Example**
 
-`#retdel`
+```text
+#debug
+```
 
-### 15.行にファイル挿入
+### 9. Initial Active State Settings
 
-`#ins`_file / `#ins`_file_after 命令は、指定したテキストファイルの内容を行として挿入します。
-`#ins`_file は、検索文字列を含む行の前に挿入します。
-`#ins`_file_after は、検索文字列を含む行の後に挿入します。
+`#st_init` specifies the states to activate when the state machine starts. If omitted, the first state defined is activated.
 
-**形式**
+**Syntax**
 
-`#ins`_file,Text file name
-`#ins`_file_after,Text file name
+```text
+#st_init,state1,state2,...,stateN
+```
 
 **Example**
 
-`#ins`_file,ccc.txt
-`#ins`_file_after,ccc.txt
+```text
+#st_init,idle,idle_2
+```
+
+### 10. Collect Log Context
+
+`#log` collects lines from `n` lines before the specified point through `m` lines after it. The output format follows `#line_chg`.
+
+**Syntax**
+
+```text
+#log,number_of_preceding_lines,number_of_following_lines
+```
+
+**Example**
+
+```text
+#log,3,4
+```
+
+### 11. Rewrite a Specified Line
+
+`#line_chg` rewrites the specified line.
+
+**Syntax**
+
+```text
+#line_chg,line_number,content
+```
+
+**Example**
+
+```text
+#line_chg,100,aaaaadd
+```
+
+If the content contains a comma, enclose it in double quotation marks. To include a double quotation mark in the content, enter it twice.
+
+### 12. Trace Commands
+
+`#itrace` traces command execution.
+
+**Syntax**
+
+```text
+#itrace
+```
+
+**Example**
+
+```text
+#itrace
+```
+
+### 13. Trace the Buffer
+
+`#trace` traces the buffer.
+
+**Syntax**
+
+```text
+#trace
+```
+
+**Example**
+
+```text
+#trace
+```
+
+### 14. Delete a Line Break
+
+`#retdel` deletes a line break and joins the current line with the next line.
+
+**Syntax**
+
+```text
+#retdel
+```
+
+**Example**
+
+```text
+#retdel
+```
+
+### 15. Insert a File into the Text
+
+`#ins_file` and `#ins_file_after` insert the contents of a text file as lines. `#ins_file` inserts the contents before a line containing the search string. `#ins_file_after` inserts them after that line.
+
+**Syntax**
+
+```text
+#ins_file,text_file_name
+#ins_file_after,text_file_name
+```
+
+**Example**
+
+```text
+#ins_file,ccc.txt
+#ins_file_after,ccc.txt
+```
 
 ## 5. Version History
 
-Ver 0.90  仮リリース
-Ver 0.91  `-r` Option追加
-Ver 0.92  バグフィックス、すべてのステートが終わった時、サーチ＆書き換えを終わらせるようにした。
-　　　　　初期ステート名を複数指定できるようにした。ログをとる機能を追加しました。
-Ver 0.93  バグフィックス
-Ver 0.94  バグフィックス、デバッグ機能追加
-Ver 0.95  `#retdel`を追加
-Ver 0.97  `#ins`_afterを追加
-Ver 0.98  高速化しました。不要なリターンコードを付加していたバグをフィックス。
-Ver 1.00  バックグラウンドジョブで走らせるようにしました。
-Ver 1.01  コマンドがNULLの時、エラーで停止してしまうバグをフィックス
-Ver 1.02  4Gバイト超のファイルも扱えるようにしました。`-buff`Option追加
-Ver 1.03  CSV fileのCELL内に改行があっても正しく読めるようにした。
-Ver 1.04  Optionの`aA_same`追加
-Ver 1.04a Optionの`aA_same`のバグフィックス
-Ver 1.05  `#ins`_file,`#ins`_file_afterを追加
+- **Ver 0.90** Preliminary release.
+- **Ver 0.91** Added the `-r` option.
+- **Ver 0.92** Fixed bugs. Made search and rewriting stop when all states have finished. Added support for specifying multiple initial states and added logging.
+- **Ver 0.93** Bug fixes.
+- **Ver 0.94** Bug fixes and added debugging features.
+- **Ver 0.95** Added `#retdel`.
+- **Ver 0.97** Added `#ins_after`.
+- **Ver 0.98** Improved performance and fixed a bug that added unnecessary line ending codes.
+- **Ver 1.00** Changed execution to run as a background job.
+- **Ver 1.01** Fixed a bug that caused an error when a command was NULL.
+- **Ver 1.02** Added support for files larger than 4 GB and added the `-buff` option.
+- **Ver 1.03** Fixed CSV reading when a cell contains a line break.
+- **Ver 1.04** Added the `aA_same` option.
+- **Ver 1.04a** Fixed a bug in the `aA_same` option.
+- **Ver 1.05** Added `#ins_file` and `#ins_file_after`.

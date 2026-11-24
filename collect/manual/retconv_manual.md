@@ -1,6 +1,6 @@
 # CSV Line Break Conversion for Excel
 
-（`0x0D 0x0A` → `0x0A`）
+(`0x0D 0x0A` → `0x0A`)
 
 ## 1. About the Program
 
@@ -8,37 +8,33 @@ This program was designed as a filter for CSVMAKE2.
 
 It can also be run as a standalone program.
 
-Converts line breaks in CSV files to a format that is easier to use in Excel.
+It converts line breaks in CSV files to a format that is easier to use in Excel.
 
-通常、データ内に改行があるCSV fileをExcelで開くと、セル内に「・」が表示されることがあります。
+When a CSV file containing line breaks in its data is opened in Excel, a middle dot may appear inside a cell. This happens because Excel uses `0x0A (LF)` for line breaks within cells.
 
-これは、Excelのセル内Line endingが `0x0A (LF)` であるためです。
-
-例えば、メモ帳で次のようなCSV fileを作成したとします。
+For example, suppose you create the following CSV file in Notepad:
 
 ```text
 a,b,"c
 d"
 ```
 
-Line ending（CR: `0x0D`、LF: `0x0A`）を表示すると、次のようになります。
+The line endings (CR: `0x0D`, LF: `0x0A`) can be shown as follows:
 
 ```text
 a,b,"c[CRLF]
 d"
 ```
 
-これをExcelで読み込むと、`c[CRLF]d` の部分が
+When this file is opened in Excel, the `c[CRLF]d` portion may appear as:
 
 ```text
-c・d
+c·d
 ```
 
-のように表示されます。
+The middle dot represents `0x0D` (CR).
 
-「・」が `0x0D` を表しています。
-
-This program この「・」の部分を削除します。
+This program removes the CR represented by that dot.
 
 ## 2. Usage
 
@@ -47,20 +43,20 @@ This is a console program.
 ### Syntax
 
 ```text
-retconv 変換前CSV file Converted toCSV file [-buff buffer_size]
+retconv input_csv_file output_csv_file [-buff buffer_size]
 ```
 
 ### Options
 
-- `-buff`: Specifies the buffer size for each read/write operation (KB). Usually not required, but a larger value may help with large files.The default is 10 KB.
+- `-buff`: Specifies the buffer size used for each read/write operation (KB). This option is usually unnecessary, but a larger value may help with large files. The default is 10 KB.
 
-### Examples
+### Example
 
 ```text
 retconv c:\csv\bbb.csv c:\csv\ccc.csv
 ```
 
-### CSVMAKE2でフィルタProgramとして使用する場合
+### Using as a Filter Program with CSVMAKE2
 
 ```text
 csvmake2 d:\aaa.xls -x retconv c:\csv\bbb.csv c:\csv\ccc.csv
@@ -68,9 +64,9 @@ csvmake2 d:\aaa.xls -x retconv c:\csv\bbb.csv c:\csv\ccc.csv
 
 ## 3. Version History
 
-- **Ver 1.00**　初公開！
-- **Ver 1.01**　Input fileとOutput fileが同名の場合、エラーを表示するようにしました。
-- **Ver 1.01**　マニュアルを修正しました。Programの変更はありません。
-- **Ver 1.02**　パラメータ数が2つ以上の場合でも、エラーにせず実行するようにしました。
-- **Ver 1.03**　第2水準の漢字に対応。
-- **Ver 1.05**　4Gバイトを超えるファイルも扱えるようにしました。`-buff` Optionを追加。
+- **Ver 1.00** Initial release.
+- **Ver 1.01** Added an error message when the input and output file names are the same.
+- **Ver 1.01** Updated the manual; no program changes.
+- **Ver 1.02** Changed the program to run without an error when two or more parameters are specified.
+- **Ver 1.03** Added support for Level 2 kanji characters.
+- **Ver 1.05** Added support for files larger than 4 GB and added the `-buff` option.

@@ -13,21 +13,17 @@ This is a console program.
 ### Syntax
 
 ```text
-retchg -m|-w|-u Files to convert [-buff buffer_size]
+retchg -m|-w|-u file_to_convert [-buff buffer_size]
 ```
 
 Specify the full path to the file to convert.
 
 ### Options
 
-- `-m`：Mac用Line endingに変換します。
-- `-w`：Windows用Line endingに変換します。
-- `-u`：Unix用Line endingに変換します。
-- `-buff`: Specifies the buffer size for each read/write operation (KB).
-
-`-buff` は通常は指定する必要はありませんが、ファイルが大きい場合などには、大きな値を指定すると有効です。
-
-指定しない場合は、10KByteとなります。
+- `-m`: Converts line endings to the Mac format.
+- `-w`: Converts line endings to the Windows format.
+- `-u`: Converts line endings to the Unix format.
+- `-buff`: Specifies the buffer size used for each read/write operation (KB). This option is usually unnecessary, but a larger value may be useful for large files. The default is 10 KB.
 
 ### Examples
 
@@ -49,6 +45,6 @@ retchg -u c:\csv\*.csv -buff 100
 
 ## 3. Version History
 
-- **Ver 1.00**　初公開！
-- **Ver 1.01**　第2水準の漢字に対応。
-- **Ver 1.02**　4Gバイトを超えるファイルも扱えるようにしました。
+- **Ver 1.00** Initial release.
+- **Ver 1.01** Added support for Level 2 kanji characters.
+- **Ver 1.02** Added support for files larger than 4 GB.

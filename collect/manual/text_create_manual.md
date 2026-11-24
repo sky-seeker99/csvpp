@@ -1,4 +1,4 @@
-# Text File GenerationProgram
+# Text File Generation Program
 
 ## 1. About the Program
 
@@ -8,17 +8,17 @@ This program generates text files using a variety of patterns.
 
 This is a console program.
 
-The syntax is as follows.
+### Syntax
 
 ```text
-text_create ルールファイル [-buff buffer_size]
+text_create rule_file [-buff buffer_size]
 ```
 
-ルールSpecify the full path to the file.
+Specify the full path to the rule file.
 
-The rule file is in CSV format.
+The rule file must be in CSV format.
 
-`-buff` は、1回の読み書きに使用するバッファサイズ（単位：KByte）を指定します。通常は指定する必要はありませんが、ファイルサイズが大きい場合などには、大きな値を指定すると有効です。The default is 10 KB.
+`-buff` specifies the buffer size used for each read/write operation (KB). This option is usually unnecessary, but a larger value may help with large files. The default is 10 KB.
 
 ### Example
 
@@ -28,7 +28,7 @@ text_create rule.csv
 
 ## 3. Examples
 
-The following is an example CSV file.
+The following is an example CSV rule file.
 
 ```csv
 #file,ptn3.txt
@@ -80,9 +80,9 @@ The following is an example CSV file.
 
 ### Assigning Keys and Data
 
-`#write` または `#writeln` の次のデータがキーとなり、その後のデータがそのキーに対応するデータになります。
+In `#write` or `#writeln`, the field following the command is the key. The subsequent fields contain the data associated with that key.
 
-In the example above,キーは `aa`、`bb`、`cc` となり、それぞれのキーに対するデータはThe result is as follows.
+In the example above, the keys are `aa`, `bb`, and `cc`. Their data is shown below.
 
 #### `[aa]`
 
@@ -118,32 +118,32 @@ ccCCCCCCCCCCCCCCCCCCCCC8
 ccCCCCCCCCCCCCCCCCCCCCC9
 ```
 
-The data is distributed to and written to the corresponding files.
+The data associated with each key is distributed among the specified files and written to them.
 
 ### Writing to Files
 
-`ptn1.txt` はThe following keys are included.
+`ptn1.txt` includes the following key:
 
 ```text
 [aa]
 ```
 
-`ptn2.txt` はThe following keys are included.
+`ptn2.txt` includes the following keys:
 
 ```text
 [bb]
 [cc]
 ```
 
-`ptn3.txt` はThe following keys are included.
+`ptn3.txt` first specifies the following key:
 
 ```text
 [cc]
 ```
 
-`[dd]` は存在しないキーのため、出力されません。
+`[dd]` is not a defined key, so no data is written for it.
 
-その後、The following keys are included.
+The following keys are then selected for output:
 
 ```text
 [aa]
@@ -214,14 +214,14 @@ ccCCCCCCCCCCCCCCCCCCCCC8
 ccCCCCCCCCCCCCCCCCCCCCC9
 ```
 
-## 4. コマンドの詳細
+## 4. Command Reference
 
-### 4.1 ファイルの定義
+### 4.1 Define an Output File
 
-**形式**
+**Syntax**
 
 ```text
-#file,File name
+#file,file_name
 ```
 
 **Example**
@@ -230,12 +230,12 @@ ccCCCCCCCCCCCCCCCCCCCCC9
 #file,c:\aaa.txt
 ```
 
-### 4.2 ファイル出力パターンの定義
+### 4.2 Define Output Patterns for a File
 
-**形式**
+**Syntax**
 
 ```text
-#key,パターン名
+#key,pattern_name
 ```
 
 **Example**
@@ -244,13 +244,13 @@ ccCCCCCCCCCCCCCCCCCCCCC9
 #key,aaa
 ```
 
-### 4.3 パターンの出力内容
+### 4.3 Define Pattern Output
 
-**形式**
+**Syntax**
 
 ```text
-#write,パターン名,String data    -> 改行なし
-#writeln,パターン名,String data  -> 改行あり
+#write,pattern_name,string_data       -> no line break
+#writeln,pattern_name,string_data     -> followed by a line break
 ```
 
 **Example**
@@ -260,25 +260,25 @@ ccCCCCCCCCCCCCCCCCCCCCC9
 #writeln,aaa,ABCDEFGHIJKLMN
 ```
 
-### 4.4 左スペースの出力設定
+### 4.4 Configure Leading Spaces
 
-パターンを出力する際の、左側のスペース数を指定します。
+Sets the number of leading spaces (indentation) used when outputting a pattern.
 
-**形式**
+**Syntax**
 
 ```text
-#sp,パターン名,Number of leading spaces
-#sp++,パターン名,Amount to add to the current number of leading spaces
-#sp--,パターン名,Amount to subtract from the current number of leading spaces
-#sp_push,パターン名,保存キー
-#sp_pop,パターン名,保存キー
+#sp,pattern_name,number_of_leading_spaces
+#sp++,pattern_name,amount_to_add
+#sp--,pattern_name,amount_to_subtract
+#sp_push,pattern_name,storage_key
+#sp_pop,pattern_name,storage_key
 ```
 
-- `#sp`：Number of leading spacesを指定した値に設定します。
-- `#sp++`：現在のNumber of leading spacesに指定した値を加算します。
-- `#sp--`：現在のNumber of leading spacesから指定した値を減算します。
-- `#sp_push`：現在のNumber of leading spacesを指定した保存キーに保存します。
-- `#sp_pop`：保存キーに保存されているNumber of leading spacesを、現在のNumber of leading spacesに設定します。
+- `#sp`: Sets the number of leading spaces to the specified value.
+- `#sp++`: Adds the specified value to the current number of leading spaces.
+- `#sp--`: Subtracts the specified value from the current number of leading spaces.
+- `#sp_push`: Saves the current number of leading spaces under the specified storage key.
+- `#sp_pop`: Sets the current number of leading spaces to the value saved under the storage key.
 
 **Example**
 
@@ -290,7 +290,7 @@ ccCCCCCCCCCCCCCCCCCCCCC9
 #writeln,aa,}
 ```
 
-Output：
+Output:
 
 ```text
 if (a==0){
@@ -298,7 +298,7 @@ if (a==0){
 }
 ```
 
-`#sp` を使用すると、直接スペース数を指定できます。
+You can use `#sp` to set the number of spaces directly.
 
 ```text
 #writeln,aa,if (a==0){
@@ -308,7 +308,7 @@ if (a==0){
 #writeln,aa,}
 ```
 
-Output：
+Output:
 
 ```text
 if (a==0){
@@ -316,12 +316,12 @@ if (a==0){
 }
 ```
 
-### 4.5 ファイルの読み込み
+### 4.5 Read a File
 
-**形式**
+**Syntax**
 
 ```text
-#wr_file,パターン名,File to read
+#wr_file,pattern_name,file_to_read
 ```
 
 **Example**
@@ -330,21 +330,21 @@ if (a==0){
 #wr_file,aaa,c:\aaa.dat
 ```
 
-`c:\aaa.dat` を読み込み、`aaa` パターンに取り込みます。
+Reads `c:\aaa.dat` and adds its contents to the `aaa` pattern.
 
-複数のファイルを指定することもできます。
+You can specify multiple files:
 
 ```text
 #wr_file,aaa,c:\a0.dat
 #wr_file,aaa,c:\a1.dat
 ```
 
-上記のように記述すると、複数のファイルの内容がマージされて出力されます。
+When multiple files are specified this way, their contents are merged in the output.
 
 ## 5. Version History
 
-- Ver 1.00　リリース
-- Ver 1.01　`#wr` を `#write`、`#writeln` に変更
-- Ver 1.02　`#sp`、`#sp++`、`#sp--` を追加
-- Ver 1.03　`#wr_file` を追加
-- Ver 1.04　`#sp_push`、`#sp_pop` を追加
+- Ver 1.00 Released.
+- Ver 1.01 Changed `#wr` to `#write` and `#writeln`.
+- Ver 1.02 Added `#sp`, `#sp++`, and `#sp--`.
+- Ver 1.03 Added `#wr_file`.
+- Ver 1.04 Added `#sp_push` and `#sp_pop`.
